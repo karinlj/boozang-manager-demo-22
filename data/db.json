@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "title": "Create new product list",
+      "details": "lorem ipsum dolor",
+      "complete": true
+    },
+    {
+      "title": "Create new banners",
+      "details": "Create new banners for home page",
+      "complete": false,
+      "id": 3
+    }
+  ]
+}

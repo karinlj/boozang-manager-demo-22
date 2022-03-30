@@ -1,30 +1,67 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <section class="menu">
+    <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
+    <Navbar :isOpen="isOpen" />
+  </section>
+  <main>
+    <router-view />
+  </main>
 </template>
 
-<style>
+<script>
+import Navbar from "./layout/Navbar.vue";
+import HeaderBar from "./layout/HeaderBar.vue";
+
+export default {
+  components: {
+    Navbar,
+    HeaderBar,
+  },
+  data() {
+    return {
+      //obs!!
+      isOpen: false,
+    };
+  },
+  methods: {
+    toggleOpen(btnIsOpen) {
+      this.isOpen = btnIsOpen;
+      console.log("this.isOpen", this.isOpen);
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+@import "./assets/_variables.scss";
+
+body {
+  background: $color_gray_light;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: $color_gray_medium;
 }
-
-#nav {
-  padding: 30px;
+* {
+  box-sizing: border-box; //obs!!
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.menu {
+  position: fixed;
+  width: 100%;
+}
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 6rem;
 }
 </style>
