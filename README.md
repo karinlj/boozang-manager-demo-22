@@ -4,7 +4,7 @@
 
 Vue.js 3 CRUD application with json-server and also a slide in navbar. Semantic and accessible.
 
-![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
+![Screenshot](/src/assets/Screenshot.jpg?raw=true "Screenshot")
 
 ### Prerequisites
 
