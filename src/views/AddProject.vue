@@ -1,10 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <label>Title:</label>
-    <input type="text" required v-model="title" />
+    <label>Title: <input type="text" required v-model="title" /> </label>
+    <label>Details: <textarea required v-model="details"></textarea></label>
 
-    <label>Details: </label>
-    <textarea required v-model="details"></textarea>
     <button>Add Project</button>
   </form>
 </template>
@@ -43,12 +41,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/_variables.scss";
+
 form {
   padding: 2rem;
   border-radius: 10px;
   background: white;
   label {
-    color: #bbb;
+    color: $color_gray_darker;
     display: block;
     margin: 2rem 0 1rem 0;
     font-size: 0.8rem;
@@ -59,6 +59,7 @@ form {
   input,
   textarea {
     padding: 0.5rem;
+    margin-top: 1rem;
     width: 100%;
     box-sizing: border-box;
     border: none;

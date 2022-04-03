@@ -9,7 +9,7 @@
       <label
         >Details: <textarea required v-model="project.details"></textarea>
       </label>
-      <button aria-label="Update project">Update Project</button>
+      <button>Update Project</button>
     </form>
   </section>
 </template>
