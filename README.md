@@ -14,7 +14,7 @@ NodeJS
 
 To clone
 
-`git clone https://github.com/karinlj/my_vue-project-planner.git`
+`git clone https://github.com/karinlj/my-vue3-project-planner.git`
 
 To install
 
