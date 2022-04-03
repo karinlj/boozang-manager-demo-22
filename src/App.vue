@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
 import Navbar from "./layout/Navbar.vue";
 import HeaderBar from "./layout/HeaderBar.vue";
 
@@ -17,17 +18,18 @@ export default {
     Navbar,
     HeaderBar,
   },
-  data() {
-    return {
-      //obs!!
-      isOpen: false,
+  setup() {
+    const isOpen = ref(false);
+
+    const toggleOpen = (btnIsOpen) => {
+      isOpen.value = btnIsOpen;
+      //console.log("isOpen", isOpen.value);
     };
-  },
-  methods: {
-    toggleOpen(btnIsOpen) {
-      this.isOpen = btnIsOpen;
-      console.log("this.isOpen", this.isOpen);
-    },
+
+    return {
+      isOpen,
+      toggleOpen,
+    };
   },
 };
 </script>
