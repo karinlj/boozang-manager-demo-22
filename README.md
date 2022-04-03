@@ -1,4 +1,4 @@
-# project-planner
+# Vue3 project-planner
 
 ## Description
 
