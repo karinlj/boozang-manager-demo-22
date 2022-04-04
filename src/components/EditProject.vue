@@ -27,8 +27,7 @@ export default {
     load();
 
     const handleSubmit = () => {
-      console.log("project to be edited", project.value.title);
-
+      //console.log("project to be edited", project.value.title);
       const { update } = updateProject(
         props.id,
         project.value.title,

@@ -25,7 +25,6 @@ export default {
       isOpen.value = btnIsOpen;
       //console.log("isOpen", isOpen.value);
     };
-
     return {
       isOpen,
       toggleOpen,

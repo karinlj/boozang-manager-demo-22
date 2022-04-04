@@ -7,17 +7,22 @@
 
 <script>
 import HeaderMenuBtn from "./HeaderMenuBtn.vue";
+
 export default {
   name: "HeaderBar",
   components: {
     HeaderMenuBtn,
   },
   props: ["isOpen"],
-  methods: {
-    toggleOpen(btnIsOpen) {
-      console.log("AppHeader - isOpen", this.isOpen);
-      this.$emit("toggleOpen", btnIsOpen);
-    },
+
+  setup(props, { emit }) {
+    const toggleOpen = (btnIsOpen) => {
+      emit("toggleOpen", btnIsOpen);
+    };
+
+    return {
+      toggleOpen,
+    };
   },
 };
 </script>

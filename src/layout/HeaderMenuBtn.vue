@@ -13,24 +13,28 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "HeaderMenuBtn",
   props: ["isOpen"],
-  data() {
-    return {
+
+  setup(props, { emit }) {
+    const btnIsOpen = ref(false);
+
+    const handleClick = () => {
       //obs!!
-      btnIsOpen: false,
+      btnIsOpen.value = props.isOpen;
+      btnIsOpen.value = !btnIsOpen.value;
+      // console.log("AppHeaderBtn - btnIsOpen:", btnIsOpen.value);
+      //obs!
+      emit("toggleOpen", btnIsOpen.value);
     };
-  },
-  methods: {
-    handleClick() {
-      //obs!!
-      this.btnIsOpen = this.isOpen;
-      this.btnIsOpen = !this.btnIsOpen;
-      console.log("AppHeaderBtn - isOpen", this.isOpen);
-      //obs!!
-      this.$emit("toggleOpen", this.btnIsOpen);
-    },
+
+    return {
+      btnIsOpen,
+      handleClick,
+    };
   },
 };
 </script>

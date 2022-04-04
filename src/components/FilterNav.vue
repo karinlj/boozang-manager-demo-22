@@ -28,10 +28,13 @@
 export default {
   name: "FilterNav",
   props: ["current"],
-  methods: {
-    updateFilter(filterBy) {
-      this.$emit("filterChange", filterBy);
-    },
+  setup(props, context) {
+    const updateFilter = (filterBy) => {
+      context.emit("filterChange", filterBy);
+    };
+    return {
+      updateFilter,
+    };
   },
 };
 </script>
