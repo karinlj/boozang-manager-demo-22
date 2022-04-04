@@ -55,11 +55,13 @@ export default {
     //   //filter out
     //   return projects.value.filter((item) => {
     //     //check if search term is in project
-    //     return item.title.includes(search); //match(this.search);
+    //     return item.title.includes(search.value); //match(search.value);
     //   });
     // });
     //methods
     const handleDelete = (id) => {
+      console.log("deleted project", id);
+
       projects.value = projects.value.filter((item) => {
         return item.id !== id;
       });
@@ -68,7 +70,7 @@ export default {
       let project = projects.value.find((item) => {
         return item.id === id;
       });
-      console.log("updated project", project);
+      // console.log("updated project", project);
       project.complete = !project.complete;
     };
 

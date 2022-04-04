@@ -2,15 +2,33 @@
   "projects": [
     {
       "id": 2,
-      "title": "Create new product list",
+      "title": "Create new product listssss",
       "details": "lorem ipsum dolor",
       "complete": true
     },
     {
-      "title": "Create new banners",
-      "details": "Create new banners for home page",
+      "id": 3,
+      "title": "Create new product banner",
+      "details": "lorem ipsum dolor",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Create new product images",
+      "details": "lorem ipsum dolor",
+      "complete": true
+    },
+    {
+      "title": "Create new Blog page",
+      "details": "Lorem ipsum\n",
+      "complete": true,
+      "id": 5
+    },
+    {
+      "title": "Create blog cards",
+      "details": "Lorem",
       "complete": false,
-      "id": 3
+      "id": 6
     }
   ]
 }

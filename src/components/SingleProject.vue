@@ -7,6 +7,7 @@
         class="show_details_btn"
         title="More details"
         aria-label="More details"
+        :aria-expanded="[showDetails]"
       >
         <span>
           {{ project.title }}

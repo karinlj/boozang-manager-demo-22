@@ -19,7 +19,7 @@ export default {
   name: "HeaderMenuBtn",
   props: ["isOpen"],
 
-  setup(props, { emit }) {
+  setup(props, context) {
     const btnIsOpen = ref(false);
 
     const handleClick = () => {
@@ -28,7 +28,7 @@ export default {
       btnIsOpen.value = !btnIsOpen.value;
       // console.log("AppHeaderBtn - btnIsOpen:", btnIsOpen.value);
       //obs!
-      emit("toggleOpen", btnIsOpen.value);
+      context.emit("toggleOpen", btnIsOpen.value);
     };
 
     return {

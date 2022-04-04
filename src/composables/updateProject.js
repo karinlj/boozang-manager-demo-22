@@ -6,7 +6,6 @@ const updateProject = (id, title, details) => {
   const update = async () => {
     try {
       //fetch data
-
       let data = await fetch("http://localhost:9000/projects/" + id, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },

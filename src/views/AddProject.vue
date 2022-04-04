@@ -8,35 +8,64 @@
 </template>
 
 <script>
+import addProject from "../composables/addProject";
+import { ref } from "@vue/reactivity";
+import { useRouter } from "vue-router";
+
 export default {
   name: "AddProject",
-  data() {
-    return {
-      details: "",
-      title: "",
-    };
-  },
-  methods: {
-    //adding project
-    handleSubmit() {
-      console.log("submit", this.title, this.details);
+  setup() {
+    const router = useRouter();
+    const details = ref("");
+    const title = ref("");
+
+    const handleSubmit = async () => {
+      //  console.log("submit", title.value, details.value);
       //make project object
       let project = {
-        title: this.title,
-        details: this.details,
+        title: title.value,
+        details: details.value,
         complete: false,
       };
-      fetch("http://localhost:9000/projects", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" }, //sending json-data
-        body: JSON.stringify(project), //sending project object
-      })
-        .then(() => {
-          this.$router.push("/"); //redirect to home
-        })
-        .catch((err) => console.log(err.message));
-    },
+      const { add } = addProject(project);
+      await add();
+
+      await router.push("/");
+    };
+
+    return {
+      handleSubmit,
+      details,
+      title,
+    };
   },
+  // data() {
+  //   return {
+  //     details: "",
+  //     title: "",
+  //   };
+  // },
+  // methods: {
+  //   //adding project
+  //   handleSubmit() {
+  //     console.log("submit", this.title, this.details);
+  //     //make project object
+  //     let project = {
+  //       title: this.title,
+  //       details: this.details,
+  //       complete: false,
+  //     };
+  //     fetch("http://localhost:9000/projects", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" }, //sending json-data
+  //       body: JSON.stringify(project), //sending project object
+  //     })
+  //       .then(() => {
+  //         this.$router.push("/"); //redirect to home
+  //       })
+  //       .catch((err) => console.log(err.message));
+  //   },
+  // },
 };
 </script>
 

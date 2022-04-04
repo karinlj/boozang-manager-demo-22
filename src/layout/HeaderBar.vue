@@ -15,9 +15,9 @@ export default {
   },
   props: ["isOpen"],
 
-  setup(props, { emit }) {
+  setup(props, context) {
     const toggleOpen = (btnIsOpen) => {
-      emit("toggleOpen", btnIsOpen);
+      context.emit("toggleOpen", btnIsOpen);
     };
 
     return {
