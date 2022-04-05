@@ -6,7 +6,7 @@ const addProject = (newProject) => {
   const add = async () => {
     try {
       //fetch data
-      let data = await fetch("http://localhost:9000/projects/", {
+      let data = await fetch("http://localhost:9000/projectss/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         //what I post as json-format

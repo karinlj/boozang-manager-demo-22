@@ -39,33 +39,6 @@ export default {
       title,
     };
   },
-  // data() {
-  //   return {
-  //     details: "",
-  //     title: "",
-  //   };
-  // },
-  // methods: {
-  //   //adding project
-  //   handleSubmit() {
-  //     console.log("submit", this.title, this.details);
-  //     //make project object
-  //     let project = {
-  //       title: this.title,
-  //       details: this.details,
-  //       complete: false,
-  //     };
-  //     fetch("http://localhost:9000/projects", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" }, //sending json-data
-  //       body: JSON.stringify(project), //sending project object
-  //     })
-  //       .then(() => {
-  //         this.$router.push("/"); //redirect to home
-  //       })
-  //       .catch((err) => console.log(err.message));
-  //   },
-  // },
 };
 </script>
 

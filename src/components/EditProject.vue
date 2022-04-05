@@ -5,7 +5,6 @@
       <label
         >Title: <input type="text" required v-model="project.title" />
       </label>
-
       <label
         >Details: <textarea required v-model="project.details"></textarea>
       </label>

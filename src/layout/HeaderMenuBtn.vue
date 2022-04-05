@@ -30,7 +30,6 @@ export default {
       //obs!
       context.emit("toggleOpen", btnIsOpen.value);
     };
-
     return {
       btnIsOpen,
       handleClick,
