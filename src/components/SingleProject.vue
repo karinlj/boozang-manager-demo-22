@@ -52,45 +52,50 @@
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+
 export default {
   name: "SingleProject",
   props: ["project"],
-  data() {
-    return {
-      showDetails: false,
-      //the uri to this project in db.json
-      uri: "http://localhost:9000/projects/" + this.project.id,
-    };
-  },
-  methods: {
-    deleteProject() {
+
+  setup(props, context) {
+    const showDetails = ref(false);
+    // uri to this project in db.json
+    const uri = ref("http://localhost:9000/projects/" + props.project.id);
+
+    const deleteProject = () => {
       //delete from db.json
-      fetch(this.uri, { method: "DELETE" })
+      fetch(uri.value, { method: "DELETE" })
         .then(() => {
           //delete locally this project
-          this.$emit("delete", this.project.id);
+          context.emit("delete", props.project.id);
         })
         .catch((err) => console.log(err.message));
-    },
-    toggleComplete() {
-      fetch(this.uri, {
+    };
+
+    const toggleComplete = () => {
+      fetch(uri.value, {
         method: "PATCH", //update
         headers: { "Content-Type": "application/json" }, //sending json-data
-        body: JSON.stringify({ complete: !this.project.complete }), //sending the data in a string made from js-object
+        body: JSON.stringify({ complete: !props.project.complete }), //sending the data in a string made from js-object
       })
         .then(() => {
           //update locally this project
-          this.$emit("complete", this.project.id);
+          context.emit("complete", props.project.id);
         })
         .catch((err) => console.log(err.message));
-    },
+    };
+    return {
+      showDetails,
+      uri,
+      deleteProject,
+      toggleComplete,
+    };
   },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/_variables.scss";
-
 .project_item {
   margin: 1rem auto;
   background: white;

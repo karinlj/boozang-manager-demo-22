@@ -14,12 +14,10 @@ export default {
     HeaderMenuBtn,
   },
   props: ["isOpen"],
-
   setup(props, context) {
     const toggleOpen = (btnIsOpen) => {
       context.emit("toggleOpen", btnIsOpen);
     };
-
     return {
       toggleOpen,
     };
@@ -28,8 +26,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/_variables.scss";
-
 header {
   padding: 1rem 4rem;
   display: flex;

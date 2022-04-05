@@ -6,25 +6,43 @@
   >
     <ul>
       <li>
-        <router-link :to="{ name: 'Home' }">Home</router-link>
+        <router-link :to="{ name: 'Home' }">
+          <div @click="handleClick">Home</div>
+        </router-link>
       </li>
       <li>
-        <router-link :to="{ name: 'AddProject' }">AddProject</router-link>
+        <router-link :to="{ name: 'AddProject' }">
+          <div @click="handleClick">AddProject</div>
+        </router-link>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "Navbar",
   props: ["isOpen"],
+  setup(props, context) {
+    const btnIsOpen = ref(false);
+
+    const handleClick = () => {
+      //obs!!
+      btnIsOpen.value = props.isOpen;
+      btnIsOpen.value = !btnIsOpen.value;
+      context.emit("toggleOpen", btnIsOpen.value);
+    };
+    return {
+      btnIsOpen,
+      handleClick,
+    };
+  },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/_variables.scss";
-
 .nav {
   //position: absolute;
   height: 100%;

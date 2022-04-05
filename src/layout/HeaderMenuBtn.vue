@@ -18,7 +18,6 @@ import { ref } from "vue";
 export default {
   name: "HeaderMenuBtn",
   props: ["isOpen"],
-
   setup(props, context) {
     const btnIsOpen = ref(false);
 
@@ -27,7 +26,6 @@ export default {
       btnIsOpen.value = props.isOpen;
       btnIsOpen.value = !btnIsOpen.value;
       // console.log("AppHeaderBtn - btnIsOpen:", btnIsOpen.value);
-      //obs!
       context.emit("toggleOpen", btnIsOpen.value);
     };
     return {
@@ -39,8 +37,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/_variables.scss";
-
 .vego_burger {
   font-size: 1.2em;
   z-index: 1; //obs!!  //same parent as nav

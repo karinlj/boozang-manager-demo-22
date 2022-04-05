@@ -1,7 +1,7 @@
 <template>
   <section class="menu">
     <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
-    <Navbar :isOpen="isOpen" />
+    <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
   </section>
   <main>
     <router-view />
@@ -20,7 +20,6 @@ export default {
   },
   setup() {
     const isOpen = ref(false);
-
     const toggleOpen = (btnIsOpen) => {
       isOpen.value = btnIsOpen;
       //console.log("isOpen", isOpen.value);
@@ -34,8 +33,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/_variables.scss";
-
 body {
   background: $color_gray_light;
   margin: 0;

@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/_variables.scss";
-
 .filter_nav {
   button {
     background: none;

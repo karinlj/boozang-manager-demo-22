@@ -10,25 +10,19 @@
       "id": 3,
       "title": "Create new product banner",
       "details": "lorem ipsum dolor",
-      "complete": false
+      "complete": true
     },
     {
       "id": 4,
       "title": "Create new product images",
       "details": "lorem ipsum dolor",
-      "complete": true
+      "complete": false
     },
     {
       "title": "Create new Blog page",
       "details": "Lorem ipsum\n",
-      "complete": true,
-      "id": 5
-    },
-    {
-      "title": "Create blog cards",
-      "details": "Lorem",
       "complete": false,
-      "id": 6
+      "id": 5
     }
   ]
 }

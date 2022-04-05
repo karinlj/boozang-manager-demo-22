@@ -47,8 +47,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/_variables.scss";
-
 form {
   padding: 2rem;
   border-radius: 10px;

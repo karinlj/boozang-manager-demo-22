@@ -6,7 +6,7 @@ const addProject = (newProject) => {
   const add = async () => {
     try {
       //fetch data
-      let data = await fetch("http://localhost:9000/projectss/", {
+      let data = await fetch("http://localhost:9000/projects/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         //what I post as json-format
@@ -15,7 +15,7 @@ const addProject = (newProject) => {
       if (!data.ok) {
         throw Error("No data available");
       }
-      console.log("added data: ", data);
+      // console.log("added data: ", data);
     } catch (err) {
       addError.value = err.message;
       console.log("Error: ", addError.value);

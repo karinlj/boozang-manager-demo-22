@@ -13,7 +13,7 @@ const getProject = (id) => {
       }
       //make json object
       project.value = await data.json();
-      console.log("project: ", project.value);
+      //  console.log("project: ", project.value);
     } catch (err) {
       error.value = err.message;
       console.log("Error: ", error.value);
