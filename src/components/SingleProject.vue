@@ -14,7 +14,7 @@
         </span>
       </button>
       <div class="icons">
-        <!-- pass in project.id to route -->
+        <!-- project.id to route -->
         <router-link
           :to="{ name: 'EditProject', params: { id: project.id } }"
           :aria-label="' Open project: ' + project.title"
