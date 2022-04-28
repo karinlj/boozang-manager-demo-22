@@ -1,7 +1,7 @@
 <template>
   <header>
     <HeaderMenuBtn :isOpen="isOpen" @toggleOpen="toggleOpen" />
-    <h1>Project Planner</h1>
+    <h1>Boozang Manager</h1>
   </header>
 </template>
 

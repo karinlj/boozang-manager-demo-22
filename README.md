@@ -1,8 +1,8 @@
-# Vue3 project-planner
+# Boozang Manager Demo Vue3
 
 ## Description
 
-Vue.js 3 CRUD application with json-server and also a slide in navbar. Semantic and accessible.
+Boozang Manager Demo. Vue.js 3 CRUD application with json-server and also a slide in navbar. Semantic and accessible.
 
 ![Screenshot](/src/assets/Screenshot.jpg?raw=true "Screenshot")
 
@@ -43,11 +43,6 @@ To run db with json-server (can be run in different terminal)
 ## Author
 
 - **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
-
-## Acknowledgements
-
-Thank's to The Net Ninja.  
-`https://www.youtube.com/c/TheNetNinja`
 
 ## License
 
