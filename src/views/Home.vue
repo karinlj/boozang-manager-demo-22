@@ -1,26 +1,28 @@
 <template>
-  <section class="home">
+  <main>
+    <!-- <header> -->
     <!-- access the argument passed in filterChange with $event -->
-    <header>
-      <FilterNav @filterChange="current = $event" :current="current" />
-      <!-- <input type="text" v-model="search" /> -->
-      <!-- <p>search term {{ search }}</p> -->
-    </header>
-    <p v-if="error">{{ error }}</p>
-    <section v-if="projects.length">
-      <ProjectsList
-        :projects="filteredProjects"
-        @delete="handleDelete"
-        @complete="handleComplete"
-      />
-    </section>
-    <p v-else>... Loading</p>
-  </section>
+    <!-- <FilterNav @filterChange="current = $event" :current="current" />
+    </header> -->
+    <div class="container-small">
+      <h2>Mats Ljunggrens projects</h2>
+
+      <p v-if="error">{{ error }}</p>
+      <section v-if="projects.length">
+        <ProjectsList
+          :projects="projects"
+          @delete="handleDelete"
+          @complete="handleComplete"
+        />
+      </section>
+      <p v-else>... Loading</p>
+    </div>
+  </main>
 </template>
 
 <script>
 import ProjectsList from "../components/ProjectsList.vue";
-import FilterNav from "../components/FilterNav.vue";
+//import FilterNav from "../components/FilterNav.vue";
 import getProjects from "../composables/getProjects";
 import { ref } from "@vue/reactivity";
 import { computed } from "@vue/runtime-core";
@@ -28,28 +30,28 @@ import { computed } from "@vue/runtime-core";
 
 export default {
   name: "Home",
-  components: { ProjectsList, FilterNav },
+  components: { ProjectsList },
   setup() {
     const { projects, error, load } = getProjects();
-    const current = ref("all");
-    const search = ref("");
+    // const current = ref("all");
+    // const search = ref("");
 
     load();
 
     //computed
-    const filteredProjects = computed(() => {
-      //evaluate the value of current wich have 3 possibilities
-      if (current.value === "completed") {
-        return projects.value.filter((item) => {
-          return item.complete;
-        });
-      } else if (current.value === "ongoing") {
-        return projects.value.filter((item) => {
-          return !item.complete;
-        });
-      }
-      return projects.value;
-    });
+    // const filteredProjects = computed(() => {
+    //   //evaluate the value of current wich have 3 possibilities
+    //   if (current.value === "completed") {
+    //     return projects.value.filter((item) => {
+    //       return item.complete;
+    //     });
+    //   } else if (current.value === "ongoing") {
+    //     return projects.value.filter((item) => {
+    //       return !item.complete;
+    //     });
+    //   }
+    //   return projects.value;
+    // });
 
     // const matchingProjects = computed(() => {
     //   //filter out
@@ -75,9 +77,9 @@ export default {
       projects,
       error,
       load,
-      current,
-      search,
-      filteredProjects,
+      // current,
+      // search,
+      // filteredProjects,
       // matchingProjects,
       handleDelete,
       handleComplete,
@@ -85,3 +87,23 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+main {
+  padding-top: 4rem;
+  min-height: 900px;
+  .btn {
+    margin: 2.5rem 0;
+  }
+  h2 {
+    padding-bottom: 0.8rem;
+    // border-bottom: 1px solid $borderColor;
+    border-bottom: 4px solid rgba(27, 40, 74, 0.5);
+    max-width: 600px;
+  }
+  .container-small {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="project-list">
     <li v-for="project in projects" :key="project">
       <!-- take project from the loop -->
       <SingleProject
@@ -28,3 +28,10 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+</style>

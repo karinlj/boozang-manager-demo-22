@@ -3,9 +3,7 @@
     <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
     <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
   </section>
-  <main>
-    <router-view />
-  </main>
+  <router-view />
 </template>
 
 <script>
@@ -57,9 +55,72 @@ ul {
   position: fixed;
   width: 100%;
 }
-main {
-  max-width: 600px;
+// main {
+//   max-width: 600px;
+//   margin: 0 auto;
+//   padding-top: 6rem;
+// }
+
+//new
+//reset
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+//general
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  // letter-spacing: 0.4px;
+  color: $textColor;
+}
+a,
+.btn,
+.icon_btn {
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+.container {
+  max-width: 1400px;
   margin: 0 auto;
-  padding-top: 6rem;
+}
+.container-small {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 </style>
