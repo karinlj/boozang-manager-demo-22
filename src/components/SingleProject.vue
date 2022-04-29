@@ -2,10 +2,15 @@
   <div class="project_item divided" :class="color">
     <div class="upper-part">
       <div class="icons-extended">
-        <button class="icon_btn" title="team" aria-label="team number">
-          <i class="fas fa-user-friends" aria-hidden="true"></i>
+        <div>
+          <i
+            class="fas fa-user-friends icon_btn team"
+            aria-hidden="true"
+            title="team members"
+          ></i>
           <span>3</span>
-        </button>
+        </div>
+
         <div class="icons">
           <button class="icon_btn right" title="edit" aria-label="Edit project">
             <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
@@ -70,9 +75,14 @@
     </div> -->
 
     <footer>
-      <span class="title">
+      <a
+        href=""
+        class="title"
+        aria-label="Launch Boozang tool"
+        title="Launch tool"
+      >
         {{ project.title }}
-      </span>
+      </a>
     </footer>
   </div>
 </template>
@@ -148,7 +158,7 @@ export default {
       span {
         font-weight: 600;
         font-size: 0.9rem;
-        margin-left: 3px;
+        margin-left: 1px;
       }
     }
     footer {
@@ -189,9 +199,12 @@ export default {
     border: none;
     background: transparent;
     color: $textColorDark;
-    padding-right: 0;
+    padding: 5px;
     &.right {
-      margin-left: 1rem;
+      margin-left: 0.9rem;
+    }
+    &.team {
+      cursor: text;
     }
   }
   .props {

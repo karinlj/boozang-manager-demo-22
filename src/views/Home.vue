@@ -106,11 +106,10 @@ export default {
   h1 {
     font-size: 1.8rem;
     color: $textColor;
-    // color: #fff;
   }
 }
 main {
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   min-height: 900px;
   .btn {
     margin: 2.5rem 0;
@@ -118,10 +117,8 @@ main {
   h2 {
     display: inline-block;
     padding-bottom: 0.8rem;
-    padding-right: 1rem;
-    // border-bottom: 4px solid rgba(116, 192, 252, 0.6); // rgba(27, 40, 74, 0.4);
-    border-bottom: 3px solid rgba(27, 40, 74, 0.4);
-    border-bottom: 3px solid $borderColor;
+    //border-bottom: 3px solid rgba(27, 40, 74, 0.4);
+    border-bottom: 2px solid $borderColor;
   }
   .container-small {
     max-width: 1000px;

@@ -61,7 +61,7 @@ export default {
   flex-wrap: wrap;
   margin-top: 3rem;
 }
-.add-project {
+button.add-project {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,10 +72,11 @@ export default {
   height: 14rem;
   width: 17rem;
   background: transparent;
-  border: dashed 2px $lightGrey;
+  border: dashed 2px $borderColor !important;
+
   .add_icon {
     color: $textColorDark;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 </style>

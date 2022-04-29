@@ -113,7 +113,7 @@ a,
 button,
 .icon_btn {
   &:hover {
-    filter: brightness(150%);
+    filter: brightness(160%);
   }
 }
 .container {
