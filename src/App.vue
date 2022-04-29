@@ -4,17 +4,21 @@
     <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
   </section>
   <router-view />
+
+  <Footer />
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
 import Navbar from "./layout/Navbar.vue";
 import HeaderBar from "./layout/HeaderBar.vue";
+import Footer from "./layout/Footer.vue";
 
 export default {
   components: {
     Navbar,
     HeaderBar,
+    Footer,
   },
   setup() {
     const isOpen = ref(false);
@@ -106,13 +110,14 @@ h5 {
 }
 a,
 .btn,
+button,
 .icon_btn {
   &:hover {
-    filter: brightness(90%);
+    filter: brightness(150%);
   }
 }
 .container {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .container-small {

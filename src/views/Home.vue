@@ -98,11 +98,11 @@ export default {
 
 <style lang="scss">
 .main-container {
-  padding-top: 5rem;
+  padding-top: 3.5rem;
 }
 .subheader {
   background: $lightestGrey;
-  padding: 3rem $sectionPadding;
+  padding: 2.5rem $sectionPadding;
   h1 {
     font-size: 1.8rem;
     color: $textColor;
@@ -110,16 +110,18 @@ export default {
   }
 }
 main {
-  //padding-top: 4rem;
+  padding-bottom: 4rem;
   min-height: 900px;
   .btn {
     margin: 2.5rem 0;
   }
   h2 {
+    display: inline-block;
     padding-bottom: 0.8rem;
-    // border-bottom: 1px solid $borderColor;
-    border-bottom: 4px solid rgba(27, 40, 74, 0.5);
-    max-width: 600px;
+    padding-right: 1rem;
+    // border-bottom: 4px solid rgba(116, 192, 252, 0.6); // rgba(27, 40, 74, 0.4);
+    border-bottom: 3px solid rgba(27, 40, 74, 0.4);
+    border-bottom: 3px solid $borderColor;
   }
   .container-small {
     max-width: 1000px;

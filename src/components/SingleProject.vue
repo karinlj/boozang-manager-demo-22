@@ -1,5 +1,41 @@
 <template>
-  <div class="project_item">
+  <div class="project_item divided" :class="color">
+    <div class="upper-part">
+      <div class="icons-extended">
+        <button class="icon_btn" title="team" aria-label="team number">
+          <i class="fas fa-user-friends" aria-hidden="true"></i>
+          <span>3</span>
+        </button>
+        <div class="icons">
+          <button class="icon_btn right" title="edit" aria-label="Edit project">
+            <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon_btn right"
+            title="delete"
+            aria-label="Delete project"
+          >
+            <i class="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
+          </button>
+          <button
+            class="icon_btn right"
+            title="favourite"
+            aria-label="Favourite project"
+          >
+            <i class="far fa-star star_icon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="props">
+        <li>
+          <p>
+            Updated {{ project.updated }} days ago by
+            {{ project.by }}
+          </p>
+        </li>
+      </ul>
+    </div>
     <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
 
     <!-- <div class="icons">
@@ -33,37 +69,6 @@
       </button>
     </div> -->
 
-    <div class="icons-extended">
-      <button class="icon_btn" title="team" aria-label="team number">
-        <i class="fas fa-user-friends" aria-hidden="true"></i>
-        <span>3</span>
-      </button>
-      <div class="icons">
-        <button class="icon_btn right" title="edit" aria-label="Edit project">
-          <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
-        </button>
-        <button
-          class="icon_btn right"
-          title="delete"
-          aria-label="Delete project"
-        >
-          <i class="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
-        </button>
-        <button
-          class="icon_btn right"
-          title="favourite"
-          aria-label="Favourite project"
-        >
-          <i class="far fa-star star_icon" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-
-    <ul class="props">
-      <li>
-        <p>Updated 4 days ago</p>
-      </li>
-    </ul>
     <footer>
       <span class="title">
         {{ project.title }}
@@ -78,7 +83,7 @@ import { computed } from "@vue/runtime-core";
 
 export default {
   name: "SingleProject",
-  props: ["project"],
+  props: ["project", "color"],
 
   setup(props, context) {
     const showDetails = ref(false);
@@ -119,40 +124,52 @@ export default {
 
 <style lang="scss">
 .project_item {
-  // margin: 1rem auto;
-  // background: white;
-  // padding: 0.5rem 1rem;
-  // border-radius: 4px;
-  // box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.05);
-  // border-left: 4px solid $color_red; // not complete color
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.4rem 1.4rem 1rem 1.4rem;
   border-radius: $themeBorderRadius;
   box-shadow: $themeBoxShadowLight;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
   width: 17rem;
   color: $textColorDark;
-  &:nth-of-type(1) {
-    // background: $lightestGrey;
-    // border: dashed 2px $lightGrey;
+  &.divided {
+    padding: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    .upper-part {
+      padding: 1.4rem 1.4rem 1rem;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      .props {
+        margin-top: 2rem;
+      }
+      span {
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-left: 3px;
+      }
+    }
+    footer {
+      background: #fff;
+      border: none;
+      padding: 1rem 1.4rem;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  }
+  &.pink {
+    background: $colorPink;
+  }
+  &.blue {
     background: $lightblue;
   }
-  &:nth-of-type(2) {
-    background: $lightblue;
-  }
-  &:nth-of-type(3) {
+  &.green {
     background: $green;
   }
-  &:nth-of-type(4) {
-    background: $colorPink;
+  &.yellow {
     background: $yellow;
-  }
-  &:nth-of-type(5) {
-    background: $colorPink;
   }
   header {
     display: flex;
@@ -177,9 +194,9 @@ export default {
       margin-left: 1rem;
     }
   }
-
   .props {
     li {
+      font-size: 0.95rem;
       padding: 3px 0;
       line-height: 22px;
     }

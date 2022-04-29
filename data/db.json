@@ -4,25 +4,41 @@
       "id": 2,
       "title": "Create new product list",
       "details": "lorem ipsum dolor",
-      "complete": true
+      "complete": true,
+      "updated": "4 days ago",
+      "by": "Mats"
     },
     {
       "id": 3,
       "title": "Create new product banner",
       "details": "lorem ipsum dolor",
-      "complete": true
+      "complete": true,
+      "updated": "5 days ago",
+      "by": "Michelangelo"
     },
     {
       "id": 4,
       "title": "Create new product images",
       "details": "lorem ipsum dolor",
-      "complete": false
+      "complete": false,
+      "updated": "6 days ago",
+      "by": "Hugo"
     },
     {
       "title": "Create new Blog page",
       "details": "Lorem ipsum\n",
       "complete": false,
-      "id": 5
+      "id": 5,
+      "updated": "3 days ago",
+      "by": "Karin"
+    },
+    {
+      "title": "Clean up css",
+      "details": "Lorem ipsum\n",
+      "complete": false,
+      "id": 6,
+      "updated": "2 days ago",
+      "by": "Filip"
     }
   ]
 }
