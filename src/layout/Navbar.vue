@@ -48,14 +48,14 @@ export default {
   height: 100%;
   position: fixed; //obs!!
   top: 0;
-  left: -300px; //obs!!
+  right: -500px; //obs!!
   z-index: 0; //obs!!  //same parent as vego_burger
   background: $color_gray;
   height: 100%;
-  width: 300px; //obs!!
+  width: 500px; //obs!!
   padding: 4rem;
   padding-top: 6rem;
-  transition: left ease-in 0.3s; //obs!!
+  transition: right ease-in 0.3s; //obs!!
   text-align: left;
   a {
     color: $color_gray_dark;
@@ -72,7 +72,7 @@ export default {
     }
   }
   &.open {
-    left: 0;
+    right: 0;
   }
 }
 </style>

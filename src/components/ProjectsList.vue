@@ -13,21 +13,30 @@
 
 <script>
 import SingleProject from "../components/SingleProject.vue";
+// import { ref } from "@vue/reactivity";
+// import { computed } from "@vue/runtime-core";
+
 export default {
   name: "ProjectsList",
   components: { SingleProject },
   props: ["projects"],
 
-  methods: {
-    handleDelete(id) {
-      this.$emit("delete", id);
-    },
-    handleComplete(id) {
-      this.$emit("complete", id);
-    },
+  setup(props, context) {
+    const handleDelete = (id) => {
+      context.emit("delete", id);
+    };
+    const handleComplete = (id) => {
+      context.emit("complete", id);
+    };
+
+    return {
+      handleDelete,
+      handleComplete,
+    };
   },
 };
 </script>
+
 <style lang="scss">
 .project-list {
   display: flex;

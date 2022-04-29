@@ -1,6 +1,6 @@
 <template>
-  <div class="project_item" :class="{ complete: project.complete }">
-    <!--  dynamic class: class complete if project.complete=true -->
+  <div class="project_item">
+    <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
 
     <!-- <div class="icons">
       <router-link
@@ -74,6 +74,7 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { computed } from "@vue/runtime-core";
 
 export default {
   name: "SingleProject",

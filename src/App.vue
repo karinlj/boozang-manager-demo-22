@@ -31,10 +31,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background: $color_gray_light;
-  margin: 0;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

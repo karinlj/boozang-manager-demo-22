@@ -1,23 +1,31 @@
 <template>
-  <main>
-    <!-- <header> -->
-    <!-- access the argument passed in filterChange with $event -->
-    <!-- <FilterNav @filterChange="current = $event" :current="current" />
+  <div class="main-container">
+    <section class="subheader">
+      <div class="container-small">
+        <h1>Manage your Boozang projects here</h1>
+      </div>
+    </section>
+    <main>
+      <!-- <header> -->
+      <!-- access the argument passed in filterChange with $event -->
+      <!-- <FilterNav @filterChange="current = $event" :current="current" />
     </header> -->
-    <div class="container-small">
-      <h2>Mats Ljunggrens projects</h2>
 
-      <p v-if="error">{{ error }}</p>
-      <section v-if="projects.length">
-        <ProjectsList
-          :projects="projects"
-          @delete="handleDelete"
-          @complete="handleComplete"
-        />
-      </section>
-      <p v-else>... Loading</p>
-    </div>
-  </main>
+      <div class="container-small">
+        <h2>Mats Ljunggrens projects</h2>
+
+        <p v-if="error">{{ error }}</p>
+        <section v-if="projects.length">
+          <ProjectsList
+            :projects="projects"
+            @delete="handleDelete"
+            @complete="handleComplete"
+          />
+        </section>
+        <p v-else>... Loading</p>
+      </div>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -89,8 +97,20 @@ export default {
 </script>
 
 <style lang="scss">
+.main-container {
+  padding-top: 5rem;
+}
+.subheader {
+  background: $lightestGrey;
+  padding: 3rem $sectionPadding;
+  h1 {
+    font-size: 1.8rem;
+    color: $textColor;
+    // color: #fff;
+  }
+}
 main {
-  padding-top: 4rem;
+  //padding-top: 4rem;
   min-height: 900px;
   .btn {
     margin: 2.5rem 0;
