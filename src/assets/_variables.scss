@@ -9,27 +9,32 @@ $color_gray_medium: #666;
 $color_gray_dark: #333;
 
 //new
-$lightblue: #74c0fc; //#7ed7e7; //#beebf3; //#9ae0ec;
+$darkBlue: #1b284a;
+$blue: #2a3970;
+$lightblue: #74c0fc;
+$lightestBlue: #b5bfe3;
+
 $yellow: #fab005;
 $green: #63e6be; //#4cd884;
-$blue: #2a3970;
-$darkBlue: #1b284a;
+$btnGreen: #24dba4;
+
 $purple: #4f4686;
 $lightPurple: #7e5da6;
 $lighterPurple: #a38cc0;
 $colorPink: #ed789b;
 $colorPinkLight: #f688a9;
 $darkGrey: #22242d;
-$lightGrey: #a3afdc; //#808080;
+$lightGrey: #bfbfbf;
 $lightestGrey: #f2f2f2;
 //#f9f9f9; //#f5f6f9; //#eff1f5;
 
-$textColor: $darkBlue; //#404959;
-$textColorDark: $darkBlue; //#15191e;
+$textColor: $darkBlue;
+$textColorDark: $darkBlue;
 $borderColor: #d5d8dd;
 $borderColorDark: #293d70;
 $linkColor: #1994e6;
 
 $sectionPadding: 4%;
 $themeBorderRadius: 12px;
+$themeBoxShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 $themeBoxShadowLight: 0px 7px 15px -3px rgba(0, 0, 0, 0.1);

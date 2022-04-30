@@ -90,12 +90,26 @@
       </a>
     </footer>
     <div v-if="showEditModal">
-      <Modal :header="header" :text="text" @closing="toggleEditModal">
-        <h1>Slot header</h1>
-        <p>Slot content</p>
-        <template v-slot:links>
-          <a href="">Sign Up</a>
-          <a href="">More info</a>
+      <Modal :project="project" @closing="toggleEditModal">
+        <h1>Edit Project</h1>
+
+        <template v-slot:editForm>
+          <form @submit.prevent="handleEditSubmit">
+            <div class="input-section">
+              <label
+                >Title: <input type="text" required v-model="project.title" />
+              </label>
+              <label
+                >Details:
+                <textarea required v-model="project.details"></textarea>
+              </label>
+            </div>
+            <div class="btn-section">
+              <button class="submit-btn">Update Project</button>
+              <!-- ej button -->
+              <button class="cancel-link">Cancel</button>
+            </div>
+          </form>
         </template>
       </Modal>
     </div>
@@ -115,8 +129,6 @@ export default {
   setup(props, context) {
     const showDetails = ref(false);
     const showEditModal = ref(false);
-    const header = ref("Edit Project");
-    const text = ref("some text");
 
     // uri to this project in db.json
     const uri = ref("http://localhost:9000/projects/" + props.project.id);
@@ -124,6 +136,10 @@ export default {
     const toggleEditModal = () => {
       console.log("toggle edit");
       showEditModal.value = !showEditModal.value;
+    };
+
+    const handleEditSubmit = () => {
+      console.log(" edit form");
     };
 
     const deleteProject = () => {
@@ -155,8 +171,7 @@ export default {
       toggleComplete,
       showEditModal,
       toggleEditModal,
-      header,
-      text,
+      handleEditSubmit,
     };
   },
 };
@@ -177,7 +192,7 @@ export default {
   color: $textColorDark;
   &.divided {
     padding: 0px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: $themeBoxShadow;
     .upper-part {
       padding: 1.4rem 1.4rem 1rem;
       border-top-left-radius: 12px;
@@ -256,54 +271,11 @@ export default {
     }
   }
 
+  //gammalt
   &.complete {
     border-color: $color_green;
     .tick {
       color: $color_green;
-    }
-  }
-  h3 {
-    cursor: pointer;
-  }
-  .project_actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .show_details_btn {
-      span {
-        display: block;
-        font-size: 1.1rem;
-        color: $color_gray_medium;
-        font-weight: bold;
-        padding: 0.8rem 0;
-      }
-    }
-    button {
-      display: inline;
-      background: transparent;
-      border: none;
-      padding: 3px;
-      &:hover {
-        filter: brightness(200%);
-      }
-    }
-  }
-  .material-icons {
-    font-size: 1.3rem;
-    margin-left: 0.5rem;
-    color: $color_gray_medium;
-    cursor: pointer;
-    &.edit {
-      &:hover {
-        color: $color_green;
-      }
-    }
-    &.delete {
-      color: $color_red_light;
-      cursor: default;
-    }
-    &.tick {
-      cursor: default;
     }
   }
 }

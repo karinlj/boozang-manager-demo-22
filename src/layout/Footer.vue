@@ -34,7 +34,7 @@ export default {};
   li {
     padding: 5px 0;
     a {
-      color: $lightGrey;
+      color: $lightestBlue;
       font-size: 0.9rem;
     }
   }

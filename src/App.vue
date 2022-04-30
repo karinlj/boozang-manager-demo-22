@@ -122,4 +122,58 @@ button,
   max-width: 1000px;
   margin: 0 auto;
 }
+//form
+form {
+  padding: 2rem 0;
+  border-radius: 10px;
+  background: white;
+  label {
+    color: $lightGrey; //$color_gray_darker;
+    display: block;
+    margin: 2rem 0 1rem 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  input,
+  textarea {
+    margin-top: 5px;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid $borderColor; //$color_gray;
+    color: $textColor;
+  }
+  textarea {
+    height: 100px;
+    border: 1px solid $borderColor; //$color_gray;
+  }
+  .btn-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    button {
+      display: block;
+      border: 0;
+      padding: 0.5rem 1.1rem;
+      margin-right: 0.5rem;
+      color: white;
+      border-radius: $themeBorderRadius;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      &:hover {
+        filter: brightness(0.9);
+      }
+      &.submit-btn {
+        background: $btnGreen;
+      }
+      &.cancel-link {
+        background: $lightGrey;
+      }
+    }
+  }
+}
 </style>

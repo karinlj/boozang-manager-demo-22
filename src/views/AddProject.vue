@@ -74,7 +74,7 @@ form {
   }
   button {
     display: block;
-    background: #00ce89;
+    background: $green;
     border: 0;
     padding: 0.5rem 1rem;
     margin: 1rem auto 0;
