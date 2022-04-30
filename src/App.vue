@@ -55,11 +55,6 @@ ul {
   position: fixed;
   width: 100%;
 }
-// main {
-//   max-width: 600px;
-//   margin: 0 auto;
-//   padding-top: 6rem;
-// }
 
 //new
 //reset
@@ -73,6 +68,9 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+body {
+  position: relative;
 }
 body,
 h6,

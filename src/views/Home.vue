@@ -110,7 +110,7 @@ export default {
 }
 main {
   padding-bottom: 3rem;
-  min-height: 900px;
+  min-height: 800px;
   .btn {
     margin: 2.5rem 0;
   }

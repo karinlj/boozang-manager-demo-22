@@ -12,7 +12,12 @@
         </div>
 
         <div class="icons">
-          <button class="icon_btn right" title="edit" aria-label="Edit project">
+          <button
+            class="icon_btn right"
+            title="edit"
+            aria-label="Edit project"
+            @click="toggleEditModal"
+          >
             <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
           </button>
           <button
@@ -84,21 +89,42 @@
         {{ project.title }}
       </a>
     </footer>
+    <div v-if="showEditModal">
+      <Modal :header="header" :text="text" @closing="toggleEditModal">
+        <h1>Slot header</h1>
+        <p>Slot content</p>
+        <template v-slot:links>
+          <a href="">Sign Up</a>
+          <a href="">More info</a>
+        </template>
+      </Modal>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
 import { computed } from "@vue/runtime-core";
+import Modal from "./Modal.vue";
 
 export default {
   name: "SingleProject",
   props: ["project", "color"],
+  components: { Modal },
 
   setup(props, context) {
     const showDetails = ref(false);
+    const showEditModal = ref(false);
+    const header = ref("Edit Project");
+    const text = ref("some text");
+
     // uri to this project in db.json
     const uri = ref("http://localhost:9000/projects/" + props.project.id);
+
+    const toggleEditModal = () => {
+      console.log("toggle edit");
+      showEditModal.value = !showEditModal.value;
+    };
 
     const deleteProject = () => {
       //delete from db.json
@@ -127,6 +153,10 @@ export default {
       uri,
       deleteProject,
       toggleComplete,
+      showEditModal,
+      toggleEditModal,
+      header,
+      text,
     };
   },
 };
