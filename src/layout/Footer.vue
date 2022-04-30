@@ -21,12 +21,12 @@ export default {};
 <style lang="scss">
 .footer {
   padding: 2rem $sectionPadding;
-  // background: $darkGrey;
-  background: $darkBlue;
+  background: $blue;
   color: #fff;
   .footer-link-container {
     // margin-left: 10%;
     margin-bottom: 6rem;
+    color: #fff;
   }
   h3 {
     color: #fff;
@@ -40,9 +40,9 @@ export default {};
   }
   .copy {
     font-size: 0.8rem;
-    color: $lightGrey;
+    color: $lightestBlue;
     padding-top: 1rem;
-    border-top: 1px solid $borderColorDark;
+    border-top: 1px solid $borderColorBlue;
   }
 }
 </style>

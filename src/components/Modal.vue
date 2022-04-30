@@ -21,12 +21,8 @@ export default {
       context.emit("closing");
     };
 
-    const handleSubmit = () => {
-      console.log("submit");
-    };
     return {
       closeModal,
-      handleSubmit,
     };
   },
 };

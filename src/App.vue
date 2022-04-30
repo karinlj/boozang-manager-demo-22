@@ -3,6 +3,7 @@
     <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
     <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
   </section>
+
   <router-view />
 
   <Footer />
@@ -81,7 +82,6 @@ ul {
   padding: 0;
   font-weight: normal;
 }
-
 ol,
 ul {
   list-style: none;
@@ -111,8 +111,17 @@ a,
 button,
 .icon_btn {
   &:hover {
-    filter: brightness(160%);
+    opacity: 0.7;
   }
+}
+button {
+  display: block;
+  border: 0;
+  padding: 0.5rem 1.1rem;
+  margin-right: 0.5rem;
+  border-radius: $themeBorderRadius;
+  font-size: 0.9rem;
+  transition: all 0.3s;
 }
 .container {
   max-width: 1300px;
@@ -122,6 +131,10 @@ button,
   max-width: 1000px;
   margin: 0 auto;
 }
+.main-container {
+  padding-top: 3.5rem;
+}
+
 //form
 form {
   padding: 2rem 0;
@@ -156,17 +169,7 @@ form {
     align-items: center;
     margin-top: 2rem;
     button {
-      display: block;
-      border: 0;
-      padding: 0.5rem 1.1rem;
-      margin-right: 0.5rem;
       color: white;
-      border-radius: $themeBorderRadius;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-      &:hover {
-        filter: brightness(0.9);
-      }
       &.submit-btn {
         background: $btnGreen;
       }

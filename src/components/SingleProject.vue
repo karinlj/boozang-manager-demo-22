@@ -105,9 +105,9 @@
               </label>
             </div>
             <div class="btn-section">
-              <button class="submit-btn">Update Project</button>
+              <button type="submit" class="submit-btn">Update Project</button>
               <!-- ej button -->
-              <button class="cancel-link">Cancel</button>
+              <button type="button" class="cancel-link">Cancel</button>
             </div>
           </form>
         </template>
@@ -230,6 +230,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+  }
+  .icons {
+    display: flex;
   }
   .icons-extended {
     display: flex;
