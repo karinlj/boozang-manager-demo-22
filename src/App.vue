@@ -127,12 +127,20 @@ button {
   transition: all 0.3s;
 }
 .container {
-  max-width: 1300px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 1rem;
+  @media all and (min-width: $lg-min) {
+    max-width: 1300px;
+  }
 }
 .container-small {
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 0 1rem;
+  @media all and (min-width: $lg-min) {
+    max-width: 1000px;
+  }
 }
 .main-container {
   padding-top: 3.5rem;

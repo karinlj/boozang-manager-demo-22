@@ -39,3 +39,19 @@ $sectionPadding: 4%;
 $themeBorderRadius: 12px;
 $themeBoxShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 $themeBoxShadowLight: 0px 7px 15px -3px rgba(0, 0, 0, 0.1);
+
+//screen width
+$xs-max: 480px;
+$sm-min: 576px;
+
+$sm-max: 767.9px;
+$md-min: 768px;
+
+$md-max: 991.9px;
+$lg-min: 992px;
+
+$lg-max: 1199.9px;
+$xl-min: 1200px;
+
+$xl-max: 1309px;
+$xxl-min: 1600px;

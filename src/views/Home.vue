@@ -116,10 +116,10 @@ main {
     padding-bottom: 0.8rem;
     border-bottom: 1px solid $lightestBlue;
   }
-  .container-small {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+  // .container-small {
+  //   max-width: 1000px;
+  //   margin: 0 auto;
+  // }
   .subheader {
     background: $blue;
     padding: 3.8rem $sectionPadding;
