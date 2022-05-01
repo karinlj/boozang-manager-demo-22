@@ -20,8 +20,18 @@
           <form>
             <label>Email address: <input type="email" required /> </label>
             <label>Password: <input type="password" required /> </label>
-
-            <button>Sign Up</button>
+            <button class="signup">Sign Up</button>
+            <div class="divider">
+              <span class=""></span>
+              <p class="">OR</p>
+              <span class=""></span>
+            </div>
+            <button class="google">
+              <span
+                ><img src="../assets/icon_google.png" alt="Google login"
+              /></span>
+              Sign In with Google
+            </button>
           </form>
         </div>
       </section>
@@ -81,6 +91,35 @@ export default {
     color: $blue;
     h2 {
       color: $blue;
+    }
+    .signup {
+      background: $blue;
+      color: #fff;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+    .divider {
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        width: 40%;
+        padding-top: -0.5rem;
+        border-top: 1px solid $lighterGrey;
+      }
+    }
+    .google {
+      width: 100%;
+      padding: 0.5rem 1.1rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid $lighterGrey;
+      img {
+        max-width: 1.5rem;
+        margin-right: 0.5rem;
+      }
     }
   }
 }

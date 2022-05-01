@@ -120,7 +120,7 @@ button,
 button {
   display: block;
   border: 0;
-  padding: 0.5rem 1.1rem;
+  padding: 0.8rem 1.1rem;
   margin-right: 0.5rem;
   border-radius: $themeBorderRadius;
   font-size: 0.9rem;
@@ -140,22 +140,20 @@ button {
 
 //form
 form {
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-radius: 10px;
   background: white;
   label {
     color: $lightGrey; //$color_gray_darker;
     display: block;
-    margin: 2rem 0 1rem 0;
+    margin: 1.2rem 0 1rem 0;
     font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
+    // text-transform: uppercase;
   }
   input,
   textarea {
     margin-top: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
     border: none;
