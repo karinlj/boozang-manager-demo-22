@@ -103,7 +103,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main {
   padding-bottom: 3rem;
   min-height: 800px;

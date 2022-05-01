@@ -1,30 +1,32 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import AddProject from "../views/AddProject.vue";
-import EditProject from "../components/EditProject.vue";
 import SignIn from "../views/SignIn.vue";
+import Account from "../views/Account.vue";
+import AppContent from "../views/AppContent";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "AppContent",
+    component: AppContent,
+
+    children: [
+      {
+        path: "",
+        name: "Home",
+        component: Home,
+      },
+      {
+        path: "/account",
+        name: "Account",
+        component: Account,
+      },
+    ],
   },
   {
-    path: "/signin",
+    path: "/sign-in",
     name: "SignIn",
     component: SignIn,
-  },
-  {
-    path: "/add",
-    name: "AddProject",
-    component: AddProject,
-  },
-  {
-    path: "/projects/:id",
-    name: "EditProject",
-    component: EditProject,
-    props: true, //allowing props
   },
 
   // {

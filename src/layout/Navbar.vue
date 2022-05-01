@@ -5,7 +5,7 @@
     aria-label="Main navigation"
   >
     <ul>
-      <li>
+      <!-- <li>
         <router-link :to="{ name: 'Home' }">
           <div @click="handleClick">Home</div>
         </router-link>
@@ -14,7 +14,7 @@
         <router-link :to="{ name: 'AddProject' }">
           <div @click="handleClick">AddProject</div>
         </router-link>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </template>

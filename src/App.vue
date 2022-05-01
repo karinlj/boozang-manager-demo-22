@@ -1,37 +1,37 @@
 <template>
-  <section class="menu">
+  <!-- <section class="menu">
     <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
     <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
-  </section>
+  </section> -->
 
   <router-view />
 
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
-import Navbar from "./layout/Navbar.vue";
-import HeaderBar from "./layout/HeaderBar.vue";
-import Footer from "./layout/Footer.vue";
+//import { ref } from "@vue/reactivity";
+// import Navbar from "./layout/Navbar.vue";
+// import HeaderBar from "./layout/HeaderBar.vue";
+// import Footer from "./layout/Footer.vue";
 
 export default {
   components: {
-    Navbar,
-    HeaderBar,
-    Footer,
+    // Navbar,
+    // HeaderBar,
+    // Footer,
   },
-  setup() {
-    const isOpen = ref(false);
-    const toggleOpen = (btnIsOpen) => {
-      isOpen.value = btnIsOpen;
-      //console.log("isOpen", isOpen.value);
-    };
-    return {
-      isOpen,
-      toggleOpen,
-    };
-  },
+  // setup() {
+  //   const isOpen = ref(false);
+  //   const toggleOpen = (btnIsOpen) => {
+  //     isOpen.value = btnIsOpen;
+  //     //console.log("isOpen", isOpen.value);
+  //   };
+  //   return {
+  //     isOpen,
+  //     toggleOpen,
+  //   };
+  // },
 };
 </script>
 
@@ -81,6 +81,9 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+}
+p {
+  line-height: 1.3;
 }
 ol,
 ul {
