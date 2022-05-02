@@ -1,27 +1,27 @@
 <template>
-  <main class="signin-main">
+  <main class="signup-main">
     <div class="container-small">
-      <section class="signin-section">
-        <section class="signin-upper">
-          <div class="signin-left">
-            <div class="signin-left-text">
+      <section class="signup-section">
+        <section class="signup-upper">
+          <div class="signup-left">
+            <div class="signup-left-text">
               <h1>Testing made simple</h1>
               <p>Automation tool for developers and non-developers.</p>
             </div>
           </div>
-          <div class="signin-right">
-            <div class="signin-text-right">
+          <div class="signup-right">
+            <div class="signup-text-right">
               <h2>Codeless testing that works</h2>
               <p>
                 Try Boozang free for 7 days to automate tests and ship software
                 with confidence.
               </p>
             </div>
-
             <form>
               <label>Email address: <input type="email" required /> </label>
               <label>Password: <input type="password" required /> </label>
-              <button class="signup">Sign Up</button>
+
+              <button class="signup-btn" @click="signingUp">Sign Up</button>
               <div class="divider">
                 <span class=""></span>
                 <p class="">OR</p>
@@ -36,11 +36,11 @@
             </form>
           </div>
         </section>
-        <section class="signin-lower">
+        <section class="signup-lower">
           <div></div>
-          <div class="login">
+          <div class="login-link">
             <p>
-              By signing up you agree to our <a href="">Terms of Service</a> and
+              By signupg up you agree to our <a href="">Terms of Service</a> and
               <a href="">Privacy Policy</a>
             </p>
             <p>Already have an account? <a href="">Login</a></p>
@@ -52,13 +52,24 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router";
 export default {
-  name: "SignIn",
+  name: "signup",
+  setup(props) {
+    const router = useRouter();
+    const signingUp = () => {
+      console.log("signup");
+      router.push("/");
+    };
+    return {
+      signingUp,
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.signin-main {
+.signup-main {
   background: #fff;
   background-image: url("../assets/bg_shapes.png");
   background-repeat: no-repeat;
@@ -68,13 +79,13 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.signin-section {
+.signup-section {
   a {
     color: $linkColor;
   }
   width: 850px;
   height: 550px;
-  .signin-upper {
+  .signup-upper {
     // border-radius: $themeBorderRadius;
 
     display: flex;
@@ -85,19 +96,7 @@ export default {
       border-radius: $themeBorderRadius;
     }
   }
-  .signin-lower {
-    display: flex;
-    justify-content: space-between;
-    background: transparent;
-    .login {
-      width: 55%;
-      padding: 1rem 4rem;
-      line-height: 1.5;
-      font-size: 0.8rem;
-      color: $lightGrey;
-    }
-  }
-  .signin-left {
+  .signup-left {
     background-image: url("../assets/sign_in_pic.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -106,7 +105,7 @@ export default {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    .signin-left-text {
+    .signup-left-text {
       h1 {
         color: #fff;
       }
@@ -119,7 +118,7 @@ export default {
       display: flex;
     }
   }
-  .signin-right {
+  .signup-right {
     width: 55%;
     flex-direction: column;
     align-items: center;
@@ -128,11 +127,14 @@ export default {
     h2 {
       color: $blue;
     }
-    .signup {
+    .signup-btn {
       background: $blue;
       color: #fff;
       margin-top: 1.5rem;
       width: 100%;
+      a {
+        color: #fff;
+      }
     }
     .divider {
       padding: 1rem 0;
@@ -160,6 +162,18 @@ export default {
     border-radius: $themeBorderRadius;
     @media all and (min-width: $md-min) {
       border-radius: none;
+    }
+  }
+  .signup-lower {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    .login-link {
+      width: 55%;
+      padding: 1rem 4rem;
+      line-height: 1.6;
+      font-size: 0.8rem;
+      color: $lightGrey;
     }
   }
 }
