@@ -27,7 +27,7 @@
                 <p class="">OR</p>
                 <span class=""></span>
               </div>
-              <button class="google">
+              <button class="google-sign-in" @click="signingUp">
                 <span
                   ><img src="../assets/icon_google.png" alt="Google login"
                 /></span>
@@ -40,7 +40,7 @@
           <div></div>
           <div class="login-link">
             <p>
-              By signupg up you agree to our <a href="">Terms of Service</a> and
+              By signing up you agree to our <a href="">Terms of Service</a> and
               <a href="">Privacy Policy</a>
             </p>
             <p>Already have an account? <a href="">Login</a></p>
@@ -109,7 +109,7 @@ export default {
       h1 {
         color: #fff;
       }
-      padding: 1.5rem 1rem 2.5rem 1rem;
+      padding: 1.5rem 2.5rem 2.5rem 2.5rem;
       color: #fff;
     }
     box-shadow: $themeBoxShadow;
@@ -147,7 +147,7 @@ export default {
         border-top: 1px solid $lighterGrey;
       }
     }
-    .google {
+    .google-sign-in {
       width: 100%;
       padding: 0.5rem 1.1rem;
       display: flex;
@@ -168,10 +168,13 @@ export default {
     display: flex;
     justify-content: space-between;
     background: transparent;
+    p {
+      line-height: 1.4;
+    }
     .login-link {
       width: 55%;
       padding: 1rem 4rem;
-      line-height: 1.6;
+
       font-size: 0.8rem;
       color: $lightGrey;
     }
