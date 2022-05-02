@@ -1,8 +1,16 @@
 <template>
-  <main class="signin-main">
+  <main class="main">
     <div class="main-container">
       <div class="container-small">
-        <h2>Account</h2>
+        <h1>Manage your Boozang account</h1>
+
+        <nav>
+          <ul>
+            <li>
+              <router-link :to="{ name: 'SignUp' }">Log out </router-link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </main>

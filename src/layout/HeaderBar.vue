@@ -15,9 +15,6 @@
           <li>
             <router-link :to="{ name: 'Account' }">Account </router-link>
           </li>
-          <li>
-            <router-link :to="{ name: 'SignUp' }">SignUp </router-link>
-          </li>
         </ul>
       </nav>
       <!-- <HeaderMenuBtn :isOpen="isOpen" @toggleOpen="toggleOpen" /> -->
