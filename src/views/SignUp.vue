@@ -110,7 +110,7 @@ export default {
       h1 {
         color: #fff;
       }
-      padding: 2.5rem;
+      padding: 1.5rem 1rem 2.5rem 1rem;
       color: #fff;
     }
     box-shadow: $themeBoxShadow;

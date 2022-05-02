@@ -12,7 +12,7 @@ NodeJS
 
 To clone
 
-`git clone https://github.com/karinlj/my-vue3-project-planner.git`
+`git clone https://github.com/karinlj/boozang-manager-demo-22.git`
 
 To install
 
