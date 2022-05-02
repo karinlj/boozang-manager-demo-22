@@ -53,8 +53,8 @@ ul {
   }
 }
 .menu {
-  position: fixed;
-  width: 100%;
+  // position: fixed;
+  // width: 100%;
 }
 
 //new
@@ -143,9 +143,12 @@ button {
   }
 }
 .main-container {
-  padding-top: 3.5rem;
+  //padding-top: 3.5rem;
 }
 
+main {
+  min-height: 500px;
+}
 //form
 form {
   padding: 1rem 0;

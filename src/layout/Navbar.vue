@@ -47,6 +47,7 @@ export default {
   //position: absolute;
   height: 100%;
   position: fixed; //obs!!
+  // position: absolute;
   top: 0;
   right: -500px; //obs!!
   z-index: 0; //obs!!  //same parent as vego_burger

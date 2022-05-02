@@ -10,14 +10,17 @@
         />
         <ul>
           <li>
-            <a href="">Home</a>
+            <router-link :to="{ name: 'Home' }"> Home</router-link>
           </li>
           <li>
-            <a href="">Account</a>
+            <router-link :to="{ name: 'Account' }">Account </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'SignUp' }">SignUp </router-link>
           </li>
         </ul>
       </nav>
-      <HeaderMenuBtn :isOpen="isOpen" @toggleOpen="toggleOpen" />
+      <!-- <HeaderMenuBtn :isOpen="isOpen" @toggleOpen="toggleOpen" /> -->
     </div>
   </header>
 </template>
