@@ -17,10 +17,32 @@
                 with confidence.
               </p>
             </div>
+
             <form>
               <label>Email address: <input type="email" required /> </label>
-              <label>Password: <input type="password" required /> </label>
-
+              <label
+                >Password: <input type="password" required /><span
+                  class="min-char"
+                  >minimum 7 characters</span
+                >
+              </label>
+              <label
+                for="promo"
+                @click="showPromo = !showPromo"
+                type="button"
+                aria-label="Type promo code"
+                :aria-expanded="[showPromo]"
+                >Promotion code?
+              </label>
+              <input type="text" id="promo" required v-if="showPromo" />
+              <!-- 
+              <input
+                type="text"
+                id="promo"
+                required
+                class="promo-code"
+                :class="{ show: showPromo }"
+              /> -->
               <button class="signup-btn" @click="signingUp">Sign Up</button>
               <div class="divider">
                 <span class=""></span>
@@ -53,15 +75,20 @@
 
 <script>
 import { useRouter } from "vue-router";
+import { ref } from "@vue/reactivity";
+
 export default {
   name: "signup",
   setup(props) {
     const router = useRouter();
+    const showPromo = ref(false);
+
     const signingUp = () => {
       console.log("signup");
       router.push("/");
     };
     return {
+      showPromo,
       signingUp,
     };
   },
@@ -108,6 +135,8 @@ export default {
     .signup-left-text {
       h1 {
         color: #fff;
+        font-size: inherit;
+        font-size: 1.5rem;
       }
       padding: 1.5rem 2.5rem 2.5rem 2.5rem;
       color: #fff;
@@ -124,10 +153,32 @@ export default {
     align-items: center;
     padding: 3rem 4rem;
     color: $blue;
+    .min-char {
+      font-size: 0.8rem;
+      font-style: italic;
+      float: right;
+      padding-bottom: 0.8rem;
+      padding-top: 0.2rem;
+    }
+    // .promo-code {
+    //   max-height: 0;
+    //   overflow: hidden;
+    //   transition: max-height 0.5s ease-in-out;
+    //   border: none;
+    //   padding: 0;
+    //   margin: 0;
+    //   &.show {
+    //     max-height: 30px;
+    //     margin-top: 5px;
+    //     padding: 0.8rem 0.5rem;
+    //     border-bottom: 1px solid $borderColor; //$color_gray;
+    //   }
+    // }
     h2 {
       color: $blue;
     }
     .signup-btn {
+      clear: both;
       background: $blue;
       color: #fff;
       margin-top: 1.5rem;

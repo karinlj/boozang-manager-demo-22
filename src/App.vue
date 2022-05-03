@@ -155,21 +155,24 @@ form {
   border-radius: 10px;
   background: white;
   label {
-    color: $lightGrey; //$color_gray_darker;
+    color: $lightGrey;
     display: block;
-    margin: 1.2rem 0 1rem 0;
+    margin: 1rem 0;
     font-size: 0.8rem;
-    // text-transform: uppercase;
   }
   input,
   textarea {
     margin-top: 5px;
-    padding: 0.9rem 0.5rem;
+    padding: 0.8rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid $borderColor; //$color_gray;
     color: $textColor;
+    &:focus {
+      outline: $blue solid 1px;
+      border-radius: 5px;
+    }
   }
   textarea {
     height: 100px;
