@@ -56,7 +56,6 @@ ul {
   // position: fixed;
   // width: 100%;
 }
-
 //new
 //reset
 html {
@@ -157,13 +156,13 @@ form {
   label {
     color: $lightGrey;
     display: block;
-    margin: 1rem 0;
+    margin: 0.8rem 0;
     font-size: 0.8rem;
   }
   input,
   textarea {
-    margin-top: 5px;
-    padding: 0.8rem 0.5rem;
+    margin-top: 3px;
+    padding: 0.6rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
     border: none;

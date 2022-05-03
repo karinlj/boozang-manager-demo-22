@@ -3,13 +3,18 @@
     <section class="flag-section">
       <div v-if="showEurope">
         <img src="../assets/eu.svg" alt="EU flag" class="eu-flag" />
+        <a href="" role="button" @click="showEurope = !showEurope"
+          >Switch to Region North America</a
+        >
       </div>
-      <div v-else>
-        <img src="../assets/canada.svg" alt="Canada flag" class="canada-flag" />
-      </div>
-      <button @click="toggleRegion">{{ regionText() }}</button>
-    </section>
 
+      <div v-if="!showEurope">
+        <img src="../assets/canada.svg" alt="Canada flag" class="canada-flag" />
+        <a href="" role="button" @click="showEurope = !showEurope"
+          >Switch to Region Europe</a
+        >
+      </div>
+    </section>
     <div class="container-small">
       <section class="signup-section">
         <section class="signup-upper">
@@ -39,24 +44,13 @@
             </div>
 
             <form>
-              <label>Name: <input type="text" required /> </label>
               <label>Email address: <input type="email" required /> </label>
               <label
-                >Password: <input type="password" required /><span
-                  class="min-char"
-                  >minimum 7 characters</span
-                >
+                >Password: <span class="forgot-pass">Forgot password?</span
+                ><input type="password" required />
               </label>
-              <label
-                for="promo"
-                @click="showPromo = !showPromo"
-                type="button"
-                aria-label="Type promo code"
-                :aria-expanded="[showPromo]"
-                >Promotion code?
-              </label>
-              <input type="text" id="promo" required v-if="showPromo" />
-              <button class="signup-btn" @click="signingUp">Sign Up</button>
+
+              <button class="signup-btn" @click="signingUp">LogIn</button>
               <div class="divider">
                 <span class=""></span>
                 <p class="">OR</p>
@@ -74,14 +68,7 @@
         <section class="signup-lower">
           <div></div>
           <div class="login-link">
-            <p>
-              By signing up you agree to our <a href="">Terms of Service</a> and
-              <a href="">Privacy Policy</a>
-            </p>
-            <p>
-              Already have an account?
-              <router-link :to="{ name: 'LogIn' }"> Login </router-link>
-            </p>
+            <p>Need a Boozang account? <a href="">Create account</a></p>
           </div>
         </section>
       </section>
@@ -92,80 +79,61 @@
 <script>
 import { useRouter } from "vue-router";
 import { ref } from "@vue/reactivity";
-import { computed } from "@vue/runtime-core";
 
 export default {
-  name: "SignUp",
+  name: "LogIn",
   setup(props) {
     const router = useRouter();
     const showPromo = ref(false);
     const showEurope = ref(false);
 
     const signingUp = () => {
-      // console.log("signup");
+      console.log("signup");
       router.push("/");
-    };
-
-    const toggleRegion = () => {
-      showEurope.value = !showEurope.value;
-      console.log("showEurope: ", showEurope);
-    };
-
-    const regionText = () => {
-      let text;
-      if (showEurope) {
-        text = "Switch to Region Region North America";
-      } else {
-        text = "Switch to Region Europe";
-      }
-      return text;
     };
 
     return {
       showPromo,
       showEurope,
       signingUp,
-      regionText,
-      toggleRegion,
     };
   },
 };
 </script>
 
-<style lang="scss">
-.signup-main {
-  position: relative;
-  background: #fff;
-  background-image: url("../assets/bg_shapes.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flag-section {
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
-  .eu-flag,
-  .canada-flag {
-    height: 20px;
-    display: block;
-  }
-  button {
-    background: transparent;
-    padding: 5px 0;
-    font-size: 0.8rem;
-    color: $lightGrey;
-  }
-}
+<style lang="scss" scoped>
+// .signup-main {
+//   position: relative;
+//   background: #fff;
+//   background-image: url("../assets/bg_shapes.png");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .flag-section {
+//   position: absolute;
+//   top: 1rem;
+//   left: 2rem;
+//   .eu-flag,
+//   .canada-flag {
+//     height: 20px;
+//     display: block;
+//     margin-bottom: 0.2rem;
+//   }
+//   a {
+//     font-size: 0.8rem;
+//     color: $lightGrey;
+//   }
+// }
 .signup-section {
   a {
     color: $linkColor;
   }
-  width: 820px;
-  height: 520px;
+  //   width: 850px;
+  //   height: 550px;
   .signup-upper {
     // border-radius: $themeBorderRadius;
 
@@ -216,13 +184,20 @@ export default {
     align-items: center;
     padding: 2rem 4rem;
     color: $blue;
-    .min-char {
-      font-size: 0.7rem;
+    .forgot-pass {
+      font-size: 0.8rem;
       font-style: italic;
       float: right;
-      padding-bottom: 0.8rem;
-      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      padding-top: 0.8rem;
     }
+    // .min-char {
+    //   font-size: 0.8rem;
+    //   font-style: italic;
+    //   float: right;
+    //   padding-bottom: 0.8rem;
+    //   padding-top: 0.2rem;
+    // }
     h2 {
       color: $blue;
       margin-top: 0;
@@ -238,7 +213,7 @@ export default {
       }
     }
     .divider {
-      padding: 0.8rem 0;
+      padding: 1rem 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
