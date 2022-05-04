@@ -7,7 +7,7 @@
       <div v-else>
         <img src="../assets/canada.svg" alt="Canada flag" class="canada-flag" />
       </div>
-      <button @click="toggleRegion">{{ regionText() }}</button>
+      <button @click="showEurope = !showEurope">{{ regionText }}</button>
     </section>
 
     <div class="container-small">
@@ -38,11 +38,16 @@
               </p>
             </div>
 
-            <form>
-              <label>Name: <input type="text" required /> </label>
-              <label>Email address: <input type="email" required /> </label>
+            <form @submit.prevent="signingUp">
               <label
-                >Password: <input type="password" required /><span
+                >Name: <input type="text" required v-model="name" />
+              </label>
+              <label
+                >Email address: <input type="email" required v-model="email" />
+              </label>
+              <label
+                >Password:
+                <input type="password" required v-model="password" /><span
                   class="min-char"
                   >minimum 7 characters</span
                 >
@@ -56,18 +61,28 @@
                 >Promotion code?
               </label>
               <input type="text" id="promo" required v-if="showPromo" />
-              <button class="signup-btn" @click="signingUp">Sign Up</button>
+              <button class="signup-btn">Sign Up</button>
+
               <div class="divider">
                 <span class=""></span>
-                <p class="">OR</p>
+                <p class="">OR LOG IN WITH</p>
                 <span class=""></span>
               </div>
-              <button class="google-sign-in" @click="signingUp">
-                <span
-                  ><img src="../assets/icon_google.png" alt="Google login"
-                /></span>
-                Sign In with Google
-              </button>
+
+              <section class="social-login">
+                <button class="github-sign-in">
+                  <span
+                    ><img src="../assets/gitHubMark.png" alt="GitHub login"
+                  /></span>
+                  GitHub
+                </button>
+                <button class="google-sign-in">
+                  <span
+                    ><img src="../assets/icon_google.png" alt="Google login"
+                  /></span>
+                  Google
+                </button>
+              </section>
             </form>
           </div>
         </section>
@@ -100,33 +115,43 @@ export default {
     const router = useRouter();
     const showPromo = ref(false);
     const showEurope = ref(false);
+    const text = ref("");
+    const name = ref("");
+    const email = ref("");
+    const password = ref("");
+    const users = ref([
+      { name: "Hugo", email: "hugo@misse.com", password: "3698741" },
+      { name: "Filip", email: "filip@misse.com", password: "258963" },
+    ]);
 
     const signingUp = () => {
-      // console.log("signup");
+      let user = {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+      };
+      const newUsers = [...users.value, user];
+      // console.log("users", newUsers);
       router.push("/");
     };
-
-    const toggleRegion = () => {
-      showEurope.value = !showEurope.value;
-      console.log("showEurope: ", showEurope);
-    };
-
-    const regionText = () => {
-      let text;
-      if (showEurope) {
-        text = "Switch to Region Region North America";
+    //computed
+    const regionText = computed(() => {
+      if (showEurope.value) {
+        text.value = "Switch to Region Region North America";
       } else {
-        text = "Switch to Region Europe";
+        text.value = "Switch to Region Europe";
       }
-      return text;
-    };
-
+      return text.value;
+    });
     return {
+      name,
+      email,
+      password,
       showPromo,
       showEurope,
       signingUp,
       regionText,
-      toggleRegion,
+      users,
     };
   },
 };
@@ -238,28 +263,41 @@ export default {
       }
     }
     .divider {
-      padding: 0.8rem 0;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      color: $lightGrey;
+      padding: 0.89rem 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       span {
-        width: 40%;
+        width: 30%;
         padding-top: -0.5rem;
         border-top: 1px solid $lighterGrey;
       }
     }
-    .google-sign-in {
-      width: 100%;
-      padding: 0.5rem 1.1rem;
+    .social-login {
       display: flex;
       align-items: center;
-      background: #fff;
-      border: 1px solid $lighterGrey;
+      justify-content: space-between;
       img {
         max-width: 1.5rem;
         margin-right: 0.5rem;
       }
+      .google-sign-in,
+      .github-sign-in {
+        width: 100%;
+        padding: 0.3rem 1.1rem;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 1px solid $lighterGrey;
+        span {
+          margin-top: 2px;
+        }
+      }
     }
+
     border-radius: $themeBorderRadius;
     @media all and (min-width: $md-min) {
       border-radius: none;
