@@ -199,21 +199,19 @@ export default {
         display: flex;
         align-items: center;
         white-space: normal;
+        transition: all 0.2s ease-in;
         i.fa-play-circle {
           font-size: 1.5rem;
           padding-right: 0.5rem;
           color: #fff;
-          &:hover {
-            color: $linkColor;
-          }
+          transition: all 0.2s ease-in;
         }
         span {
           line-height: 1.2;
           &:hover {
-            text-decoration: underline;
+            // text-decoration: underline;
           }
         }
-        //not underlining the whole <a>
         &:hover {
           text-decoration: none;
           opacity: 1;
