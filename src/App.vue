@@ -1,38 +1,9 @@
 <template>
-  <!-- <section class="menu">
-    <HeaderBar :isOpen="isOpen" @toggleOpen="toggleOpen" />
-    <Navbar :isOpen="isOpen" @toggleOpen="toggleOpen" />
-  </section> -->
-
   <router-view />
-
-  <!-- <Footer /> -->
 </template>
 
 <script>
-//import { ref } from "@vue/reactivity";
-// import Navbar from "./layout/Navbar.vue";
-// import HeaderBar from "./layout/HeaderBar.vue";
-// import Footer from "./layout/Footer.vue";
-
-export default {
-  components: {
-    // Navbar,
-    // HeaderBar,
-    // Footer,
-  },
-  // setup() {
-  //   const isOpen = ref(false);
-  //   const toggleOpen = (btnIsOpen) => {
-  //     isOpen.value = btnIsOpen;
-  //     //console.log("isOpen", isOpen.value);
-  //   };
-  //   return {
-  //     isOpen,
-  //     toggleOpen,
-  //   };
-  // },
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -134,9 +105,12 @@ button {
   }
 }
 .container-small {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+  @media all and (min-width: $md-min) {
+    max-width: 800px;
+  }
   @media all and (min-width: $lg-min) {
     max-width: 1000px;
   }
@@ -166,7 +140,7 @@ form {
     width: 100%;
     box-sizing: border-box;
     border: none;
-    border-bottom: 1px solid $borderColor; //$color_gray;
+    border-bottom: 1px solid $borderColor;
     color: $textColor;
     &:focus {
       outline: $blue solid 1px;
@@ -175,7 +149,7 @@ form {
   }
   textarea {
     height: 100px;
-    border: 1px solid $borderColor; //$color_gray;
+    border: 1px solid $borderColor;
   }
   .btn-section {
     display: flex;

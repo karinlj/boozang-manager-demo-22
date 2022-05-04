@@ -7,7 +7,7 @@
         <nav>
           <ul>
             <li>
-              <router-link :to="{ name: 'SignUp' }">Log out </router-link>
+              <router-link :to="{ name: 'LogIn' }">Log out </router-link>
             </li>
           </ul>
         </nav>

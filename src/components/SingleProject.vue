@@ -37,14 +37,14 @@
         </div>
       </div>
 
-      <ul class="props">
-        <li>
-          <p>
-            Updated {{ project.updated }} days ago by
-            {{ project.by }}
-          </p>
-        </li>
-      </ul>
+      <a
+        href=""
+        class="title"
+        aria-label="Launch Boozang tool"
+        title="Launch tool"
+      >
+        {{ project.title }}
+      </a>
     </div>
     <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
 
@@ -80,14 +80,14 @@
     </div> -->
 
     <footer>
-      <a
-        href=""
-        class="title"
-        aria-label="Launch Boozang tool"
-        title="Launch tool"
-      >
-        {{ project.title }}
-      </a>
+      <ul class="props">
+        <li>
+          <p>
+            Updated {{ project.updated }} days ago by
+            {{ project.by }}
+          </p>
+        </li>
+      </ul>
     </footer>
     <div v-if="showEditModal">
       <Modal :project="project" @closing="toggleEditModal">
@@ -255,11 +255,20 @@ export default {
       cursor: text;
     }
   }
+  .title {
+    color: $darkBlue;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
   .props {
     li {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
+
       padding: 3px 0;
       line-height: 22px;
+      p {
+        line-height: 15px;
+      }
     }
   }
   footer {
@@ -267,11 +276,6 @@ export default {
     // text-align: center;
     padding: 0.7rem 0 0 0;
     border-top: 1px solid $darkBlue;
-    .title {
-      color: $darkBlue;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
   }
 
   //gammalt
