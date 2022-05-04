@@ -1,6 +1,6 @@
 <template>
   <div class="project_item divided" :class="color">
-    <div class="upper-part">
+    <header class="header">
       <div class="icons-extended">
         <div>
           <i
@@ -36,19 +36,20 @@
           </button>
         </div>
       </div>
-
+    </header>
+    <div class="body">
       <a
         href=""
         class="title"
         aria-label="Launch Boozang tool"
         title="Launch tool"
       >
-        {{ project.title }}
+        <i class="fas fa-play-circle"></i>
+        <span> {{ project.title }}</span>
       </a>
     </div>
     <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
-
-    <!-- <div class="icons">
+    <!-- 
       <router-link
         :to="{ name: 'EditProject', params: { id: project.id } }"
         :aria-label="' Open project: ' + project.title"
@@ -61,24 +62,7 @@
           edit
         </span>
       </router-link>
-      <button
-        class="material-icons delete"
-        @click="deleteProject"
-        title="Delete"
-        aria-label="Delete project"
-      >
-        delete
-      </button>
-      <button
-        class="material-icons tick"
-        @click="toggleComplete"
-        title="Toggle complete"
-        aria-label="Toggle complete on project"
-      >
-        done
-      </button>
-    </div> -->
-
+   -->
     <footer>
       <ul class="props">
         <li>
@@ -89,6 +73,7 @@
         </li>
       </ul>
     </footer>
+
     <div v-if="showEditModal">
       <Modal :project="project" @closing="toggleEditModal">
         <h1>Edit Project</h1>
@@ -190,28 +175,68 @@ export default {
   height: 14rem;
   width: 17rem;
   color: $textColorDark;
+  //divided with white
   &.divided {
     padding: 0px;
     box-shadow: $themeBoxShadow;
-    .upper-part {
-      padding: 1.4rem 1.4rem 1rem;
+    .header {
+      padding: 1.1rem 1.4rem;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
-      .props {
-        margin-top: 2rem;
-      }
       span {
         font-weight: 600;
         font-size: 0.9rem;
         margin-left: 1px;
       }
     }
+    .body {
+      padding: 1rem 1.4rem;
+      a.title {
+        color: $darkBlue;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        white-space: normal;
+        i.fa-play-circle {
+          font-size: 1.5rem;
+          padding-right: 0.5rem;
+          color: #fff;
+          &:hover {
+            color: $linkColor;
+          }
+        }
+        span {
+          line-height: 1.2;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        //not underlining the whole <a>
+        &:hover {
+          text-decoration: none;
+          opacity: 1;
+          color: $linkColor;
+          i.fa-play-circle {
+            color: $linkColor;
+          }
+        }
+      }
+    }
     footer {
       background: #fff;
       border: none;
-      padding: 1rem 1.4rem;
+      padding: 1.1rem 1.4rem;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
+      .props {
+        li {
+          font-size: 0.8rem;
+          p {
+            line-height: 18px;
+          }
+        }
+      }
     }
   }
   &.pink {
@@ -225,11 +250,6 @@ export default {
   }
   &.yellow {
     background: $yellow;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
   }
   .icons {
     display: flex;
@@ -249,33 +269,11 @@ export default {
     color: $textColorDark;
     padding: 5px;
     &.right {
-      margin-left: 0.9rem;
+      margin-left: 0.1rem;
     }
     &.team {
       cursor: text;
     }
-  }
-  .title {
-    color: $darkBlue;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-  .props {
-    li {
-      font-size: 0.8rem;
-
-      padding: 3px 0;
-      line-height: 22px;
-      p {
-        line-height: 15px;
-      }
-    }
-  }
-  footer {
-    background: transparent;
-    // text-align: center;
-    padding: 0.7rem 0 0 0;
-    border-top: 1px solid $darkBlue;
   }
 
   //gammalt

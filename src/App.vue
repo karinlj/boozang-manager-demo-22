@@ -87,7 +87,8 @@ button,
     opacity: 0.7;
   }
 }
-button {
+button,
+.btn-link {
   display: block;
   border: 0;
   padding: 0.8rem 1.1rem;
@@ -95,6 +96,18 @@ button {
   border-radius: $themeBorderRadius;
   font-size: 0.9rem;
   transition: all 0.3s;
+}
+a.btn-link {
+  background: #fff;
+  color: $blue;
+  &:visited {
+    background: #fff;
+    color: $blue;
+  }
+  &:focus {
+    background: #fff;
+    color: $blue;
+  }
 }
 .container {
   max-width: 1100px;

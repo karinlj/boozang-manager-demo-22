@@ -14,8 +14,9 @@
               automation experts.
             </p>
           </div>
-
-          <button>Book now</button>
+          <a href="https://calendly.com/boozang/boozang-demo" class="btn-link"
+            >Book now</a
+          >
         </div>
       </section>
     </div>
@@ -49,7 +50,6 @@ export default {
   setup() {
     const { projects, error, load } = getProjects();
     // const current = ref("all");
-    // const search = ref("");
 
     load();
 
@@ -66,14 +66,6 @@ export default {
     //     });
     //   }
     //   return projects.value;
-    // });
-
-    // const matchingProjects = computed(() => {
-    //   //filter out
-    //   return projects.value.filter((item) => {
-    //     //check if search term is in project
-    //     return item.title.includes(search.value); //match(search.value);
-    //   });
     // });
 
     const handleDelete = (id) => {
@@ -93,9 +85,7 @@ export default {
       error,
       load,
       // current,
-      // search,
       // filteredProjects,
-      // matchingProjects,
       handleDelete,
       handleComplete,
     };
@@ -113,8 +103,6 @@ main {
   h2 {
     display: inline-block;
     margin-top: 2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid $lightestBlue;
   }
   // .container-small {
   //   max-width: 1000px;
