@@ -67,8 +67,9 @@
       <ul class="props">
         <li>
           <p>
-            Updated {{ project.updated }} days ago by
-            {{ project.by }}
+            Last modified <strong>{{ project.updated }}</strong>
+            <strong> days</strong> ago by
+            <strong>{{ project.by }}</strong>
           </p>
         </li>
       </ul>
