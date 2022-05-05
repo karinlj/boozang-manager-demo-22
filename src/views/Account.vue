@@ -1,9 +1,15 @@
 <template>
-  <main class="main">
-    <div class="main-container">
-      <div class="container-small">
-        <h1>Manage your Boozang account</h1>
+  <main>
+    <SubHeader>
+      <template v-slot:subheaderItems>
+        <div>
+          <h1>Manage your Boozang account</h1>
+        </div>
+      </template>
+    </SubHeader>
 
+    <section class="account">
+      <div class="container-small">
         <nav>
           <ul>
             <li>
@@ -12,14 +18,25 @@
           </ul>
         </nav>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
 <script>
+import SubHeader from "../components/SubHeader.vue";
+
 export default {
   name: "Account",
+  components: { SubHeader },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+main {
+  padding-bottom: 3rem;
+  min-height: 800px;
+  .account {
+    padding: 2rem $sectionPadding;
+  }
+}
+</style>

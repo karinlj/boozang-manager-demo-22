@@ -268,7 +268,7 @@ export default {
     color: $textColorDark;
     padding: 5px;
     &.right {
-      margin-left: 0.1rem;
+      margin-left: 0.4rem;
     }
     &.team {
       cursor: text;

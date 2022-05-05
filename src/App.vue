@@ -92,7 +92,7 @@ button,
   display: block;
   border: 0;
   padding: 0.8rem 1.1rem;
-  margin-right: 0.5rem;
+  // margin-right: 0.5rem;
   border-radius: $themeBorderRadius;
   font-size: 0.9rem;
   transition: all 0.3s;
@@ -111,6 +111,7 @@ a.btn-link {
 }
 .container {
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   @media all and (min-width: $lg-min) {
@@ -119,6 +120,7 @@ a.btn-link {
 }
 .container-small {
   max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   @media all and (min-width: $md-min) {

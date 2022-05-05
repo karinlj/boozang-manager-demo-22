@@ -111,9 +111,10 @@ export default {
   height: auto;
   @media all and (min-width: $sm-min) {
     width: 410px;
+    margin: 0 auto;
   }
   @media all and (min-width: $md-min) {
-    width: 820px;
+    width: 800px;
     height: 520px;
   }
   a {
@@ -127,7 +128,7 @@ export default {
     border-radius: $themeBorderRadius;
   }
   .signup-left {
-    padding: 2rem 4rem;
+    padding: 2rem 3rem;
     background: linear-gradient(
       333.41deg,
       rgba(126, 93, 166, 0.54) 0%,
@@ -174,7 +175,7 @@ export default {
       padding: 2rem 1.2rem;
     }
     @media all and (min-width: $sm-min) {
-      padding: 2rem 4rem;
+      padding: 2rem 3rem;
     }
     @media all and (min-width: $md-min) {
       width: 55%;
@@ -248,12 +249,15 @@ export default {
     }
     .small-text {
       width: 100%;
-      padding: 1rem 2rem;
+      padding: 1rem;
       font-size: 0.8rem;
       color: $lightGrey;
+      @media all and (min-width: $sm-min) {
+        padding: 1rem 2rem;
+      }
       @media all and (min-width: $md-min) {
         width: 55%;
-        padding: 1rem 4rem;
+        padding: 1rem 3rem;
       }
     }
   }

@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss">
 header {
-  //padding: 1rem 4rem;
+  padding: 0 $sectionPadding;
   height: 3.5rem;
   // z-index: 1;
   .container {
