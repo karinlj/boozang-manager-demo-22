@@ -7,6 +7,11 @@ export default {};
 </script>
 
 <style lang="scss">
+html,
+body,
+#app {
+  height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -139,19 +144,19 @@ main {
 }
 //form
 form {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   border-radius: 10px;
   background: white;
   label {
     color: $lightGrey;
     display: block;
-    margin: 0.8rem 0;
+    margin: 0.7rem 0;
     font-size: 0.8rem;
   }
   input,
   textarea {
     margin-top: 3px;
-    padding: 0.6rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
     border: none;

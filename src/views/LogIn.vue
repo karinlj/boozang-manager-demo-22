@@ -2,7 +2,7 @@
   <SignUpComp>
     <template v-slot:header>
       <h2>Welcome Back</h2>
-      <p>Log in to your Boozang account</p>
+      <p class="header-text">Log in to your Boozang account</p>
     </template>
 
     <template v-slot:form>

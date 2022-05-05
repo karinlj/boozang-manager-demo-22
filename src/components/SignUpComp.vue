@@ -7,7 +7,14 @@
       <div v-else>
         <img src="../assets/canada.svg" alt="Canada flag" class="canada-flag" />
       </div>
-      <button @click="showEurope = !showEurope">{{ regionTextOutput }}</button>
+      <a
+        href="#"
+        role="button"
+        @click="showEurope = !showEurope"
+        class="flag-switch"
+        aria-label="switch region"
+        >{{ regionTextOutput }}</a
+      >
     </section>
 
     <div class="container-small">
@@ -30,12 +37,21 @@
             </div>
           </div>
           <div class="signup-right">
-            <div class="signup-text-right">
-              <!-- slot -->
-              <slot name="header"></slot>
+            <div class="right-logo">
+              <img
+                src="../assets/boozang_logo_white.png"
+                alt="Boozang logo"
+                class="logo"
+              />
             </div>
-            <!-- slot -->
-            <slot name="form"></slot>
+            <div class="signup-right-inner">
+              <div class="signup-text-right">
+                <!-- slot -->
+                <slot name="header"></slot>
+              </div>
+              <!-- slot -->
+              <slot name="form"></slot>
+            </div>
           </div>
         </section>
         <section class="signup-lower">
@@ -85,6 +101,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,20 +109,31 @@ export default {
 .flag-section {
   position: absolute;
   top: 1rem;
-  left: 2rem;
+  right: 2rem;
+  margin-bottom: 2rem;
   .eu-flag,
   .canada-flag {
     height: 20px;
     display: block;
+    float: right;
   }
-  button {
+  .flag-switch {
+    display: block;
+    clear: both;
     background: transparent;
     padding: 5px 0;
     font-size: 0.8rem;
-    color: $lightGrey;
+    color: $blue;
+  }
+}
+.container-small {
+  margin-top: 3rem;
+  @media all and (min-width: $md-min) {
+    margin-top: 0;
   }
 }
 .signup-section {
+  margin-top: 2rem;
   padding: 1rem;
   width: 100%;
   height: auto;
@@ -129,11 +157,6 @@ export default {
   }
   .signup-left {
     padding: 2rem 3rem;
-    background: linear-gradient(
-      333.41deg,
-      rgba(126, 93, 166, 0.54) 0%,
-      rgba(126, 93, 166, 0) 100%
-    );
     background: $blue;
     width: 45%;
     flex-direction: column;
@@ -141,7 +164,6 @@ export default {
     align-items: center;
     box-shadow: $themeBoxShadow;
     display: none;
-
     @media all and (min-width: $md-min) {
       display: flex;
       border-top-left-radius: $themeBorderRadius;
@@ -167,31 +189,61 @@ export default {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+
     color: $blue;
     border-top-right-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
     @media all and (max-width: $xs-max) {
-      padding: 2rem 1.2rem;
-    }
-    @media all and (min-width: $sm-min) {
-      padding: 2rem 3rem;
+      //padding: 1rem 1.2rem;
     }
     @media all and (min-width: $md-min) {
       width: 55%;
+      // padding: 2rem 3rem;
+    }
+    .signup-right-inner {
+      padding: 1rem 2rem;
+      @media all and (max-width: $xs-max) {
+        padding: 1rem 1.2rem;
+      }
+      @media all and (min-width: $md-min) {
+        padding: 2rem 3rem;
+      }
+    }
+    .right-logo {
+      background: $blue;
+      text-align: center;
+      padding: 1rem;
+      border-top-right-radius: $themeBorderRadius;
+      border-top-left-radius: $themeBorderRadius;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      line-height: 0.6;
+      margin-bottom: 1rem;
+      img {
+        max-width: 140px;
+      }
+      @media all and (min-width: $md-min) {
+        display: none;
+      }
     }
     h2 {
       color: $blue;
       margin-top: 0;
       margin-bottom: 0;
+      font-size: 1.3rem;
       @media all and (min-width: $sm-min) {
         margin-bottom: 1rem;
+        font-size: 1.5rem;
       }
     }
-    p {
+    .header-text {
       display: none;
+      font-size: 0.9rem;
       @media all and (min-width: $sm-min) {
         display: block;
+      }
+      @media all and (min-width: $md-min) {
+        font-size: 1rem;
       }
     }
     .signup-btn {
@@ -206,7 +258,7 @@ export default {
     }
     .divider {
       font-size: 0.6rem;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: $lightGrey;
       padding: 0.89rem 0;
       display: flex;
@@ -228,12 +280,13 @@ export default {
       }
       .google-sign-in,
       .github-sign-in {
-        width: 100%;
+        width: 48%;
         padding: 0.3rem 1.1rem;
         display: flex;
         align-items: center;
         background: #fff;
         border: 1px solid $lighterGrey;
+        margin-right: 0.5rem;
         span {
           margin-top: 2px;
         }

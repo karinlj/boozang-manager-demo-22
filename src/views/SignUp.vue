@@ -2,7 +2,7 @@
   <SignUpComp>
     <template v-slot:header>
       <h2>Codeless testing that works</h2>
-      <p>
+      <p class="header-text">
         Try Boozang free for 7 days to automate tests and ship software with
         confidence.
       </p>
@@ -33,7 +33,7 @@
 
         <div class="divider">
           <span class=""></span>
-          <p class="">OR LOG IN WITH</p>
+          <p class="divider-text">OR LOG IN WITH</p>
           <span class=""></span>
         </div>
         <section class="social-login">
@@ -54,8 +54,7 @@
     </template>
     <template v-slot:smallText>
       <p>
-        By signing up you agree to our <a href="">Terms of Service</a> and
-        <a href="">Privacy Policy</a>
+        By creating an account, you agree to our <a href="">Terms of Use</a>
       </p>
       <p>
         Already have an account?
