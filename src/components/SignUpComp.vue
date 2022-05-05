@@ -187,9 +187,6 @@ export default {
   }
   .signup-right {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-
     color: $blue;
     border-top-right-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
@@ -201,12 +198,16 @@ export default {
       // padding: 2rem 3rem;
     }
     .signup-right-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 1rem 2rem;
       @media all and (max-width: $xs-max) {
         padding: 1rem 1.2rem;
       }
       @media all and (min-width: $md-min) {
         padding: 2rem 3rem;
+        height: 100%;
       }
     }
     .right-logo {
