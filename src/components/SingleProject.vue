@@ -1,5 +1,6 @@
 <template>
   <div class="project_item divided" :class="color">
+    <a href="" aria-label="Launch Boozang tool"> </a>
     <header class="header">
       <div class="icons-extended">
         <div>
@@ -38,15 +39,7 @@
       </div>
     </header>
     <div class="body">
-      <a
-        href=""
-        class="title"
-        aria-label="Launch Boozang tool"
-        title="Launch tool"
-      >
-        <i class="fas fa-play-circle"></i>
-        <span> {{ project.title }}</span>
-      </a>
+      <h3 class="title">{{ project.title }}</h3>
     </div>
     <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
     <!-- 
@@ -54,13 +47,6 @@
         :to="{ name: 'EditProject', params: { id: project.id } }"
         :aria-label="' Open project: ' + project.title"
       >
-        <span
-          class="material-icons edit"
-          aria-hidden="true"
-          title="Open project"
-        >
-          edit
-        </span>
       </router-link>
    -->
     <footer>
@@ -165,6 +151,7 @@ export default {
 
 <style lang="scss">
 .project_item {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -176,12 +163,22 @@ export default {
   height: 14rem;
   width: 17rem;
   color: $textColorDark;
+  transition: all 0.3s ease-in;
+
   //divided with white
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+  }
   &.divided {
     padding: 0px;
     box-shadow: $themeBoxShadow;
     .header {
-      padding: 1.1rem 1.4rem;
+      padding: 1rem 1.4rem;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
       span {
@@ -191,41 +188,22 @@ export default {
       }
     }
     .body {
-      padding: 1rem 1.4rem;
-      a.title {
+      padding: 0 1.4rem;
+      .title {
+        margin: 0;
+        margin-top: -1rem;
         color: $darkBlue;
         font-weight: 700;
         font-size: 1.1rem;
         display: flex;
         align-items: center;
         white-space: normal;
-        transition: all 0.2s ease-in;
-        i.fa-play-circle {
-          font-size: 1.5rem;
-          padding-right: 0.5rem;
-          color: #fff;
-          transition: all 0.2s ease-in;
-        }
-        span {
-          line-height: 1.2;
-          &:hover {
-            // text-decoration: underline;
-          }
-        }
-        &:hover {
-          text-decoration: none;
-          opacity: 1;
-          color: $linkColor;
-          i.fa-play-circle {
-            color: $linkColor;
-          }
-        }
       }
     }
     footer {
       background: #fff;
       border: none;
-      padding: 1.1rem 1.4rem;
+      padding: 1rem 1.4rem;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
       .props {
@@ -238,21 +216,7 @@ export default {
       }
     }
   }
-  &.pink {
-    background: $colorPink;
-  }
-  &.blue {
-    background: $lightblue;
-  }
-  &.green {
-    background: $green;
-  }
-  &.yellow {
-    background: $yellow;
-  }
-  .icons {
-    display: flex;
-  }
+
   .icons-extended {
     display: flex;
     justify-content: space-between;
@@ -273,6 +237,32 @@ export default {
     &.team {
       cursor: text;
     }
+  }
+
+  .icons {
+    display: flex;
+    // position: relative;
+    // z-index: 3;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+  }
+  &:hover {
+    filter: brightness(90%);
+    .icons {
+      opacity: 1;
+    }
+  }
+  &.pink {
+    background: $colorPink;
+  }
+  &.blue {
+    background: $lightblue;
+  }
+  &.green {
+    background: $green;
+  }
+  &.yellow {
+    background: $yellow;
   }
 
   //gammalt

@@ -4,7 +4,6 @@
       <div>
         <slot>Header</slot>
       </div>
-
       <slot name="editForm"></slot>
     </div>
   </div>
