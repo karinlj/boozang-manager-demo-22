@@ -25,11 +25,9 @@
 
         <p v-if="error">{{ error }}</p>
         <section v-if="projects.length">
-          <ProjectsList
-            :projects="projects"
-            @delete="handleDelete"
-            @complete="handleComplete"
-          />
+          <ProjectsList :projects="projects" @delete="handleDelete" />
+
+          <!-- @complete="handleComplete" -->
         </section>
         <p v-else>... Loading</p>
       </div>
@@ -76,12 +74,12 @@ export default {
         return item.id !== id;
       });
     };
-    const handleComplete = (id) => {
-      let project = projects.value.find((item) => {
-        return item.id === id;
-      });
-      project.complete = !project.complete;
-    };
+    // const handleComplete = (id) => {
+    //   let project = projects.value.find((item) => {
+    //     return item.id === id;
+    //   });
+    //   project.complete = !project.complete;
+    // };
 
     return {
       projects,
@@ -90,7 +88,7 @@ export default {
       // current,
       // filteredProjects,
       handleDelete,
-      handleComplete,
+      // handleComplete,
       subheaderTheme,
     };
   },

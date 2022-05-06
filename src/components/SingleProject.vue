@@ -137,9 +137,9 @@ export default {
     const showEditModal = ref(false);
     const showDeleteModal = ref(false);
 
-    // uri to this project in db.json
     const uri = ref("http://localhost:9000/projects/" + props.project.id);
 
+    //edit
     const toggleEditModal = () => {
       showEditModal.value = !showEditModal.value;
     };
@@ -153,8 +153,9 @@ export default {
       toggleEditModal();
     };
 
+    //delete
     const toggleDeleteModal = () => {
-      console.log("toggle delete");
+      //console.log("toggle delete");
       showDeleteModal.value = !showDeleteModal.value;
     };
     const deleteProject = () => {
@@ -168,23 +169,23 @@ export default {
       toggleDeleteModal();
     };
 
-    const toggleComplete = () => {
-      fetch(uri.value, {
-        method: "PATCH", //update
-        headers: { "Content-Type": "application/json" }, //sending json-data
-        body: JSON.stringify({ complete: !props.project.complete }), //sending the data in a string made from js-object
-      })
-        .then(() => {
-          //update locally this project
-          context.emit("complete", props.project.id);
-        })
-        .catch((err) => console.log(err.message));
-    };
+    // const toggleComplete = () => {
+    //   fetch(uri.value, {
+    //     method: "PATCH", //update
+    //     headers: { "Content-Type": "application/json" }, //sending json-data
+    //     body: JSON.stringify({ complete: !props.project.complete }), //sending the data in a string made from js-object
+    //   })
+    //     .then(() => {
+    //       //update locally this project
+    //       context.emit("complete", props.project.id);
+    //     })
+    //     .catch((err) => console.log(err.message));
+    // };
     return {
       showDetails,
       uri,
       deleteProject,
-      toggleComplete,
+      // toggleComplete,
       showEditModal,
       toggleEditModal,
       showDeleteModal,

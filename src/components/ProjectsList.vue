@@ -1,50 +1,98 @@
 <template>
   <ul class="project-list">
     <li>
-      <button class="add-project" aria-label="Add Project" @click="addProject">
+      <button
+        class="add-project"
+        aria-label="Add Project"
+        @click="toggleAddModal"
+      >
         <i class="fas fa-solid fa-plus add_icon" aria-hidden="true"></i>
       </button>
     </li>
     <li v-for="(project, index) in projects" :key="project">
-      <!-- take project from the loop -->
+      <!-- project from the loop -->
       <SingleProject
         :project="project"
         :color="colors[index % 4]"
         @delete="handleDelete"
-        @complete="handleComplete"
       />
+      <!--  @complete="handleComplete" -->
     </li>
   </ul>
+  <!-- add -->
+  <div v-if="showAddModal">
+    <Modal @closing="toggleAddModal">
+      <h1>Add new Project</h1>
+      <template v-slot:addForm>
+        <form>
+          <div class="input-section">
+            <label
+              >Title: <input type="text" required v-model="title" />
+            </label>
+          </div>
+          <div class="btn-section">
+            <button type="submit" class="submit-btn" @click="addNewProject">
+              Add Project
+            </button>
+            <button type="button" class="cancel-link" @click="toggleAddModal">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </template>
+    </Modal>
+  </div>
 </template>
 
 <script>
 import SingleProject from "../components/SingleProject.vue";
 import { ref } from "@vue/reactivity";
+import Modal from "./Modal.vue";
+
+import addProject from "../composables/addProject";
 // import { computed } from "@vue/runtime-core";
 
 export default {
   name: "ProjectsList",
-  components: { SingleProject },
+  components: { SingleProject, Modal },
   props: ["projects"],
 
   setup(props, context) {
     const colors = ref(["blue", "green", "pink", "yellow"]);
+    const title = ref("");
+    const showAddModal = ref(false);
+
+    const toggleAddModal = () => {
+      console.log("toggleAddModal");
+      showAddModal.value = !showAddModal.value;
+    };
+
+    const addNewProject = async () => {
+      console.log("add");
+
+      //make project object
+      let newProject = {
+        title: title.value,
+      };
+      //add to db
+      const { add } = addProject(newProject);
+      await add();
+    };
 
     const handleDelete = (id) => {
       context.emit("delete", id);
     };
-    const handleComplete = (id) => {
-      context.emit("complete", id);
-    };
-
-    const addProject = () => {
-      console.log("add");
-    };
+    // const handleComplete = (id) => {
+    //   context.emit("complete", id);
+    // };
     return {
       handleDelete,
-      handleComplete,
-      addProject,
+      // handleComplete,
       colors,
+      title,
+      addNewProject,
+      showAddModal,
+      toggleAddModal,
     };
   },
 };

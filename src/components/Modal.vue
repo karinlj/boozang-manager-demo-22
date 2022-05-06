@@ -4,6 +4,7 @@
       <div>
         <slot>Header</slot>
       </div>
+      <slot name="addForm"></slot>
       <slot name="editForm"></slot>
       <slot name="deleteConferm"></slot>
     </div>
@@ -11,8 +12,6 @@
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
-
 export default {
   props: ["project"],
 
