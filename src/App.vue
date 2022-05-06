@@ -119,12 +119,12 @@ button,
   }
 }
 .container {
-  max-width: 1300px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   @media all and (min-width: $xxl-min) {
-    max-width: 1500px;
+    max-width: 1400px;
   }
 }
 .container-small {
@@ -179,12 +179,12 @@ form {
     align-items: center;
     margin-top: 2rem;
     button {
-      color: white;
+      color: #fff;
       &.submit-btn {
         background: $btnGreen;
       }
       &.cancel-link {
-        background: $lightGrey;
+        background: $middleGrey;
       }
     }
   }

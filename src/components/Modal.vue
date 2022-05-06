@@ -19,7 +19,6 @@ export default {
     const closeModal = () => {
       context.emit("closing");
     };
-
     return {
       closeModal,
     };
@@ -29,15 +28,19 @@ export default {
 
 <style lang="scss">
 .modal {
-  width: 500px;
-  height: 500px;
-  padding: 1.5rem 3.5rem;
+  width: 400px;
+  height: 400px;
+  padding: 1.5rem 2.5rem;
   margin: 100px auto;
   background: white;
   border-radius: $themeBorderRadius;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+  }
 }
 .backdrop {
   position: fixed;

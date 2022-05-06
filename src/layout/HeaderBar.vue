@@ -1,7 +1,6 @@
 <template>
   <header>
     <div class="container">
-      <!-- <h1>Boozang Manager</h1> -->
       <nav>
         <img
           src="../assets/boozang-icon.png"

@@ -47,13 +47,7 @@
       <h3 class="title">{{ project.title }}</h3>
     </div>
     <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
-    <!-- 
-      <router-link
-        :to="{ name: 'EditProject', params: { id: project.id } }"
-        :aria-label="' Open project: ' + project.title"
-      >
-      </router-link>
-   -->
+
     <footer>
       <ul class="props">
         <li>
@@ -82,9 +76,21 @@
               </label>
             </div>
             <div class="btn-section">
-              <button type="submit" class="submit-btn">Update Project</button>
+              <button
+                type="submit"
+                class="submit-btn"
+                @click="handleEditSubmit"
+              >
+                Update Project
+              </button>
               <!-- ej button -->
-              <button type="button" class="cancel-link">Cancel</button>
+              <button
+                type="button"
+                class="cancel-link"
+                @click="toggleEditModal"
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </template>
@@ -98,6 +104,7 @@
 import { ref } from "@vue/reactivity";
 import { computed } from "@vue/runtime-core";
 import Modal from "./Modal.vue";
+import updateProject from "../composables/updateProject";
 
 export default {
   name: "SingleProject",
@@ -117,7 +124,15 @@ export default {
     };
 
     const handleEditSubmit = () => {
-      console.log(" edit form");
+      console.log(" edit form:", props.project.title);
+
+      const { update } = updateProject(
+        props.project.id,
+        props.project.title,
+        props.project.details
+      );
+      update();
+      toggleEditModal();
     };
 
     const deleteProject = () => {
