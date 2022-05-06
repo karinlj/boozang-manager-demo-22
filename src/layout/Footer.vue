@@ -39,7 +39,7 @@ export default {};
     }
   }
   .copy {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: $lightestBlue;
     padding-top: 1rem;
     border-top: 1px solid $borderColorBlue;

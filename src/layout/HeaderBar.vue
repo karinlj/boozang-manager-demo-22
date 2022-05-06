@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
   padding: 0 $sectionPadding;
   height: 3.5rem;
@@ -54,7 +54,10 @@ header {
     height: 100%;
     .logo {
       min-width: 1.6rem;
-      margin-right: 4.5rem;
+      margin-right: 2.5rem;
+      @media all and (min-width: $md-min) {
+        margin-right: 4.5rem;
+      }
     }
     nav {
       display: flex;
@@ -65,7 +68,24 @@ header {
       }
       a {
         color: $textColor;
-        margin-right: 2.5rem;
+        margin-right: 1.5rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding-bottom: 2px;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.2s ease-in;
+        @media all and (min-width: $md-min) {
+          margin-right: 2.1rem;
+        }
+        &:hover {
+          text-decoration: none;
+          border-bottom: 3px solid $lightblue;
+        }
+        &.router-link-exact-active {
+          border-bottom: 3px solid $lightblue;
+        }
       }
     }
   }

@@ -1,6 +1,11 @@
 <template>
-  <div class="project_item divided" :class="color">
-    <a href="" aria-label="Launch Boozang tool"> </a>
+  <!-- <div class="project_item divided" :class="color"> -->
+  <a
+    href="#"
+    class="project_item"
+    :class="color"
+    aria-label="Launch Boozang tool"
+  >
     <header class="header">
       <div class="icons-extended">
         <div>
@@ -12,7 +17,7 @@
           <span>3</span>
         </div>
 
-        <div class="icons">
+        <div class="icons-right">
           <button
             class="icon_btn right"
             title="edit"
@@ -85,7 +90,8 @@
         </template>
       </Modal>
     </div>
-  </div>
+  </a>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -155,9 +161,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.4rem 1.4rem 1rem 1.4rem;
   border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadowLight;
+  padding: 0px;
+  box-shadow: $themeBoxShadow;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
@@ -165,58 +171,44 @@ export default {
   color: $textColorDark;
   transition: all 0.3s ease-in;
 
-  //divided with white
-  a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
+  .header {
+    padding: 1rem 1.4rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    span {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 1px;
+    }
   }
-  &.divided {
-    padding: 0px;
-    box-shadow: $themeBoxShadow;
-    .header {
-      padding: 1rem 1.4rem;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      span {
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-left: 1px;
-      }
+  .body {
+    padding: 0 1.4rem;
+    .title {
+      margin: 0;
+      margin-top: -1rem;
+      color: $darkBlue;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      white-space: normal;
     }
-    .body {
-      padding: 0 1.4rem;
-      .title {
-        margin: 0;
-        margin-top: -1rem;
-        color: $darkBlue;
-        font-weight: 700;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        white-space: normal;
-      }
-    }
-    footer {
-      background: #fff;
-      border: none;
-      padding: 1rem 1.4rem;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      .props {
-        li {
-          font-size: 0.8rem;
-          p {
-            line-height: 18px;
-          }
+  }
+  footer {
+    background: #fff;
+    border: none;
+    padding: 1rem 1.4rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    .props {
+      li {
+        font-size: 0.8rem;
+        p {
+          line-height: 18px;
         }
       }
     }
   }
-
   .icons-extended {
     display: flex;
     justify-content: space-between;
@@ -225,30 +217,39 @@ export default {
       font-weight: 600;
       font-size: 0.9rem;
     }
-  }
-  .icon_btn {
-    border: none;
-    background: transparent;
-    color: $textColorDark;
-    padding: 5px;
-    &.right {
-      margin-left: 0.4rem;
+    .icon_btn {
+      border: none;
+      background: transparent;
+      color: $textColorDark;
+      padding: 5px;
+      position: relative;
+      z-index: 2;
+      &.right {
+        margin-left: 0.4rem;
+      }
+      &.team {
+        cursor: text;
+      }
     }
-    &.team {
-      cursor: text;
-    }
   }
-
-  .icons {
+  .icons-right {
     display: flex;
-    // position: relative;
-    // z-index: 3;
     opacity: 0;
     transition: all 0.3s ease-in;
   }
   &:hover {
-    filter: brightness(90%);
-    .icons {
+    text-decoration: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: brightness(97%);
+      border-radius: $themeBorderRadius;
+    }
+    .icons-right {
       opacity: 1;
     }
   }

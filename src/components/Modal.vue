@@ -41,6 +41,7 @@ export default {
 }
 .backdrop {
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);

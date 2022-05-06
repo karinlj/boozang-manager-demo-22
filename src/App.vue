@@ -84,12 +84,13 @@ h5 {
   // letter-spacing: 0.4px;
   color: $textColor;
 }
-a,
+
 .btn,
 button,
-.icon_btn {
+.icon_btn,
+.btn-link {
   &:hover {
-    opacity: 0.7;
+    filter: brightness(90%);
   }
 }
 button,
@@ -102,7 +103,7 @@ button,
   font-size: 0.9rem;
   transition: all 0.3s;
 }
-a.btn-link {
+.btn-link {
   background: #fff;
   color: $blue;
   &:visited {
@@ -113,26 +114,27 @@ a.btn-link {
     background: #fff;
     color: $blue;
   }
+  &:hover {
+    text-decoration: none;
+  }
 }
 .container {
-  max-width: 1100px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  @media all and (min-width: $lg-min) {
-    max-width: 1300px;
+  @media all and (min-width: $xxl-min) {
+    max-width: 1500px;
   }
 }
 .container-small {
-  max-width: 100%;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  @media all and (min-width: $md-min) {
-    max-width: 800px;
-  }
-  @media all and (min-width: $lg-min) {
-    max-width: 1000px;
+
+  @media all and (min-width: $xxl-min) {
+    max-width: 1200px;
   }
 }
 .main-container {

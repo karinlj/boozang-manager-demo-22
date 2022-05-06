@@ -43,8 +43,11 @@ export default {
     background: #fff;
     margin-top: 2rem;
     width: 7.5rem;
+    text-align: center;
+
     @media all and (min-width: $sm-min) {
       margin-top: 0;
+      width: auto;
     }
   }
   &.blue {

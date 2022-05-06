@@ -1,67 +1,75 @@
 <template>
   <main class="signup-main">
     <section class="flag-section">
-      <div v-if="showEurope">
-        <img src="../assets/eu.svg" alt="EU flag" class="eu-flag" />
+      <div class="flag-section-inner">
+        <div v-if="showEurope">
+          <img src="../assets/eu.svg" alt="EU flag" class="eu-flag" />
+        </div>
+        <div v-else>
+          <img
+            src="../assets/canada.svg"
+            alt="Canada flag"
+            class="canada-flag"
+          />
+        </div>
+        <a
+          href="#"
+          role="button"
+          @click="showEurope = !showEurope"
+          class="flag-switch"
+          aria-label="switch region"
+          >{{ regionTextOutput }}</a
+        >
       </div>
-      <div v-else>
-        <img src="../assets/canada.svg" alt="Canada flag" class="canada-flag" />
-      </div>
-      <a
-        href="#"
-        role="button"
-        @click="showEurope = !showEurope"
-        class="flag-switch"
-        aria-label="switch region"
-        >{{ regionTextOutput }}</a
-      >
     </section>
 
-    <div class="container-small">
-      <section class="signup-section">
-        <section class="signup-upper">
-          <div class="signup-left">
-            <img
-              src="../assets/boozang_logo_white.png"
-              alt="Boozang logo"
-              class="logo"
-            />
-            <img
-              src="../assets/robot-white.png"
-              alt="Boozang Robot"
-              class="robot"
-            />
-            <div class="signup-left-text">
-              <h1>Testing made simple</h1>
-              <p>Automation tool for developers and non-developers.</p>
-            </div>
-          </div>
-          <div class="signup-right">
-            <div class="right-logo">
+    <div class="signup-main-inner">
+      <div class="container-small">
+        <section class="signup-section">
+          <section class="signup-upper">
+            <div class="signup-left">
               <img
                 src="../assets/boozang_logo_white.png"
                 alt="Boozang logo"
                 class="logo"
               />
-            </div>
-            <div class="signup-right-inner">
-              <div class="signup-text-right">
-                <!-- slot -->
-                <slot name="header"></slot>
+              <img
+                src="../assets/robot-white.png"
+                alt="Boozang Robot"
+                class="robot"
+              />
+              <div class="signup-left-text">
+                <h1>Testing made simple</h1>
+                <p>Automation tool for developers and non-developers.</p>
               </div>
-              <!-- slot -->
-              <slot name="form"></slot>
             </div>
-          </div>
+            <div class="signup-right">
+              <div class="right-logo">
+                <img
+                  src="../assets/boozang_logo_white.png"
+                  alt="Boozang logo"
+                  class="logo"
+                />
+              </div>
+              <div class="signup-right-inner">
+                <div class="signup-text-right">
+                  <!-- slot -->
+                  <slot name="header"></slot>
+                </div>
+                <!-- slot -->
+                <slot name="form"></slot>
+              </div>
+            </div>
+          </section>
+          <section class="signup-lower">
+            <div></div>
+            <div class="small-text">
+              <!-- slot -->
+              <slot name="smallText"></slot>
+            </div>
+          </section>
         </section>
-        <section class="signup-lower">
-          <div></div>
-          <div class="small-text">
-            <!-- slot -->
-            <slot name="smallText"></slot>
-          </div>
-        </section>
-      </section>
+      </div>
     </div>
   </main>
 </template>
@@ -95,22 +103,18 @@ export default {
 
 <style lang="scss">
 .signup-main {
-  position: relative;
   background: #fff;
   background-image: url("../assets/bg_shapes.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .flag-section {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
   .eu-flag,
   .canada-flag {
     height: 20px;
@@ -125,6 +129,12 @@ export default {
     font-size: 0.8rem;
     color: $blue;
   }
+}
+.signup-main-inner {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container-small {
   margin-top: 3rem;

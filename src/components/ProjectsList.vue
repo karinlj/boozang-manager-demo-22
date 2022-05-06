@@ -62,6 +62,7 @@ export default {
   margin-top: 3rem;
 }
 button.add-project {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,8 +73,22 @@ button.add-project {
   height: 14rem;
   width: 17rem;
   background: transparent;
-  border: dashed 2px $borderColor !important;
+  //border: dashed 2px $borderColor !important;
+  transition: all 0.3s ease-in;
 
+  &:hover {
+    filter: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: brightness(97%);
+      border-radius: $themeBorderRadius;
+    }
+  }
   .add_icon {
     color: $textColorDark;
     font-size: 1.7rem;
