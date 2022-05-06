@@ -50,7 +50,7 @@ export default {
   top: 0;
   right: -500px; //obs!!
   z-index: 0; //obs!!  //same parent as vego_burger
-  background: $color_gray;
+  background: $lightGrey;
   height: 100%;
   width: 500px; //obs!!
   padding: 4rem;
@@ -58,16 +58,16 @@ export default {
   transition: right ease-in 0.3s; //obs!!
   text-align: left;
   a {
-    color: $color_gray_dark;
+    color: $darkBlue;
     display: block;
     margin-bottom: 0.7rem;
     text-decoration: none;
     &:hover {
-      color: $color_green;
+      color: $green;
       text-decoration: underline;
     }
     &.router-link-active {
-      color: $color_green;
+      color: $green;
       padding-bottom: 4px;
     }
   }

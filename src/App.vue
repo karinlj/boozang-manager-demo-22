@@ -16,7 +16,7 @@ body,
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $color_gray_medium;
+  color: $textColor;
 }
 * {
   box-sizing: border-box; //obs!!
@@ -85,20 +85,21 @@ h5 {
   color: $textColor;
 }
 
-.btn,
 button,
-.icon_btn,
 .btn-link {
+  box-shadow: $themeBoxShadowLight;
   &:hover {
     filter: brightness(90%);
   }
+}
+.icon_btn {
+  box-shadow: none;
 }
 button,
 .btn-link {
   display: block;
   border: 0;
   padding: 0.8rem 1.1rem;
-  // margin-right: 0.5rem;
   border-radius: $themeBorderRadius;
   font-size: 0.9rem;
   transition: all 0.3s;
@@ -173,19 +174,19 @@ form {
     height: 100px;
     border: 1px solid $borderColor;
   }
-  .btn-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    button {
-      color: #fff;
-      &.submit-btn {
-        background: $btnGreen;
-      }
-      &.cancel-link {
-        background: $middleGrey;
-      }
+}
+.btn-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  button {
+    color: #fff;
+    &.submit-btn {
+      background: $btnGreen;
+    }
+    &.cancel-link {
+      background: $middleGrey;
     }
   }
 }

@@ -46,13 +46,13 @@ export default {
     display: block;
     width: 30px;
     height: 2px;
-    background: $color_gray_dark;
+    background: $darkGrey;
     margin-bottom: 5px;
     transition: all ease-in 0.3s; //obs!!
   }
   &:hover {
     span {
-      background: $color_green;
+      background: $green;
     }
   }
   &.open {

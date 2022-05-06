@@ -5,6 +5,7 @@
         <slot>Header</slot>
       </div>
       <slot name="editForm"></slot>
+      <slot name="deleteConferm"></slot>
     </div>
   </div>
 </template>
@@ -29,7 +30,7 @@ export default {
 <style lang="scss">
 .modal {
   width: 400px;
-  height: 400px;
+  min-height: 250px;
   padding: 1.5rem 2.5rem;
   margin: 100px auto;
   background: white;

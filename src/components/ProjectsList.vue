@@ -1,12 +1,7 @@
 <template>
   <ul class="project-list">
     <li>
-      <button
-        class="add-project"
-        title="Add"
-        aria-label="Add Project"
-        @click="addProject"
-      >
+      <button class="add-project" aria-label="Add Project" @click="addProject">
         <i class="fas fa-solid fa-plus add_icon" aria-hidden="true"></i>
       </button>
     </li>
@@ -67,15 +62,21 @@ button.add-project {
   justify-content: center;
   align-items: center;
   border-radius: $themeBorderRadius;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: $themeBoxShadowLight;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
   width: 17rem;
   background: transparent;
-  //border: dashed 2px $borderColor !important;
+  border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
 
+  .add_icon {
+    color: $textColor;
+    font-size: 1.7rem;
+    // opacity: 0.8;
+    transition: all 0.3s ease-in;
+  }
   &:hover {
     filter: none;
     &:after {
@@ -85,13 +86,12 @@ button.add-project {
       left: 0;
       width: 100%;
       height: 100%;
-      backdrop-filter: brightness(97%);
+      backdrop-filter: brightness(92%);
       border-radius: $themeBorderRadius;
     }
-  }
-  .add_icon {
-    color: $textColorDark;
-    font-size: 1.7rem;
+    // .add_icon {
+    //   opacity: 1;
+    // }
   }
 }
 </style>

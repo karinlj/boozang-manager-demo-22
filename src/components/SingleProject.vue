@@ -30,6 +30,7 @@
             class="icon_btn right"
             title="delete"
             aria-label="Delete project"
+            @click="toggleDeleteModal"
           >
             <i class="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
           </button>
@@ -60,12 +61,14 @@
       </ul>
     </footer>
 
+    <!-- edit -->
     <div v-if="showEditModal">
       <Modal :project="project" @closing="toggleEditModal">
         <h1>Edit Project</h1>
 
         <template v-slot:editForm>
-          <form @submit.prevent="handleEditSubmit">
+          <!-- <form @submit.prevent="editProject"> -->
+          <form>
             <div class="input-section">
               <label
                 >Title: <input type="text" required v-model="project.title" />
@@ -76,14 +79,9 @@
               </label>
             </div>
             <div class="btn-section">
-              <button
-                type="submit"
-                class="submit-btn"
-                @click="handleEditSubmit"
-              >
+              <button type="submit" class="submit-btn" @click="editProject">
                 Update Project
               </button>
-              <!-- ej button -->
               <button
                 type="button"
                 class="cancel-link"
@@ -93,6 +91,29 @@
               </button>
             </div>
           </form>
+        </template>
+      </Modal>
+    </div>
+    <!-- delete -->
+    <div v-if="showDeleteModal">
+      <Modal @closing="toggleDeleteModal">
+        <h1>Delete Project</h1>
+        <template v-slot:deleteConferm>
+          <p>Are you sure you want to delete the project?</p>
+
+          <div class="btn-section">
+            <button type="submit" class="submit-btn" @click="deleteProject">
+              Yes
+            </button>
+            <!-- ej button -->
+            <button
+              type="button"
+              class="cancel-link"
+              @click="toggleDeleteModal"
+            >
+              Cancel
+            </button>
+          </div>
         </template>
       </Modal>
     </div>
@@ -114,18 +135,15 @@ export default {
   setup(props, context) {
     const showDetails = ref(false);
     const showEditModal = ref(false);
+    const showDeleteModal = ref(false);
 
     // uri to this project in db.json
     const uri = ref("http://localhost:9000/projects/" + props.project.id);
 
     const toggleEditModal = () => {
-      console.log("toggle edit");
       showEditModal.value = !showEditModal.value;
     };
-
-    const handleEditSubmit = () => {
-      console.log(" edit form:", props.project.title);
-
+    const editProject = () => {
       const { update } = updateProject(
         props.project.id,
         props.project.title,
@@ -135,6 +153,10 @@ export default {
       toggleEditModal();
     };
 
+    const toggleDeleteModal = () => {
+      console.log("toggle delete");
+      showDeleteModal.value = !showDeleteModal.value;
+    };
     const deleteProject = () => {
       //delete from db.json
       fetch(uri.value, { method: "DELETE" })
@@ -143,6 +165,7 @@ export default {
           context.emit("delete", props.project.id);
         })
         .catch((err) => console.log(err.message));
+      toggleDeleteModal();
     };
 
     const toggleComplete = () => {
@@ -164,7 +187,9 @@ export default {
       toggleComplete,
       showEditModal,
       toggleEditModal,
-      handleEditSubmit,
+      showDeleteModal,
+      toggleDeleteModal,
+      editProject,
     };
   },
 };
@@ -178,12 +203,12 @@ export default {
   justify-content: space-between;
   border-radius: $themeBorderRadius;
   padding: 0px;
-  box-shadow: $themeBoxShadow;
+  box-shadow: $themeBoxShadowLight;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
   width: 17rem;
-  color: $textColorDark;
+  color: $textColor;
   transition: all 0.3s ease-in;
 
   .header {
@@ -235,7 +260,7 @@ export default {
     .icon_btn {
       border: none;
       background: transparent;
-      color: $textColorDark;
+      color: $textColor;
       padding: 5px;
       position: relative;
       z-index: 2;
@@ -261,7 +286,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      backdrop-filter: brightness(97%);
+      backdrop-filter: brightness(92%);
       border-radius: $themeBorderRadius;
     }
     .icons-right {
@@ -283,9 +308,9 @@ export default {
 
   //gammalt
   &.complete {
-    border-color: $color_green;
+    border-color: $green;
     .tick {
-      color: $color_green;
+      color: $green;
     }
   }
 }

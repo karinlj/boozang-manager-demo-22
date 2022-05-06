@@ -75,7 +75,7 @@ export default {
 //   }
 //   button {
 //     display: block;
-//     background: $color_green;
+//     background: $green;
 //     border: 0;
 //     padding: 0.5rem 1rem;
 //     margin: 1rem auto 0;

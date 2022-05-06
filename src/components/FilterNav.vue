@@ -52,10 +52,10 @@ export default {
     font-weight: bold;
     cursor: pointer;
     &.active {
-      color: $color_green;
+      color: $green;
     }
     &:hover {
-      color: $color_green;
+      color: $green;
     }
   }
 }
