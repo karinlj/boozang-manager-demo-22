@@ -129,7 +129,6 @@ export default {
     const showComment = ref(false);
     const showEditModal = ref(false);
     const showDeleteModal = ref(false);
-    const uri = ref("http://localhost:9000/projects/" + props.project.id);
 
     //edit
     const toggleEditModal = () => {
@@ -164,7 +163,6 @@ export default {
 
     return {
       showComment,
-      uri,
       handleDelete,
       showEditModal,
       toggleEditModal,
@@ -183,33 +181,38 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   border-radius: $themeBorderRadius;
-  padding: 0px;
   box-shadow: $themeBoxShadowLight;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
-  width: 17rem;
+  // height: 14rem;
+  // width: 17rem;
+  width: 100%;
   color: $textColor;
   transition: all 0.3s ease-in;
-
+  @media all and (min-width: $lg-min) {
+    height: 17rem;
+  }
   .header {
-    padding: 1rem 1.4rem;
+    // padding: 1rem 1.4rem;
+    padding: 1.2rem 1.6rem;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     span {
       font-weight: 600;
-      font-size: 0.9rem;
-      margin-left: 1px;
+      font-size: 1rem;
+      margin-left: 3px;
     }
   }
   .body {
-    padding: 0 1.4rem;
+    // padding: 0 1.4rem;
+    padding: 0 1.6rem;
     .title {
       margin: 0;
       margin-top: -1rem;
       color: $darkBlue;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
       white-space: normal;
@@ -218,7 +221,8 @@ export default {
   footer {
     background: #fff;
     border: none;
-    padding: 1rem 1.4rem;
+    // padding: 1rem 1.4rem;
+    padding: 1.2rem 1.6rem;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     .props {
@@ -246,7 +250,7 @@ export default {
       position: relative;
       z-index: 2;
       &.right {
-        margin-left: 0.4rem;
+        margin-left: 0.5rem;
       }
       &.team {
         cursor: text;

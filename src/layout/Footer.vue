@@ -24,7 +24,6 @@ export default {};
   background: $blue;
   color: #fff;
   .footer-link-container {
-    // margin-left: 10%;
     margin-bottom: 6rem;
     color: #fff;
   }

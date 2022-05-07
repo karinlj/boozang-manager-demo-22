@@ -1,6 +1,6 @@
 <template>
   <ul class="project-list">
-    <li>
+    <li class="project-list-item">
       <button
         class="add-project"
         aria-label="Add Project"
@@ -9,7 +9,11 @@
         <i class="fas fa-solid fa-plus add_icon" aria-hidden="true"></i>
       </button>
     </li>
-    <li v-for="(project, index) in projects" :key="project">
+    <li
+      class="project-list-item"
+      v-for="(project, index) in projects"
+      :key="project"
+    >
       <!-- project from the loop -->
       <SingleProject
         :project="project"
@@ -98,6 +102,21 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-top: 3rem;
+  margin-right: -15px;
+  margin-left: -15px;
+  .project-list-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    @media all and (min-width: $sm-min) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @media all and (min-width: $lg-min) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
 }
 button.add-project {
   position: relative;
@@ -109,10 +128,15 @@ button.add-project {
   margin-right: 1.5rem;
   margin-bottom: 2rem;
   height: 14rem;
-  width: 17rem;
+  // height: 14rem;
+  // width: 17rem;
+  width: 100%;
   background: transparent;
   border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
+  @media all and (min-width: $lg-min) {
+    height: 17rem;
+  }
 
   .add_icon {
     color: $textColor;
@@ -132,9 +156,6 @@ button.add-project {
       backdrop-filter: brightness(92%);
       border-radius: $themeBorderRadius;
     }
-    // .add_icon {
-    //   opacity: 1;
-    // }
   }
 }
 </style>
