@@ -15,7 +15,7 @@ const updateData = (id, title, comment) => {
       if (!data.ok) {
         throw Error("No data available");
       }
-      console.log("updated data: ", data);
+      //console.log("updated data: ", data);
     } catch (err) {
       updateError.value = err.message;
       console.log("Error: ", updateError.value);

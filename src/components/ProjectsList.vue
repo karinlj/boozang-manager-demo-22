@@ -53,7 +53,7 @@ export default {
   name: "ProjectsList",
   components: { SingleProject, Modal },
   props: ["projects"],
-  emits: ["delete"],
+  emits: ["delete", "add"],
 
   setup(props, context) {
     const colors = ref(["blue", "green", "pink", "yellow"]);
@@ -65,22 +65,22 @@ export default {
     };
 
     const handleAddNew = async () => {
-      console.log("add");
       //make project object
       let newProject = {
         title: title.value,
       };
+      console.log("adding newProject:", newProject);
       //add to db
       const { add } = addData(newProject);
       await add();
-      //add locally ????
+      //add locally
+      context.emit("add", newProject);
       toggleAddModal();
     };
 
     const handleDelete = (id) => {
       context.emit("delete", id);
     };
-
     return {
       handleDelete,
       colors,

@@ -20,7 +20,11 @@
 
         <p v-if="error">{{ error }}</p>
         <section v-if="projects.length">
-          <ProjectsList :projects="projects" @delete="handleDelete" />
+          <ProjectsList
+            :projects="projects"
+            @delete="handleDelete"
+            @add="handleAdd"
+          />
         </section>
         <p v-else>... Loading</p>
       </div>
@@ -39,12 +43,16 @@ import { ref } from "@vue/reactivity";
 export default {
   name: "Home",
   components: { ProjectsList, SubHeader },
-  emits: ["delete"],
+  emits: ["delete", "add"],
   setup() {
     const { projects, error, load } = getData();
     const subheaderTheme = ref("home");
     load();
 
+    //add locally
+    const handleAdd = (newProject) => {
+      projects.value = [newProject, ...projects.value];
+    };
     //delete locally
     const handleDelete = (id) => {
       projects.value = projects.value.filter((item) => {
@@ -56,8 +64,9 @@ export default {
       projects,
       error,
       load,
-      handleDelete,
       subheaderTheme,
+      handleDelete,
+      handleAdd,
     };
   },
 };

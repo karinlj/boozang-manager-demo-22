@@ -13,7 +13,7 @@ const deleteData = (id) => {
       if (!data.ok) {
         throw Error("No data available");
       }
-      console.log("delete data", data);
+      // console.log("delete data", data);
     } catch (err) {
       deleteError.value = err.message;
       console.log("Error: ", deleteError.value);

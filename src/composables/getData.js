@@ -13,7 +13,7 @@ const getData = () => {
       }
       //make json object
       projects.value = await data.json();
-      console.log("get data: ", data);
+      // console.log("get data: ", data);
     } catch (err) {
       error.value = err.message;
       console.log("Error: ", error.value);
