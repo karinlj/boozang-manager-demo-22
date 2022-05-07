@@ -1,24 +1,24 @@
 const { ref } = require("vue");
 
-const getProject = (id) => {
-  const project = ref(null);
+const getData = () => {
+  const projects = ref([]);
   const error = ref(null);
 
   const load = async () => {
     try {
       //fetch data
-      let data = await fetch("http://localhost:9000/projects/" + id);
+      let data = await fetch("http://localhost:9000/projects");
       if (!data.ok) {
         throw Error("No data available");
       }
       //make json object
-      project.value = await data.json();
-      //  console.log("project: ", project.value);
+      projects.value = await data.json();
+      console.log("get data: ", data);
     } catch (err) {
       error.value = err.message;
       console.log("Error: ", error.value);
     }
   };
-  return { project, error, load };
+  return { projects, error, load };
 };
-export default getProject;
+export default getData;

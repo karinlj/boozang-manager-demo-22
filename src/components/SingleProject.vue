@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="project_item divided" :class="color"> -->
   <a
     href="#"
     class="project_item"
@@ -16,7 +15,6 @@
           ></i>
           <span>3</span>
         </div>
-
         <div class="icons-right">
           <button
             class="icon_btn right"
@@ -47,8 +45,6 @@
     <div class="body">
       <h3 class="title">{{ project.title }}</h3>
     </div>
-    <!--  dynamic class: class complete if project.complete=true    :class="{ complete: project.complete }" -->
-
     <footer>
       <ul class="props">
         <li>
@@ -67,21 +63,18 @@
         <h1>Edit Project</h1>
 
         <template v-slot:editForm>
-          <!-- <form @submit.prevent="editProject"> -->
-          <form>
+          <form @submit.prevent="handleEdit">
             <div class="input-section">
               <label
                 >Title: <input type="text" required v-model="project.title" />
               </label>
               <label
-                >Details:
-                <textarea required v-model="project.details"></textarea>
+                >Comment:
+                <textarea required v-model="project.comment"></textarea>
               </label>
             </div>
             <div class="btn-section">
-              <button type="submit" class="submit-btn" @click="editProject">
-                Update Project
-              </button>
+              <button class="submit-btn">Update Project</button>
               <button
                 type="button"
                 class="cancel-link"
@@ -102,7 +95,7 @@
           <p>Are you sure you want to delete the project?</p>
 
           <div class="btn-section">
-            <button type="submit" class="submit-btn" @click="deleteProject">
+            <button type="submit" class="submit-btn" @click="handleDelete">
               Yes
             </button>
             <!-- ej button -->
@@ -118,14 +111,14 @@
       </Modal>
     </div>
   </a>
-  <!-- </div> -->
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
-import { computed } from "@vue/runtime-core";
+//import { computed } from "@vue/runtime-core";
 import Modal from "./Modal.vue";
-import updateProject from "../composables/updateProject";
+import updateData from "../composables/updateData";
+import deleteData from "../composables/deleteData";
 
 export default {
   name: "SingleProject",
@@ -133,64 +126,51 @@ export default {
   components: { Modal },
 
   setup(props, context) {
-    const showDetails = ref(false);
+    const showComment = ref(false);
     const showEditModal = ref(false);
     const showDeleteModal = ref(false);
-
     const uri = ref("http://localhost:9000/projects/" + props.project.id);
 
     //edit
     const toggleEditModal = () => {
       showEditModal.value = !showEditModal.value;
     };
-    const editProject = () => {
-      const { update } = updateProject(
+    const handleEdit = async () => {
+      //upd project
+      const { update } = updateData(
         props.project.id,
         props.project.title,
-        props.project.details
+        props.project.comment
       );
-      update();
+      await update();
       toggleEditModal();
     };
 
     //delete
     const toggleDeleteModal = () => {
-      //console.log("toggle delete");
       showDeleteModal.value = !showDeleteModal.value;
     };
-    const deleteProject = () => {
+    const handleDelete = async () => {
       //delete from db.json
-      fetch(uri.value, { method: "DELETE" })
-        .then(() => {
-          //delete locally this project
-          context.emit("delete", props.project.id);
-        })
-        .catch((err) => console.log(err.message));
+      const { deleteItem } = deleteData(props.project.id);
+      await deleteItem();
+      //The keyword await before a function makes the function wait for a promise:
+      //let value = await promise; The await keyword can only be used inside an async function.
+
+      //delete locally
+      context.emit("delete", props.project.id);
       toggleDeleteModal();
     };
 
-    // const toggleComplete = () => {
-    //   fetch(uri.value, {
-    //     method: "PATCH", //update
-    //     headers: { "Content-Type": "application/json" }, //sending json-data
-    //     body: JSON.stringify({ complete: !props.project.complete }), //sending the data in a string made from js-object
-    //   })
-    //     .then(() => {
-    //       //update locally this project
-    //       context.emit("complete", props.project.id);
-    //     })
-    //     .catch((err) => console.log(err.message));
-    // };
     return {
-      showDetails,
+      showComment,
       uri,
-      deleteProject,
-      // toggleComplete,
+      handleDelete,
       showEditModal,
       toggleEditModal,
       showDeleteModal,
       toggleDeleteModal,
-      editProject,
+      handleEdit,
     };
   },
 };

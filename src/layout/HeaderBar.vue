@@ -16,28 +16,14 @@
           </li>
         </ul>
       </nav>
-      <!-- <HeaderMenuBtn :isOpen="isOpen" @toggleOpen="toggleOpen" /> -->
     </div>
   </header>
 </template>
 
 <script>
-import HeaderMenuBtn from "./HeaderMenuBtn.vue";
-
 export default {
   name: "HeaderBar",
-  components: {
-    HeaderMenuBtn,
-  },
-  props: ["isOpen"],
-  setup(props, context) {
-    const toggleOpen = (btnIsOpen) => {
-      context.emit("toggleOpen", btnIsOpen);
-    };
-    return {
-      toggleOpen,
-    };
-  },
+  components: {},
 };
 </script>
 
@@ -45,7 +31,6 @@ export default {
 header {
   padding: 0 $sectionPadding;
   height: 3.5rem;
-  // z-index: 1;
   .container {
     display: flex;
     align-items: center;

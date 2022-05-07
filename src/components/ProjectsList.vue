@@ -16,7 +16,6 @@
         :color="colors[index % 4]"
         @delete="handleDelete"
       />
-      <!--  @complete="handleComplete" -->
     </li>
   </ul>
   <!-- add -->
@@ -24,16 +23,14 @@
     <Modal @closing="toggleAddModal">
       <h1>Add new Project</h1>
       <template v-slot:addForm>
-        <form>
+        <form @submit.prevent="handleAddNew">
           <div class="input-section">
             <label
               >Title: <input type="text" required v-model="title" />
             </label>
           </div>
           <div class="btn-section">
-            <button type="submit" class="submit-btn" @click="addNewProject">
-              Add Project
-            </button>
+            <button type="submit" class="submit-btn">Add Project</button>
             <button type="button" class="cancel-link" @click="toggleAddModal">
               Cancel
             </button>
@@ -49,13 +46,14 @@ import SingleProject from "../components/SingleProject.vue";
 import { ref } from "@vue/reactivity";
 import Modal from "./Modal.vue";
 
-import addProject from "../composables/addProject";
+import addData from "../composables/addData";
 // import { computed } from "@vue/runtime-core";
 
 export default {
   name: "ProjectsList",
   components: { SingleProject, Modal },
   props: ["projects"],
+  emits: ["delete"],
 
   setup(props, context) {
     const colors = ref(["blue", "green", "pink", "yellow"]);
@@ -63,34 +61,31 @@ export default {
     const showAddModal = ref(false);
 
     const toggleAddModal = () => {
-      console.log("toggleAddModal");
       showAddModal.value = !showAddModal.value;
     };
 
-    const addNewProject = async () => {
+    const handleAddNew = async () => {
       console.log("add");
-
       //make project object
       let newProject = {
         title: title.value,
       };
       //add to db
-      const { add } = addProject(newProject);
+      const { add } = addData(newProject);
       await add();
+      //add locally ????
+      toggleAddModal();
     };
 
     const handleDelete = (id) => {
       context.emit("delete", id);
     };
-    // const handleComplete = (id) => {
-    //   context.emit("complete", id);
-    // };
+
     return {
       handleDelete,
-      // handleComplete,
       colors,
       title,
-      addNewProject,
+      handleAddNew,
       showAddModal,
       toggleAddModal,
     };

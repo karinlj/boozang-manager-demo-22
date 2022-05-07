@@ -1,17 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
+import AppContent from "../views/AppContent";
 import Home from "../views/Home.vue";
+import Account from "../views/Account.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
-
-import Account from "../views/Account.vue";
-import AppContent from "../views/AppContent";
 
 const routes = [
   {
     path: "/",
     name: "AppContent",
     component: AppContent,
-
     children: [
       {
         path: "",

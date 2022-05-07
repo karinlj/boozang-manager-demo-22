@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 2,
-      "title": "Create new product listsssstttt",
-      "details": "lorem ipsum dolor",
+      "title": "Create new product list",
+      "comment": "lorem ipsum dolor",
       "complete": true,
       "updated": "4",
       "by": "Mats"
@@ -11,7 +11,7 @@
     {
       "id": 3,
       "title": "Create new product banner",
-      "details": "lorem ipsum dolor",
+      "comment": "lorem ipsum dolor",
       "complete": true,
       "updated": "5",
       "by": "Michelangelo"
@@ -19,14 +19,14 @@
     {
       "id": 4,
       "title": "Create new product images",
-      "details": "lorem ipsum dolor",
+      "comment": "lorem ipsum dolor",
       "complete": false,
       "updated": "6",
       "by": "Hugo"
     },
     {
       "title": "Create new Blog page",
-      "details": "Lorem ipsum\n",
+      "comment": "Lorem ipsum\n",
       "complete": false,
       "id": 5,
       "updated": "3",
@@ -34,15 +34,11 @@
     },
     {
       "title": "Clean up css",
-      "details": "Lorem ipsum\n",
+      "comment": "Lorem ipsum\n",
       "complete": false,
       "id": 6,
       "updated": "2",
       "by": "Filip"
-    },
-    {
-      "title": "My new project",
-      "id": 7
     }
   ]
 }

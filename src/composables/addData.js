@@ -1,6 +1,6 @@
 const { ref } = require("vue");
 
-const addProject = (newProject) => {
+const addData = (newProject) => {
   const addError = ref(null);
 
   const add = async () => {
@@ -10,12 +10,12 @@ const addProject = (newProject) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         //what I post as json-format
-        body: JSON.stringify(newProject), //sending project object
+        body: JSON.stringify(newProject), //sending new project object
       });
       if (!data.ok) {
         throw Error("No data available");
       }
-      // console.log("added data: ", data);
+      console.log("added data: ", data);
     } catch (err) {
       addError.value = err.message;
       console.log("Error: ", addError.value);
@@ -23,4 +23,4 @@ const addProject = (newProject) => {
   };
   return { addError, add };
 };
-export default addProject;
+export default addData;

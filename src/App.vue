@@ -18,21 +18,6 @@ body,
   -moz-osx-font-smoothing: grayscale;
   color: $textColor;
 }
-* {
-  box-sizing: border-box; //obs!!
-}
-ul {
-  margin: 0;
-  padding: 0;
-  li {
-    list-style: none;
-  }
-}
-.menu {
-  // position: fixed;
-  // width: 100%;
-}
-//new
 //reset
 html {
   box-sizing: border-box;
@@ -40,6 +25,10 @@ html {
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+* {
+  box-sizing: border-box; //obs!
+}
+
 *,
 *:before,
 *:after {
