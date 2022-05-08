@@ -166,9 +166,19 @@ form {
       color: $middleGrey;
     }
   }
+  input[type="checkbox"] {
+    width: auto;
+  }
   textarea {
     height: 100px;
     border: 1px solid $borderColor;
+  }
+  .checkbox-section {
+    display: flex;
+    align-items: center;
+    input {
+      margin-right: 0.5rem;
+    }
   }
 }
 .btn-section {
@@ -196,7 +206,7 @@ form {
       color: #fff;
     }
     &.cancel-link {
-      background: $lighterGrey;
+      background: $lightestGrey;
     }
   }
 }

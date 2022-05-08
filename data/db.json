@@ -2,46 +2,46 @@
   "projects": [
     {
       "id": 2,
-      "title": "Create new product list",
-      "comment": "lorem ipsum dolor",
-      "complete": true,
+      "name": "Create new product list",
+      "description": "lorem ipsum dolor",
+      "isPublic": false,
       "updated": "4",
       "by": "Mats"
     },
     {
       "id": 3,
-      "title": "Create new product banner",
-      "comment": "lorem ipsum dolor",
-      "complete": true,
+      "name": "Create new product banner",
+      "description": "lorem ipsum dolor",
+      "isPublic": true,
       "updated": "5",
       "by": "Michelangelo"
     },
     {
       "id": 4,
-      "title": "Create new product images",
-      "comment": "lorem ipsum dolor",
-      "complete": false,
+      "name": "Create new product images",
+      "description": "lorem ipsum dolor",
+      "isPublic": false,
       "updated": "6",
       "by": "Hugo"
     },
     {
-      "title": "Create new Blog page",
-      "comment": "Lorem ipsum\n",
-      "complete": false,
+      "name": "Create new Blog page",
+      "description": "Lorem ipsum\n",
+      "isPublic": false,
       "id": 5,
       "updated": "3",
       "by": "Karin"
     },
     {
-      "title": "Clean up css",
-      "comment": "Lorem ipsum\n",
-      "complete": false,
+      "name": "Clean up css",
+      "description": "Lorem ipsum\n",
+      "isPublic": false,
       "id": 6,
       "updated": "2",
       "by": "Filip"
     },
     {
-      "title": "gh",
+      "name": "gh",
       "id": 7
     }
   ]

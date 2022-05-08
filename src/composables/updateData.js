@@ -1,6 +1,6 @@
 const { ref } = require("vue");
 
-const updateData = (id, title, comment) => {
+const updateData = (id, name, description, isPublic) => {
   const updateError = ref(null);
 
   const update = async () => {
@@ -10,7 +10,11 @@ const updateData = (id, title, comment) => {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         //what I post as json-format
-        body: JSON.stringify({ title: title, comment: comment }), //update props
+        body: JSON.stringify({
+          name: name,
+          description: description,
+          isPublic: isPublic,
+        }), //update props
       });
       if (!data.ok) {
         throw Error("No data available");

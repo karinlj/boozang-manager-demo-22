@@ -1,61 +1,58 @@
 <template>
-  <a
-    href="#"
-    class="project_item"
-    :class="color"
-    aria-label="Launch Boozang tool"
-  >
-    <header class="header">
-      <div class="icons-extended">
-        <div>
-          <i
-            class="fas fa-user-friends icon_btn team"
-            aria-hidden="true"
-            title="team members"
-          ></i>
-          <span>3</span>
+  <a href="#" class="project-item" aria-label="Launch Boozang tool">
+    <div class="project-item-wrapper" :class="color">
+      <header class="header">
+        <div class="icons-extended">
+          <div>
+            <i
+              class="fas fa-user-friends icon_btn team"
+              aria-hidden="true"
+              title="team members"
+            ></i>
+            <span>3</span>
+          </div>
+          <div class="icons-right">
+            <button
+              class="icon_btn right"
+              title="edit"
+              aria-label="Edit project"
+              @click="toggleEditModal"
+            >
+              <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
+            </button>
+            <button
+              class="icon_btn right"
+              title="delete"
+              aria-label="Delete project"
+              @click="toggleDeleteModal"
+            >
+              <i class="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
+            </button>
+            <button
+              class="icon_btn right"
+              title="favourite"
+              aria-label="Favourite project"
+            >
+              <i class="far fa-star star_icon" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
-        <div class="icons-right">
-          <button
-            class="icon_btn right"
-            title="edit"
-            aria-label="Edit project"
-            @click="toggleEditModal"
-          >
-            <i class="fas fa-pencil-alt edit_icon" aria-hidden="true"></i>
-          </button>
-          <button
-            class="icon_btn right"
-            title="delete"
-            aria-label="Delete project"
-            @click="toggleDeleteModal"
-          >
-            <i class="fas fa-trash-alt delete_icon" aria-hidden="true"></i>
-          </button>
-          <button
-            class="icon_btn right"
-            title="favourite"
-            aria-label="Favourite project"
-          >
-            <i class="far fa-star star_icon" aria-hidden="true"></i>
-          </button>
-        </div>
+      </header>
+      <div class="body">
+        <h3 class="title">{{ project.name }}</h3>
       </div>
-    </header>
-    <div class="body">
-      <h3 class="title">{{ project.title }}</h3>
+      <footer>
+        <ul class="props">
+          <li>
+            <p>
+              Last modified <strong>{{ project.updated }}</strong>
+              <strong> days</strong> ago by
+              <strong>{{ project.by }}</strong>
+            </p>
+          </li>
+        </ul>
+      </footer>
     </div>
-    <footer>
-      <ul class="props">
-        <li>
-          <p>
-            Last modified <strong>{{ project.updated }}</strong>
-            <strong> days</strong> ago by
-            <strong>{{ project.by }}</strong>
-          </p>
-        </li>
-      </ul>
-    </footer>
 
     <!-- edit -->
     <div v-if="showEditModal">
@@ -66,14 +63,19 @@
           <form @submit.prevent="handleEdit">
             <div class="input-section">
               <label
-                >Project name:
-                <input type="text" required v-model="project.title" />
+                >Project name
+                <input type="text" required v-model="project.name" />
               </label>
               <label
-                >Description:
-                <textarea required v-model="project.comment"></textarea>
+                >Description
+                <textarea required v-model="project.description"></textarea>
               </label>
             </div>
+            <div class="checkbox-section">
+              <input type="checkbox" v-model="project.isPublic" />
+              <label>Public project </label>
+            </div>
+
             <div class="btn-section">
               <button
                 type="button"
@@ -142,8 +144,9 @@ export default {
       //upd project
       const { update } = updateData(
         props.project.id,
-        props.project.title,
-        props.project.comment
+        props.project.name,
+        props.project.description,
+        props.project.isPublic
       );
       await update();
       toggleEditModal();
@@ -179,30 +182,41 @@ export default {
 </script>
 
 <style lang="scss">
-.project_item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadow;
-  margin-right: 1.5rem;
-  margin-bottom: 2rem;
-  height: 16rem;
-  width: 100%;
-  color: $textColor;
-  transition: all 0.3s ease-in;
-  @media all and (min-width: $lg-min) {
+.project-item {
+  .project-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: $themeBorderRadius;
+    box-shadow: $themeBoxShadow;
     height: 16rem;
-  }
-  @media all and (min-width: $xxl-min) {
-    height: 17rem;
+    width: 100%;
+    color: $textColor;
+    transition: all 0.3s ease-in;
+    @media all and (min-width: $lg-min) {
+      height: 16rem;
+    }
+    @media all and (min-width: $xxl-min) {
+      height: 17rem;
+    }
+    &.pink {
+      background: $colorPink;
+    }
+    &.blue {
+      background: $lightblue;
+    }
+    &.green {
+      background: $green;
+    }
+    &.yellow {
+      background: $yellow;
+    }
   }
   .header {
-    // padding: 1rem 1.4rem;
     padding: 1.2rem 1.6rem;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: $themeBorderRadius;
+    border-top-right-radius: $themeBorderRadius;
     span {
       font-weight: 600;
       font-size: 1rem;
@@ -210,7 +224,6 @@ export default {
     }
   }
   .body {
-    // padding: 0 1.4rem;
     padding: 0 1.6rem;
     .title {
       margin: 0;
@@ -226,10 +239,9 @@ export default {
   footer {
     background: #fff;
     border: none;
-    // padding: 1rem 1.4rem;
     padding: 1.2rem 1.6rem;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: $themeBorderRadius;
+    border-bottom-right-radius: $themeBorderRadius;
     .props {
       li {
         font-size: 0.8rem;
@@ -282,18 +294,6 @@ export default {
     .icons-right {
       opacity: 1;
     }
-  }
-  &.pink {
-    background: $colorPink;
-  }
-  &.blue {
-    background: $lightblue;
-  }
-  &.green {
-    background: $green;
-  }
-  &.yellow {
-    background: $yellow;
   }
 
   //gammalt

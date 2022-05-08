@@ -31,7 +31,7 @@ export default {
   width: 420px;
   min-height: 300px;
   padding: 1rem 2rem;
-  margin: 180px auto;
+  margin: 150px auto;
   background: white;
   border-radius: $themeBorderRadius;
   display: flex;
