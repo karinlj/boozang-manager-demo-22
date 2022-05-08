@@ -92,19 +92,22 @@
       <Modal @closing="toggleDeleteModal">
         <h1>Delete Project</h1>
         <template v-slot:deleteConferm>
-          <p>Are you sure you want to delete the project?</p>
+          <p>Are you sure you want to delete this project?</p>
+          <p>
+            You will lose access to all tests and modules contained in the
+            project. This action cannot be undone.
+          </p>
 
           <div class="btn-section">
-            <button type="submit" class="submit-btn" @click="handleDelete">
-              Yes
-            </button>
-            <!-- ej button -->
             <button
               type="button"
               class="cancel-link"
               @click="toggleDeleteModal"
             >
               Cancel
+            </button>
+            <button type="submit" class="delete-btn" @click="handleDelete">
+              Delete
             </button>
           </div>
         </template>
@@ -181,16 +184,17 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadowLight;
+  box-shadow: $themeBoxShadow;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
-  height: 14rem;
-  // height: 14rem;
-  // width: 17rem;
+  height: 16rem;
   width: 100%;
   color: $textColor;
   transition: all 0.3s ease-in;
   @media all and (min-width: $lg-min) {
+    height: 16rem;
+  }
+  @media all and (min-width: $xxl-min) {
     height: 17rem;
   }
   .header {

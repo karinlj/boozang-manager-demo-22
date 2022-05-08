@@ -10,36 +10,40 @@
 
 //new
 $darkBlue: #1b284a;
-$blue: #2a3970;
+$blue: #314281;
 $lightblue: #74c0fc;
 $lightestBlue: #b5bfe3;
 
 $yellow: #fab005;
 $green: #63e6be; //#4cd884;
-$btnGreen: #24dba4;
+$btnGreen: #20c594;
 
 $purple: #4f4686;
 $lightPurple: #7e5da6;
 $lighterPurple: #a38cc0;
 $colorPink: #ed789b;
 $colorPinkLight: #f688a9;
+
+$red: #dc143c;
+
 $darkGrey: #22242d;
 $lightGrey: #737373;
 $middleGrey: #b3b3b3;
-$lighterGrey: #d9d9d9;
+$lighterGrey: #ccc;
 $lightestGrey: #f2f2f2;
 //#f9f9f9; //#f5f6f9; //#eff1f5;
 
-$textColor: $darkBlue;
+$textColor: #183153; // $darkBlue;
+$textColorLight: $lightGrey;
 $borderColor: #d5d8dd;
 $borderColorBlue: #465fb9;
 $linkColor: #1994e6;
-
 $sectionPadding: 4%;
-$themeBorderRadius: 12px; // 8px; //
-$themeBoxShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-$themeBoxShadowLight: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+$themeBorderRadius: 10px;
+
+$themeBoxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
   rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+$themeBoxShadowLight: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 //screen width
 $xs-max: 480px;

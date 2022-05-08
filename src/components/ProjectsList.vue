@@ -25,18 +25,30 @@
   <!-- add -->
   <div v-if="showAddModal">
     <Modal @closing="toggleAddModal">
-      <h1>Add new Project</h1>
+      <h1>New Project</h1>
+      <p>Stay organized with a dedicated workspace for your software tests.</p>
       <template v-slot:addForm>
         <form @submit.prevent="handleAddNew">
           <div class="input-section">
-            <label
-              >Title: <input type="text" required v-model="title" />
+            <label aria-label="Project name">
+              <input
+                type="text"
+                required
+                v-model="title"
+                placeholder="Project name"
+              />
             </label>
           </div>
           <div class="btn-section">
-            <button type="submit" class="submit-btn">Add Project</button>
             <button type="button" class="cancel-link" @click="toggleAddModal">
               Cancel
+            </button>
+            <button
+              type="submit"
+              class="submit-btn"
+              :class="{ active: inputContent }"
+            >
+              Add Project
             </button>
           </div>
         </form>
@@ -51,7 +63,7 @@ import { ref } from "@vue/reactivity";
 import Modal from "./Modal.vue";
 
 import addData from "../composables/addData";
-// import { computed } from "@vue/runtime-core";
+import { computed } from "@vue/runtime-core";
 
 export default {
   name: "ProjectsList",
@@ -64,6 +76,14 @@ export default {
     const title = ref("");
     const showAddModal = ref(false);
 
+    const inputContent = computed(() => {
+      let inputFilled;
+      if (title.value !== "") {
+        inputFilled = true;
+      }
+      return inputFilled;
+    });
+
     const toggleAddModal = () => {
       showAddModal.value = !showAddModal.value;
     };
@@ -73,7 +93,7 @@ export default {
       let newProject = {
         title: title.value,
       };
-      console.log("adding newProject:", newProject);
+      // console.log("adding newProject:", newProject);
       //add to db
       const { add } = addData(newProject);
       await add();
@@ -92,6 +112,7 @@ export default {
       handleAddNew,
       showAddModal,
       toggleAddModal,
+      inputContent,
     };
   },
 };
@@ -116,28 +137,32 @@ export default {
       flex: 0 0 33.333333%;
       max-width: 33.333333%;
     }
+    @media all and (min-width: $xxl-min) {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
   }
 }
-button.add-project {
+.add-project {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadowLight;
+  box-shadow: $themeBoxShadow;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
-  height: 14rem;
-  // height: 14rem;
-  // width: 17rem;
+  height: 16rem;
   width: 100%;
   background: transparent;
   border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
   @media all and (min-width: $lg-min) {
+    height: 16rem;
+  }
+  @media all and (min-width: $xxl-min) {
     height: 17rem;
   }
-
   .add_icon {
     color: $textColor;
     font-size: 1.7rem;

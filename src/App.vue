@@ -78,6 +78,7 @@ button,
 .btn-link {
   box-shadow: $themeBoxShadowLight;
   &:hover {
+    cursor: pointer;
     filter: brightness(90%);
   }
 }
@@ -131,10 +132,6 @@ button,
     max-width: 1300px;
   }
 }
-.main-container {
-  //padding-top: 3.5rem;
-}
-
 main {
   min-height: 500px;
 }
@@ -152,15 +149,22 @@ form {
   input,
   textarea {
     margin-top: 3px;
-    padding: 0.5rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid $borderColor;
+    padding: 0.9rem 0.7rem;
+    border: 1px solid $borderColor;
+    border-radius: $themeBorderRadius;
     color: $textColor;
+    // border: none;
+    // padding: 0.5rem 0.5rem;
+    // border-bottom: 1px solid $borderColor;
     &:focus {
       outline: $blue solid 1px;
       border-radius: 5px;
+      border-radius: $themeBorderRadius;
+    }
+    &::placeholder {
+      color: $middleGrey;
     }
   }
   textarea {
@@ -170,16 +174,24 @@ form {
 }
 .btn-section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 2rem;
   button {
-    color: #fff;
+    // color: #fff;
     &.submit-btn {
-      background: $btnGreen;
+      background: $lightestGrey;
+      &.active {
+        background: $btnGreen;
+        color: #fff;
+      }
+    }
+    &.delete-btn {
+      background: $red;
+      color: #fff;
     }
     &.cancel-link {
-      background: $middleGrey;
+      background: $lightestGrey;
     }
   }
 }

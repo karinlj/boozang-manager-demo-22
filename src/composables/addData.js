@@ -15,7 +15,7 @@ const addData = (newProject) => {
       if (!data.ok) {
         throw Error("No data available");
       }
-      console.log("added data: ", data);
+      // console.log("added data: ", data);
     } catch (err) {
       addError.value = err.message;
       console.log("Error: ", addError.value);

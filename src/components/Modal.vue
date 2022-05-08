@@ -28,18 +28,27 @@ export default {
 
 <style lang="scss">
 .modal {
-  width: 400px;
-  min-height: 250px;
-  padding: 1.5rem 2.5rem;
-  margin: 100px auto;
+  width: 420px;
+  min-height: 300px;
+  padding: 1rem 2rem;
+  margin: 180px auto;
   background: white;
   border-radius: $themeBorderRadius;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   button {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 0.9rem;
     margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+  h1 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $borderColor;
+  }
+  p {
+    font-size: 0.9rem;
+    color: $lightGrey;
   }
 }
 .backdrop {
