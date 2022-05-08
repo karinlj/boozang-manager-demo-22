@@ -22,6 +22,7 @@
         </label>
         <label
           for="promo"
+          class="promo"
           @click="showPromo = !showPromo"
           type="button"
           aria-label="Type promo code"
@@ -108,6 +109,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.promo {
+  cursor: pointer;
+}
 .min-char {
   font-size: 0.7rem;
   font-style: italic;

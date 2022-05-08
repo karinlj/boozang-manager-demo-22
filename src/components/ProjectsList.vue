@@ -171,7 +171,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      backdrop-filter: brightness(92%);
+      backdrop-filter: brightness(95%);
       border-radius: $themeBorderRadius;
     }
   }

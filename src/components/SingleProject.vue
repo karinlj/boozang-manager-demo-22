@@ -184,6 +184,7 @@ export default {
 <style lang="scss">
 .project-item {
   .project-item-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -211,6 +212,22 @@ export default {
     }
     &.yellow {
       background: $yellow;
+    }
+    &:hover {
+      text-decoration: none;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: brightness(95%);
+        border-radius: $themeBorderRadius;
+      }
+      .icons-right {
+        opacity: 1;
+      }
     }
   }
   .header {
@@ -279,22 +296,6 @@ export default {
     opacity: 0;
     transition: all 0.3s ease-in;
   }
-  &:hover {
-    text-decoration: none;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: brightness(92%);
-      border-radius: $themeBorderRadius;
-    }
-    .icons-right {
-      opacity: 1;
-    }
-  }
 
   //gammalt
   &.complete {
@@ -302,6 +303,9 @@ export default {
     .tick {
       color: $green;
     }
+  }
+  &:hover {
+    text-decoration: none;
   }
 }
 </style>

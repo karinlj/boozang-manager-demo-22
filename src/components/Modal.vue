@@ -38,7 +38,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   button {
-    padding: 0.7rem 0.9rem;
+    padding: 0.6rem 0.9rem;
     margin-right: 0.5rem;
     font-size: 0.8rem;
   }

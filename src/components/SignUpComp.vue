@@ -257,6 +257,9 @@ export default {
         font-size: 1rem;
       }
     }
+    input {
+      padding: 0.7rem 0.7rem;
+    }
     .signup-btn {
       clear: both;
       background: $blue;
@@ -298,6 +301,7 @@ export default {
         background: #fff;
         border: 1px solid $borderColor;
         margin-right: 0.5rem;
+        font-size: 0.8rem;
         span {
           margin-top: 2px;
         }

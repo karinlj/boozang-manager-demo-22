@@ -10,7 +10,7 @@
         <label
           >Email address: <input type="email" required v-model="email" />
         </label>
-        <label
+        <label class="password"
           >Password:
           <span class="forgot-pass"><a href="">Forgot password?</a></span
           ><input type="password" required v-model="password" />
@@ -75,11 +75,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.forgot-pass {
-  font-size: 0.75rem;
-  font-style: italic;
-  float: right;
-  padding-bottom: 0.2rem;
-  padding-top: 0.8rem;
+.password {
+  position: relative;
+  .forgot-pass {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.75rem;
+    font-style: italic;
+  }
 }
 </style>

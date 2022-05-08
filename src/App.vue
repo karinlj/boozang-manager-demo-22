@@ -119,6 +119,8 @@ button,
     max-width: 1300px;
   }
 }
+
+//fixa
 .container-small {
   max-width: 1000px;
   max-width: 1100px;
@@ -187,7 +189,6 @@ form {
   align-items: center;
   margin-top: 2rem;
   button {
-    // color: #fff;
     &.submit-btn {
       background: $btnGreen;
       color: #fff;
@@ -196,10 +197,6 @@ form {
         color: lightGrey;
         cursor: not-allowed;
       }
-      // &.active {
-      //   background: $btnGreen;
-      //   color: #fff;
-      // }
     }
     &.delete-btn {
       background: $red;
