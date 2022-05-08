@@ -66,15 +66,15 @@
           <form @submit.prevent="handleEdit">
             <div class="input-section">
               <label
-                >Title: <input type="text" required v-model="project.title" />
+                >Project name:
+                <input type="text" required v-model="project.title" />
               </label>
               <label
-                >Comment:
+                >Description:
                 <textarea required v-model="project.comment"></textarea>
               </label>
             </div>
             <div class="btn-section">
-              <button class="submit-btn">Update Project</button>
               <button
                 type="button"
                 class="cancel-link"
@@ -82,6 +82,7 @@
               >
                 Cancel
               </button>
+              <button class="submit-btn">Save</button>
             </div>
           </form>
         </template>

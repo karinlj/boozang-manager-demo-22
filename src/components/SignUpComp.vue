@@ -278,7 +278,7 @@ export default {
       span {
         width: 30%;
         padding-top: -0.5rem;
-        border-top: 1px solid $lighterGrey;
+        border-top: 1px solid $borderColor;
       }
     }
     .social-login {
@@ -296,7 +296,7 @@ export default {
         display: flex;
         align-items: center;
         background: #fff;
-        border: 1px solid $lighterGrey;
+        border: 1px solid $borderColor;
         margin-right: 0.5rem;
         span {
           margin-top: 2px;

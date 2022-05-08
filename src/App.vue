@@ -13,7 +13,8 @@ body,
   height: 100%;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $textColor;
@@ -22,8 +23,7 @@ body,
 html {
   box-sizing: border-box;
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
 }
 * {
   box-sizing: border-box; //obs!
@@ -70,7 +70,6 @@ h3,
 h4,
 h5 {
   font-weight: bold;
-  // letter-spacing: 0.4px;
   color: $textColor;
 }
 
@@ -148,7 +147,7 @@ form {
   }
   input,
   textarea {
-    margin-top: 3px;
+    margin-top: 5px;
     width: 100%;
     box-sizing: border-box;
     padding: 0.9rem 0.7rem;
@@ -180,18 +179,24 @@ form {
   button {
     // color: #fff;
     &.submit-btn {
-      background: $lightestGrey;
-      &.active {
-        background: $btnGreen;
-        color: #fff;
+      background: $btnGreen;
+      color: #fff;
+      &:disabled {
+        background: $lightestGrey;
+        color: lightGrey;
+        cursor: not-allowed;
       }
+      // &.active {
+      //   background: $btnGreen;
+      //   color: #fff;
+      // }
     }
     &.delete-btn {
       background: $red;
       color: #fff;
     }
     &.cancel-link {
-      background: $lightestGrey;
+      background: $lighterGrey;
     }
   }
 }

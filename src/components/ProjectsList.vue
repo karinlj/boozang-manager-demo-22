@@ -30,25 +30,17 @@
       <template v-slot:addForm>
         <form @submit.prevent="handleAddNew">
           <div class="input-section">
-            <label aria-label="Project name">
-              <input
-                type="text"
-                required
-                v-model="title"
-                placeholder="Project name"
-              />
+            <label aria-label="Project name"
+              >Project name
+              <input type="text" required v-model="title" />
             </label>
           </div>
           <div class="btn-section">
             <button type="button" class="cancel-link" @click="toggleAddModal">
               Cancel
             </button>
-            <button
-              type="submit"
-              class="submit-btn"
-              :class="{ active: inputContent }"
-            >
-              Add Project
+            <button type="submit" class="submit-btn" :disabled="title === ''">
+              Create Project
             </button>
           </div>
         </form>
@@ -100,6 +92,7 @@ export default {
       //add locally
       context.emit("add", newProject);
       toggleAddModal();
+      title.value = "";
     };
 
     const handleDelete = (id) => {

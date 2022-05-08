@@ -56,7 +56,7 @@ header {
         text-transform: uppercase;
         font-size: 0.75rem;
         font-weight: 700;
-        letter-spacing: 0.1px;
+        letter-spacing: 0.5px;
         padding-bottom: 2px;
         border-bottom: 3px solid transparent;
         transition: border-color 0.2s ease-in;

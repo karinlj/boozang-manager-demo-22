@@ -47,7 +47,7 @@ export default {
     border-bottom: 1px solid $borderColor;
   }
   p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: $lightGrey;
   }
 }
