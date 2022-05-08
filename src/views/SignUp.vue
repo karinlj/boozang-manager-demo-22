@@ -10,12 +10,10 @@
 
     <template v-slot:form>
       <form @submit.prevent="signingUp">
-        <label>Name: <input type="text" required v-model="name" /> </label>
+        <label>Name <input type="text" required v-model="name" /> </label>
+        <label>Email <input type="email" required v-model="email" /> </label>
         <label
-          >Email address: <input type="email" required v-model="email" />
-        </label>
-        <label
-          >Password: <input type="password" required v-model="password" /><span
+          >Password <input type="password" required v-model="password" /><span
             class="min-char"
             >minimum 7 characters</span
           >

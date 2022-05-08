@@ -1,20 +1,13 @@
 {
   "projects": [
     {
-      "id": 2,
-      "name": "Create new product list",
-      "description": "lorem ipsum dolor",
-      "isPublic": false,
-      "updated": "4",
-      "by": "Mats"
-    },
-    {
       "id": 3,
       "name": "Create new product banner",
       "description": "lorem ipsum dolor",
       "isPublic": true,
       "updated": "5",
-      "by": "Michelangelo"
+      "by": "Michelangelo",
+      "team": 3
     },
     {
       "id": 4,
@@ -22,7 +15,8 @@
       "description": "lorem ipsum dolor",
       "isPublic": false,
       "updated": "6",
-      "by": "Hugo"
+      "by": "Hugo",
+      "team": 4
     },
     {
       "name": "Create new Blog page",
@@ -30,7 +24,8 @@
       "isPublic": false,
       "id": 5,
       "updated": "3",
-      "by": "Karin"
+      "by": "Karin",
+      "team": 2
     },
     {
       "name": "Clean up css",
@@ -38,7 +33,8 @@
       "isPublic": false,
       "id": 6,
       "updated": "2",
-      "by": "Filip"
+      "by": "Filip",
+      "team": 3
     }
   ]
 }

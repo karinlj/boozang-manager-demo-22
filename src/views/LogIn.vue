@@ -7,11 +7,9 @@
 
     <template v-slot:form>
       <form @submit.prevent="loginIn">
-        <label
-          >Email address: <input type="email" required v-model="email" />
-        </label>
+        <label>Email <input type="email" required v-model="email" /> </label>
         <label class="password"
-          >Password:
+          >Password
           <span class="forgot-pass"><a href="">Forgot password?</a></span
           ><input type="password" required v-model="password" />
         </label>

@@ -1,22 +1,78 @@
 <template>
   <main>
-    <SubHeader>
+    <SubHeader :theme="subheaderTheme">
       <template v-slot:subheaderItems>
         <div>
           <h1>Manage your Boozang account</h1>
+          <p>Update profile, change password, get token or log out.</p>
         </div>
       </template>
     </SubHeader>
 
     <section class="account">
-      <div class="container-small">
-        <nav>
-          <ul>
-            <li>
-              <router-link :to="{ name: 'LogIn' }">Log out </router-link>
-            </li>
-          </ul>
-        </nav>
+      <div class="container">
+        <section class="account-profile">
+          <h2>Profile</h2>
+          <form @submit.prevent="">
+            <label
+              >Email <input type="email" required v-model="email" />
+            </label>
+            <label class="password"
+              >Password<input type="password" required v-model="password" />
+            </label>
+            <div class="btn-section">
+              <button class="submit-btn">Update profile</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="change-password">
+          <h2>Change Password</h2>
+          <form @submit.prevent="">
+            <label
+              >Current password
+              <input type="password" required v-model="password" />
+            </label>
+            <label class=""
+              >New Password<input type="password" required v-model="password" />
+            </label>
+            <label class=""
+              >Conferm Password<input
+                type="password"
+                required
+                v-model="password"
+              />
+            </label>
+            <div class="btn-section">
+              <button class="submit-btn">Save password</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="get-token">
+          <h2>Get token</h2>
+          <form @submit.prevent="">
+            <label
+              >Password
+              <input type="password" required v-model="password" />
+            </label>
+            <div class="btn-section">
+              <button class="submit-btn">Get token</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="log-out">
+          <h2>Log out?</h2>
+
+          <div class="btn-section">
+            <button class="submit-btn">
+              <router-link :to="{ name: 'LogIn' }" class=""
+                >Log out
+              </router-link>
+            </button>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -24,10 +80,21 @@
 
 <script>
 import SubHeader from "../components/SubHeader.vue";
-
+import { ref } from "@vue/reactivity";
 export default {
   name: "Account",
   components: { SubHeader },
+  setup(props) {
+    const subheaderTheme = ref("home");
+
+    const email = ref("");
+    const password = ref("");
+    return {
+      subheaderTheme,
+      email,
+      password,
+    };
+  },
 };
 </script>
 
@@ -35,8 +102,42 @@ export default {
 main {
   padding-bottom: 3rem;
   min-height: 800px;
-  .account {
-    padding: 2rem $sectionPadding;
+  .account-profile,
+  .change-password,
+  .get-token {
+    margin-bottom: 4rem;
+    width: 100%;
+    @media all and (min-width: $sm-min) {
+      width: 80%;
+    }
+    @media all and (min-width: $md-min) {
+      width: 60%;
+    }
+    @media all and (min-width: $lg-min) {
+      width: 50%;
+    }
+    @media all and (min-width: $xl-min) {
+      width: 40%;
+    }
+  }
+}
+.account {
+  padding: 2rem $sectionPadding;
+  .btn-section {
+    margin-top: 1rem;
+    justify-content: flex-start;
+    button {
+      padding: 0.6rem 0.9rem;
+      font-size: 0.8rem;
+      &.submit-btn {
+        a {
+          color: #fff;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }
 </style>

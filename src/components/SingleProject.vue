@@ -9,7 +9,7 @@
               aria-hidden="true"
               title="team members"
             ></i>
-            <span>3</span>
+            <span>{{ project.team }}</span>
           </div>
           <div class="icons-right">
             <button
@@ -188,7 +188,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     border-radius: $themeBorderRadius;
     box-shadow: $themeBoxShadow;
     height: 16rem;
@@ -261,7 +260,7 @@ export default {
     border-bottom-right-radius: $themeBorderRadius;
     .props {
       li {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         p {
           line-height: 18px;
         }
@@ -295,14 +294,6 @@ export default {
     display: flex;
     opacity: 0;
     transition: all 0.3s ease-in;
-  }
-
-  //gammalt
-  &.complete {
-    border-color: $green;
-    .tick {
-      color: $green;
-    }
   }
   &:hover {
     text-decoration: none;

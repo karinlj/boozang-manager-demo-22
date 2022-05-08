@@ -15,7 +15,7 @@
       </template>
     </SubHeader>
     <section class="projects">
-      <div class="container-small">
+      <div class="container">
         <h2>Mats Ljunggrens projects</h2>
 
         <p v-if="error">{{ error }}</p>

@@ -14,7 +14,7 @@ body,
 }
 #app {
   font-family: "Roboto", Helvetica, sans-serif;
-
+  // font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $textColor;
@@ -120,19 +120,6 @@ button,
   }
 }
 
-//fixa
-.container-small {
-  max-width: 1000px;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media all and (min-width: $xxl-min) {
-    max-width: 1200px;
-    max-width: 1300px;
-  }
-}
 main {
   min-height: 500px;
 }
@@ -156,9 +143,6 @@ form {
     border: 1px solid $borderColor;
     border-radius: $themeBorderRadius;
     color: $textColor;
-    // border: none;
-    // padding: 0.5rem 0.5rem;
-    // border-bottom: 1px solid $borderColor;
     &:focus {
       outline: $blue solid 1px;
       border-radius: 5px;

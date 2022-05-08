@@ -20,6 +20,7 @@ export default {
 .subheader {
   padding: 3.8rem $sectionPadding;
   background: $lighterGrey;
+  min-height: 230px;
   .subheader-items {
     display: flex;
     flex-direction: column;

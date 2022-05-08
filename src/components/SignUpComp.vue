@@ -24,7 +24,7 @@
     </section>
 
     <div class="signup-main-inner">
-      <div class="container-small">
+      <div class="container">
         <section class="signup-section">
           <section class="signup-upper">
             <div class="signup-left">
@@ -107,8 +107,7 @@ export default {
   background-image: url("../assets/bg_shapes.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  height: 100%;
+  min-height: 100vh;
 }
 .flag-section {
   display: flex;
@@ -136,7 +135,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.container-small {
+.container {
   margin-top: 3rem;
   @media all and (min-width: $md-min) {
     margin-top: 0;
@@ -144,7 +143,7 @@ export default {
 }
 .signup-section {
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 1rem 0 2rem 0;
   width: 100%;
   height: auto;
   @media all and (min-width: $sm-min) {
@@ -153,7 +152,6 @@ export default {
   }
   @media all and (min-width: $md-min) {
     width: 800px;
-    height: 520px;
   }
   a {
     color: $linkColor;
