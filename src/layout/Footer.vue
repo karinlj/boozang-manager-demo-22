@@ -4,9 +4,9 @@
       <div class="footer-link-container">
         <h3>Learning and Documentation</h3>
         <ul>
-          <li><a href="">Homepage</a></li>
-          <li><a href="">Videos</a></li>
-          <li><a href="">Documentation</a></li>
+          <li><a href="https://boozang.com/">Homepage</a></li>
+          <li><a href="https://boozang.com/videos/">Video tutorials</a></li>
+          <li><a href="http://docs.boozang.com/">Documentation</a></li>
         </ul>
       </div>
       <p class="copy">2022 Boozang Inc. all rights reserved.</p>
