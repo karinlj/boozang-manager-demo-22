@@ -2,7 +2,7 @@
 
 ## Description
 
-Boozang Manager Demo. Vue.js 3 CRUD application with json-server. Semantic and accessible.
+Boozang Manager Demo. Vue.js 3 CRUD application with json-server as BE exept for fake signup and login. Semantic and accessible.
 
 ![Screenshot](/src/assets/Screenshot.jpg?raw=true "Screenshot")
 
@@ -20,7 +20,7 @@ To clone
 
 To install
 
-`cd project-planner`
+`cd boozang-manager-22`
 
 `npm install`
 
