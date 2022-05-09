@@ -130,10 +130,13 @@ export default {
   }
 }
 .signup-main-inner {
-  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
+  @media all and (min-width: $xxl-min) {
+    margin-top: 4rem;
+  }
   .container {
     margin-top: 3rem;
     @media all and (min-width: $md-min) {

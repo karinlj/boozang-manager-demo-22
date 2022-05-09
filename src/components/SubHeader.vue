@@ -47,7 +47,7 @@ export default {
     text-align: center;
     color: #fff;
     background: $blue;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     font-weight: 600;
     box-shadow: $themeBoxShadow;
     width: 8rem;
