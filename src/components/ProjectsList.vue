@@ -147,7 +147,7 @@ export default {
   color: $textColor;
   transition: all 0.3s ease-in;
   margin-bottom: 2rem;
-  background: #fff;
+  background: $superLightGrey;
   border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
   box-shadow: none;
