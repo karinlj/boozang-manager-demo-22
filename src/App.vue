@@ -97,13 +97,11 @@ button,
   }
 }
 .container {
-  max-width: 1200px;
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   @media all and (min-width: $xxl-min) {
-    max-width: 1400px;
     max-width: 1300px;
   }
 }

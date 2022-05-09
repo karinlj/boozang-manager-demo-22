@@ -108,6 +108,9 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  @media all and (max-width: $xs-max) {
+    background: #fff;
+  }
 }
 .flag-section {
   display: flex;
@@ -138,20 +141,19 @@ export default {
     margin-top: 4rem;
   }
   .container {
-    margin-top: 3rem;
     @media all and (min-width: $md-min) {
       margin-top: 0;
     }
   }
 }
 .signup-section {
-  margin-top: 2rem;
   padding: 1rem 0 2rem 0;
   width: 100%;
   height: auto;
   @media all and (min-width: $sm-min) {
     width: 410px;
     margin: 0 auto;
+    margin-top: 2rem;
   }
   @media all and (min-width: $md-min) {
     width: 800px;

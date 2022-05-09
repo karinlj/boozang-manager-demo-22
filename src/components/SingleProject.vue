@@ -289,6 +289,9 @@ export default {
     display: flex;
     opacity: 0;
     transition: all 0.3s ease-in;
+    @media all and (max-width: $xs-max) {
+      opacity: 1;
+    }
   }
   &:hover {
     text-decoration: none;

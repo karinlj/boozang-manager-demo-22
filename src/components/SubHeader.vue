@@ -25,7 +25,7 @@ export default {
     display: flex;
     flex-direction: column;
     @media all and (max-width: $xs-max) {
-      text-align: center;
+      // text-align: center;
     }
     @media all and (min-width: $sm-min) {
       flex-direction: row;
@@ -56,8 +56,8 @@ export default {
       background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
     }
     @media all and (max-width: $xs-max) {
-      width: 80%;
-      margin: 2rem auto;
+      width: 70%;
+      margin: 2rem 0;
     }
     @media all and (min-width: $sm-min) {
       margin-top: 0;
