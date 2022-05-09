@@ -6,6 +6,8 @@ Boozang Manager Demo. Vue.js 3 CRUD application with json-server. Semantic and a
 
 ![Screenshot](/src/assets/Screenshot.jpg?raw=true "Screenshot")
 
+##### Url: http://mgmtdemo.boozang.com//
+
 ### Prerequisites
 
 NodeJS
