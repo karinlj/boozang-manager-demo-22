@@ -2,7 +2,9 @@
 
 ## Description
 
-Boozang Manager Demo. Vue.js 3 CRUD application with json-server and also a slide in mobile nav. Semantic and accessible.
+Boozang Manager Demo. Vue.js 3 CRUD application with json-server. Semantic and accessible.
+
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
 ### Prerequisites
 
