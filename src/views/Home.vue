@@ -10,7 +10,7 @@
           </p>
         </div>
         <a href="https://calendly.com/boozang/boozang-demo" class="btn-link"
-          >Book now</a
+          >Book now!</a
         >
       </template>
     </SubHeader>

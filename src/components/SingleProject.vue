@@ -189,11 +189,12 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     border-radius: $themeBorderRadius;
-    box-shadow: $themeBoxShadow;
     height: 16rem;
     width: 100%;
     color: $textColor;
     transition: all 0.3s ease-in;
+    margin-bottom: 2rem;
+
     @media all and (min-width: $lg-min) {
       height: 16rem;
     }
@@ -214,23 +215,14 @@ export default {
     }
     &:hover {
       text-decoration: none;
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: brightness(95%);
-        border-radius: $themeBorderRadius;
-      }
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
       .icons-right {
         opacity: 1;
       }
     }
   }
   .header {
-    padding: 1.2rem 1.6rem;
+    padding: 1.3rem 1.6rem;
     border-top-left-radius: $themeBorderRadius;
     border-top-right-radius: $themeBorderRadius;
     span {
@@ -253,9 +245,9 @@ export default {
     }
   }
   footer {
-    background: #fff;
+    background: $superLightGrey;
     border: none;
-    padding: 1.2rem 1.6rem;
+    padding: 1.3rem 1.6rem;
     border-bottom-left-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
     .props {
@@ -287,6 +279,9 @@ export default {
       }
       &.team {
         cursor: text;
+      }
+      &:hover {
+        background-image: none !important;
       }
     }
   }

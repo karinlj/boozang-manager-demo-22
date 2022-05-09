@@ -28,12 +28,6 @@ html {
 * {
   box-sizing: border-box; //obs!
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 body {
   position: relative;
 }
@@ -72,15 +66,6 @@ h5 {
   font-weight: bold;
   color: $textColor;
 }
-
-button,
-.btn-link {
-  box-shadow: $themeBoxShadowLight;
-  &:hover {
-    cursor: pointer;
-    filter: brightness(90%);
-  }
-}
 .icon_btn {
   box-shadow: none;
 }
@@ -91,7 +76,13 @@ button,
   padding: 0.8rem 1.1rem;
   border-radius: $themeBorderRadius;
   font-size: 0.9rem;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in;
+  box-shadow: $themeBoxShadowLight;
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0) !important;
+    text-decoration: none;
+  }
 }
 .btn-link {
   background: #fff;
@@ -103,9 +94,6 @@ button,
   &:focus {
     background: #fff;
     color: $blue;
-  }
-  &:hover {
-    text-decoration: none;
   }
 }
 .container {
@@ -119,7 +107,6 @@ button,
     max-width: 1300px;
   }
 }
-
 main {
   min-height: 500px;
 }

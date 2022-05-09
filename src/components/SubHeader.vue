@@ -24,6 +24,9 @@ export default {
   .subheader-items {
     display: flex;
     flex-direction: column;
+    @media all and (max-width: $xs-max) {
+      text-align: center;
+    }
     @media all and (min-width: $sm-min) {
       flex-direction: row;
       justify-content: space-between;
@@ -40,12 +43,22 @@ export default {
   .btn-link {
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
-    color: $blue;
-    background: #fff;
     margin-top: 2rem;
-    width: 7.5rem;
     text-align: center;
-
+    color: #fff;
+    background: $blue;
+    border: 1px solid #fff;
+    font-weight: 600;
+    box-shadow: $themeBoxShadow;
+    width: 8rem;
+    &:hover {
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+    }
+    @media all and (max-width: $xs-max) {
+      width: 80%;
+      margin: 2rem auto;
+    }
     @media all and (min-width: $sm-min) {
       margin-top: 0;
       width: auto;

@@ -3,7 +3,7 @@
     <SubHeader :theme="subheaderTheme">
       <template v-slot:subheaderItems>
         <div>
-          <h1>Manage your Boozang account</h1>
+          <h1>My Boozang account</h1>
           <p>Update profile, change password, get token or log out.</p>
         </div>
       </template>

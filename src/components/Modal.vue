@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
 .modal {
-  width: 420px;
+  width: 90%;
   min-height: 300px;
   padding: 1rem 2rem;
   margin: 150px auto;
@@ -37,6 +37,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media all and (min-width: $sm-min) {
+    width: 420px;
+  }
   button {
     padding: 0.6rem 0.9rem;
     margin-right: 0.5rem;

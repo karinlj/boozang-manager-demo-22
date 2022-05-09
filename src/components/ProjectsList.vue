@@ -142,14 +142,15 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: $themeBorderRadius;
-  box-shadow: $themeBoxShadow;
-  margin-right: 1.5rem;
-  margin-bottom: 2rem;
   height: 16rem;
   width: 100%;
-  background: transparent;
+  color: $textColor;
+  transition: all 0.3s ease-in;
+  margin-bottom: 2rem;
+  background: #fff;
   border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
+  box-shadow: none;
   @media all and (min-width: $lg-min) {
     height: 16rem;
   }
@@ -159,21 +160,9 @@ export default {
   .add_icon {
     color: $textColor;
     font-size: 1.7rem;
-    // opacity: 0.8;
-    transition: all 0.3s ease-in;
   }
   &:hover {
-    filter: none;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: brightness(95%);
-      border-radius: $themeBorderRadius;
-    }
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0 0) !important;
   }
 }
 </style>

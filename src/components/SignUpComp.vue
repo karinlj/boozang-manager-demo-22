@@ -134,11 +134,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.container {
-  margin-top: 3rem;
-  @media all and (min-width: $md-min) {
-    margin-top: 0;
+  .container {
+    margin-top: 3rem;
+    @media all and (min-width: $md-min) {
+      margin-top: 0;
+    }
   }
 }
 .signup-section {
@@ -296,6 +296,7 @@ export default {
         padding: 0.3rem 1.1rem;
         display: flex;
         align-items: center;
+        justify-content: center;
         background: #fff;
         border: 1px solid $borderColor;
         margin-right: 0.5rem;
