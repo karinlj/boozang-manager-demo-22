@@ -37,12 +37,10 @@
       "team": 3
     },
     {
-      "title": "hejhej",
+      "name": "hejhej",
+      "updated": "3",
+      "by": "Karin",
       "id": 7
-    },
-    {
-      "name": "hej",
-      "id": 8
     }
   ]
 }

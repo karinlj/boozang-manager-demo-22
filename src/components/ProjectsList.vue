@@ -66,6 +66,8 @@ export default {
   setup(props, context) {
     const colors = ref(["blue", "green", "pink", "yellow"]);
     const name = ref("");
+    const updated = ref("");
+    const by = ref("");
     const showAddModal = ref(false);
 
     const inputContent = computed(() => {
@@ -84,6 +86,8 @@ export default {
       //make project object
       let newProject = {
         name: name.value,
+        updated: "3",
+        by: "Karin",
       };
       // console.log("adding newProject:", newProject);
       //add to db
