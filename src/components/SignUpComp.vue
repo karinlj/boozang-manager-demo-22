@@ -1,6 +1,8 @@
 <template>
   <main class="signup-main">
-    <section class="flag-section">
+    <header class="flag-section">
+      <img src="../assets/boozang.png" alt="Boozang logo" class="logo" />
+
       <div class="flag-section-inner">
         <div v-if="showEurope">
           <img src="../assets/eu.svg" alt="EU flag" class="eu-flag" />
@@ -21,7 +23,7 @@
           >{{ regionTextOutput }}</a
         >
       </div>
-    </section>
+    </header>
 
     <div class="signup-main-inner">
       <div class="container">
@@ -114,14 +116,17 @@ export default {
 }
 .flag-section {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 1rem;
   .eu-flag,
   .canada-flag {
     height: 20px;
     display: block;
     float: right;
+  }
+  img {
+    max-width: 115px;
   }
   .flag-switch {
     display: block;
@@ -230,6 +235,7 @@ export default {
       img {
         max-width: 140px;
       }
+      display: none;
       @media all and (min-width: $md-min) {
         display: none;
       }
