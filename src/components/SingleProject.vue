@@ -64,11 +64,11 @@
             <div class="input-section">
               <label
                 >Project name
-                <input type="text" required v-model="project.name" />
+                <input type="text" v-model="project.name" />
               </label>
               <label
                 >Description
-                <textarea required v-model="project.description"></textarea>
+                <textarea v-model="project.description"></textarea>
               </label>
             </div>
             <div class="checkbox-section">

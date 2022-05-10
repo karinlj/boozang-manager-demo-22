@@ -31,12 +31,16 @@ export default {
   width: 90%;
   min-height: 300px;
   padding: 1rem 2rem;
-  margin: 150px auto;
   background: white;
   border-radius: $themeBorderRadius;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 150px auto;
+  @media all and (max-width: $xs-max) {
+    margin: 80px auto;
+  }
+
   @media all and (min-width: $sm-min) {
     width: 420px;
   }
@@ -48,8 +52,10 @@ export default {
   h1 {
     padding-bottom: 1rem;
     border-bottom: 1px solid $borderColor;
+    margin-bottom: 0;
   }
   p {
+    margin-top: 1rem;
     font-size: 0.95rem;
     color: $lightGrey;
   }
