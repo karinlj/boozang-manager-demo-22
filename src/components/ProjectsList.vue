@@ -32,14 +32,14 @@
           <div class="input-section">
             <label aria-label="Project name"
               >Project name
-              <input type="text" required v-model="title" />
+              <input type="text" required v-model="name" />
             </label>
           </div>
           <div class="btn-section">
             <button type="button" class="cancel-link" @click="toggleAddModal">
               Cancel
             </button>
-            <button type="submit" class="submit-btn" :disabled="title === ''">
+            <button type="submit" class="submit-btn" :disabled="name === ''">
               Create Project
             </button>
           </div>
@@ -65,12 +65,12 @@ export default {
 
   setup(props, context) {
     const colors = ref(["blue", "green", "pink", "yellow"]);
-    const title = ref("");
+    const name = ref("");
     const showAddModal = ref(false);
 
     const inputContent = computed(() => {
       let inputFilled;
-      if (title.value !== "") {
+      if (name.value !== "") {
         inputFilled = true;
       }
       return inputFilled;
@@ -83,7 +83,7 @@ export default {
     const handleAddNew = async () => {
       //make project object
       let newProject = {
-        title: title.value,
+        name: name.value,
       };
       // console.log("adding newProject:", newProject);
       //add to db
@@ -92,7 +92,7 @@ export default {
       //add locally
       context.emit("add", newProject);
       toggleAddModal();
-      title.value = "";
+      name.value = "";
     };
 
     const handleDelete = (id) => {
@@ -101,7 +101,7 @@ export default {
     return {
       handleDelete,
       colors,
-      title,
+      name,
       handleAddNew,
       showAddModal,
       toggleAddModal,
