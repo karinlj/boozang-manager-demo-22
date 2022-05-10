@@ -46,7 +46,7 @@
             <div class="signup-right">
               <div class="right-logo">
                 <img
-                  src="../assets/boozang_logo_white.png"
+                  src="../assets/boozang.png"
                   alt="Boozang logo"
                   class="logo"
                 />
@@ -167,6 +167,9 @@ export default {
     background: #fff;
     box-shadow: $themeBoxShadow;
     border-radius: $themeBorderRadius;
+    @media all and (max-width: $xs-max) {
+      box-shadow: none;
+    }
   }
   .signup-left {
     padding: 2rem 3rem;
@@ -203,12 +206,8 @@ export default {
     color: $blue;
     border-top-right-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
-    @media all and (max-width: $xs-max) {
-      //padding: 1rem 1.2rem;
-    }
     @media all and (min-width: $md-min) {
       width: 55%;
-      // padding: 2rem 3rem;
     }
     .signup-right-inner {
       display: flex;
@@ -224,15 +223,10 @@ export default {
       }
     }
     .right-logo {
-      background: $blue;
-      text-align: center;
-      padding: 1rem;
-      border-top-right-radius: $themeBorderRadius;
-      border-top-left-radius: $themeBorderRadius;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-      line-height: 0.6;
-      margin-bottom: 1rem;
+      padding: 1rem 2rem;
+      @media all and (max-width: $xs-max) {
+        padding: 1rem 1.2rem;
+      }
       img {
         max-width: 140px;
       }
@@ -321,11 +315,11 @@ export default {
     }
     .small-text {
       width: 100%;
-      padding: 1rem;
+      padding: 1rem 2rem;
       font-size: 0.8rem;
       color: $lightGrey;
-      @media all and (min-width: $sm-min) {
-        padding: 1rem 2rem;
+      @media all and (max-width: $xs-max) {
+        padding: 0.5rem 2.5rem;
       }
       @media all and (min-width: $md-min) {
         width: 55%;
