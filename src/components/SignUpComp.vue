@@ -46,13 +46,6 @@
               </div>
             </div>
             <div class="signup-right">
-              <div class="right-logo">
-                <img
-                  src="../assets/boozang.png"
-                  alt="Boozang logo"
-                  class="logo"
-                />
-              </div>
               <div class="signup-right-inner">
                 <div class="signup-text-right">
                   <!-- slot -->
@@ -118,15 +111,26 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+  @media all and (min-width: $md-min) {
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+  }
   .eu-flag,
   .canada-flag {
     height: 20px;
     display: block;
     float: right;
   }
-  img {
-    max-width: 115px;
+  img.logo {
+    max-width: 120px;
+    @media all and (max-width: $xs-max) {
+      max-width: 100px;
+    }
+    @media all and (min-width: $md-min) {
+      display: none;
+    }
   }
   .flag-switch {
     display: block;
@@ -135,6 +139,7 @@ export default {
     padding: 5px 0;
     font-size: 0.8rem;
     color: $blue;
+    text-align: right;
   }
 }
 .signup-main-inner {
@@ -220,24 +225,11 @@ export default {
       justify-content: space-between;
       padding: 1rem 2rem;
       @media all and (max-width: $xs-max) {
-        padding: 1rem 1.2rem;
+        padding: 1rem 0.5rem;
       }
       @media all and (min-width: $md-min) {
         padding: 2rem 3rem;
         height: 100%;
-      }
-    }
-    .right-logo {
-      padding: 1rem 2rem;
-      @media all and (max-width: $xs-max) {
-        padding: 1rem 1.2rem;
-      }
-      img {
-        max-width: 140px;
-      }
-      display: none;
-      @media all and (min-width: $md-min) {
-        display: none;
       }
     }
     h2 {
@@ -325,7 +317,7 @@ export default {
       font-size: 0.8rem;
       color: $lightGrey;
       @media all and (max-width: $xs-max) {
-        padding: 0.5rem 2.5rem;
+        padding: 0.5rem 2rem;
       }
       @media all and (min-width: $md-min) {
         width: 55%;
