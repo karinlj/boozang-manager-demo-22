@@ -1,19 +1,20 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
-    <div class="modal">
+    <div class="modal" :class="{ small: smallSize === 'true' }">
       <div>
         <slot>Header</slot>
       </div>
       <slot name="addForm"></slot>
       <slot name="editForm"></slot>
       <slot name="deleteConferm"></slot>
+      <slot name="tokenConferm"></slot>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["project"],
+  props: ["project", "smallSize"],
 
   setup(props, context) {
     const closeModal = () => {
@@ -37,6 +38,9 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   margin: 150px auto;
+  &.small {
+    min-height: 200px;
+  }
   @media all and (max-width: $xs-max) {
     margin: 80px auto;
   }

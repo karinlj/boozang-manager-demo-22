@@ -121,7 +121,6 @@
 
 <script>
 import { ref } from "@vue/reactivity";
-//import { computed } from "@vue/runtime-core";
 import Modal from "./Modal.vue";
 import updateData from "../composables/updateData";
 import deleteData from "../composables/deleteData";
