@@ -53,7 +53,10 @@ export default {
     width: 8rem;
     &:hover {
       text-decoration: none;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+      color: $blue;
+      background: #fff;
+      border: 2px solid $blue;
+      // background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
     }
     @media all and (max-width: $xs-max) {
       width: 70%;
