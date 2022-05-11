@@ -112,7 +112,9 @@ export default {
     const showTokenModal = ref(false);
 
     const toggleTokenModal = () => {
-      showTokenModal.value = !showTokenModal.value;
+      if (password.value != "") {
+        showTokenModal.value = !showTokenModal.value;
+      }
     };
     return {
       subheaderTheme,
