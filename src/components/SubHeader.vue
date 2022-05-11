@@ -46,7 +46,7 @@ export default {
     margin-top: 2rem;
     text-align: center;
     color: #fff;
-    background: $blue;
+    background: transparent;
     border: 2px solid #fff;
     font-weight: 600;
     box-shadow: $themeBoxShadow;
@@ -55,8 +55,8 @@ export default {
       text-decoration: none;
       color: $blue;
       background: #fff;
-      border: 2px solid $blue;
-      // background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+      border: 2px solid transparent;
+      background-image: none !important;
     }
     @media all and (max-width: $xs-max) {
       width: 70%;
