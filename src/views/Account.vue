@@ -112,7 +112,7 @@ export default {
     const showTokenModal = ref(false);
 
     const toggleTokenModal = () => {
-      if (password.value != "") {
+      if (password.value) {
         showTokenModal.value = !showTokenModal.value;
       }
     };

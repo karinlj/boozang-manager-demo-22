@@ -130,11 +130,11 @@ export default {
       flex: 0 0 50%;
       max-width: 50%;
     }
-    @media all and (min-width: $lg-min) {
+    @media all and (min-width: $md-min) {
       flex: 0 0 33.333333%;
       max-width: 33.333333%;
     }
-    @media all and (min-width: $xxl-min) {
+    @media all and (min-width: $xl-min) {
       flex: 0 0 25%;
       max-width: 25%;
     }
@@ -150,19 +150,19 @@ export default {
   width: 100%;
   color: $textColor;
   transition: all 0.3s ease-in;
-  margin-bottom: 2rem;
-  background: $superLightGrey;
+  margin-bottom: 4rem;
+  background: #fff;
   border: dashed 2px $borderColor !important;
   transition: all 0.3s ease-in;
-  box-shadow: none;
+  box-shadow: $themeBoxShadowLight;
   @media all and (min-width: $lg-min) {
-    height: 16rem;
+    height: 15rem;
   }
   @media all and (min-width: $xxl-min) {
     height: 17rem;
   }
   .add_icon {
-    color: $textColor;
+    color: $blue;
     font-size: 1.7rem;
   }
   &:hover {

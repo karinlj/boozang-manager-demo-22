@@ -37,10 +37,8 @@
             </button>
           </div>
         </div>
-      </header>
-      <div class="body">
         <h3 class="title">{{ project.name }}</h3>
-      </div>
+      </header>
       <footer>
         <ul class="props">
           <li>
@@ -190,12 +188,11 @@ export default {
     border-radius: $themeBorderRadius;
     height: 16rem;
     width: 100%;
-    color: $textColor;
     transition: all 0.3s ease-in;
-    margin-bottom: 2rem;
-
+    margin-bottom: 4rem;
+    box-shadow: $themeBoxShadowLight;
     @media all and (min-width: $lg-min) {
-      height: 16rem;
+      height: 15rem;
     }
     @media all and (min-width: $xxl-min) {
       height: 17rem;
@@ -221,6 +218,13 @@ export default {
     }
   }
   .header {
+    .title {
+      color: $textColor;
+      font-size: 1.1rem;
+      @media all and (min-width: $xxl-min) {
+        font-size: 1.3rem;
+      }
+    }
     padding: 1.3rem 1.6rem;
     border-top-left-radius: $themeBorderRadius;
     border-top-right-radius: $themeBorderRadius;
@@ -230,34 +234,27 @@ export default {
       margin-left: 3px;
     }
   }
-  .body {
-    padding: 0 1.6rem;
-    .title {
-      margin: 0;
-      margin-top: -1rem;
-      color: $darkBlue;
-      font-weight: 700;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      white-space: normal;
-    }
-  }
   footer {
-    background: $superLightGrey;
-    border: none;
+    background: #fff;
     padding: 1.3rem 1.6rem;
+    border: none;
+    height: 4.5rem;
     border-bottom-left-radius: $themeBorderRadius;
     border-bottom-right-radius: $themeBorderRadius;
     .props {
       li {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        @media all and (min-width: $xxl-min) {
+          font-size: 0.9rem;
+        }
         p {
-          line-height: 18px;
+          line-height: 19px;
+          color: $blue;
         }
       }
     }
   }
+
   .icons-extended {
     display: flex;
     justify-content: space-between;
@@ -269,10 +266,10 @@ export default {
     .icon_btn {
       border: none;
       background: transparent;
-      color: $textColor;
       padding: 5px;
       position: relative;
       z-index: 2;
+      color: $blue;
       &.right {
         margin-left: 0.5rem;
       }

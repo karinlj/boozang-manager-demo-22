@@ -4,14 +4,14 @@ $blue: #314281;
 $blueHover: #2a396f;
 $lightblue: #74c0fc;
 $lightestBlue: #b5bfe3;
-
-$yellow: #fab005;
+$yellow: #fab81e;
 $green: #63e6be; //#4cd884;
 $btnGreen: #20c594;
 
 $purple: #4f4686;
 $lightPurple: #7e5da6;
 $lighterPurple: #a38cc0;
+
 $colorPink: #ed789b;
 $colorPinkLight: #f688a9;
 $red: #dc143c;
@@ -33,7 +33,8 @@ $themeBorderRadius: 10px;
 
 $themeBoxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
   rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-$themeBoxShadowLight: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+//$themeBoxShadowLight: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+$themeBoxShadowLight: 0 2px 4px 0 rgba(0, 0, 0, 0.125);
 
 //screen width
 $xs-max: 480px;

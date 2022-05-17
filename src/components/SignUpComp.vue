@@ -175,7 +175,7 @@ export default {
     display: flex;
     justify-content: space-between;
     background: #fff;
-    box-shadow: $themeBoxShadow;
+    box-shadow: $themeBoxShadowLight;
     border-radius: $themeBorderRadius;
     @media all and (max-width: $xs-max) {
       box-shadow: none;
@@ -188,7 +188,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    box-shadow: $themeBoxShadow;
+    box-shadow: $themeBoxShadowLight;
     display: none;
     @media all and (min-width: $md-min) {
       display: flex;
