@@ -26,21 +26,6 @@
       "updated": "3",
       "by": "Karin",
       "team": 2
-    },
-    {
-      "name": "Clean up css",
-      "description": "Lorem ipsum\n",
-      "isPublic": false,
-      "id": 6,
-      "updated": "2",
-      "by": "Filip",
-      "team": 3
-    },
-    {
-      "name": "hejhej",
-      "updated": "3",
-      "by": "Karin",
-      "id": 7
     }
   ]
 }

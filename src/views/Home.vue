@@ -76,6 +76,9 @@ export default {
 main {
   padding-bottom: 3rem;
   min-height: 800px;
+  @media all and (min-width: $xxl-min) {
+    min-height: 1000px;
+  }
   .projects {
     padding: 2rem $sectionPadding;
   }
